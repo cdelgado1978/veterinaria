@@ -12,20 +12,21 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Cargo
+    public partial class Facturas_Detalle
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cargo()
-        {
-            this.Empleados = new HashSet<Empleado>();
-        }
-    
         public int ID { get; set; }
-        public string Nombre { get; set; }
-        public string Estatus { get; set; }
+        public int FacturasID { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public int EmpleadoID { get; set; }
+        public int ProductoID { get; set; }
+        public int TipoProductoId { get; set; }
+        public int Precio { get; set; }
+        public int Cantidad { get; set; }
+        public int Descuento { get; set; }
+        public int SubTotal { get; set; }
+        public int Total { get; set; }
         public bool Inactivo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleado> Empleados { get; set; }
+        public virtual Factura Factura { get; set; }
     }
 }

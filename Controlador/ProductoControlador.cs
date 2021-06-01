@@ -17,9 +17,9 @@ namespace Veterinaria.Controlador
         }
 
 
-        public List<PRODUCTO> ObtenerProductos()
+        public List<Producto> ObtenerProductos()
         {
-            return entidades.PRODUCTOes.ToList();
+            return entidades.Productos.ToList();
         }
 
     }

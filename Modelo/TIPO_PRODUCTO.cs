@@ -12,19 +12,20 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class TIPO_PRODUCTO
+    public partial class Tipo_Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPO_PRODUCTO()
+        public Tipo_Producto()
         {
-            this.PRODUCTOes = new HashSet<PRODUCTO>();
+            this.Productoes = new HashSet<Producto>();
         }
     
-        public int IDTIPOPRO { get; set; }
-        public string NOMBRETIPPRO { get; set; }
-        public string ESTATUS { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Estatus { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRODUCTO> PRODUCTOes { get; set; }
+        public virtual ICollection<Producto> Productoes { get; set; }
     }
 }

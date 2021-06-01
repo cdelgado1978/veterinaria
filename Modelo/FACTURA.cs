@@ -12,29 +12,30 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class FACTURA
+    public partial class Factura
     {
-        public int IDFACTURA { get; set; }
-        public int IDCATEGORIA { get; set; }
-        public System.DateTime FECHA { get; set; }
-        public int IDTIPOFAC { get; set; }
-        public int IDEMPLEADO { get; set; }
-        public int IDCLIENTE { get; set; }
-        public int IDPRODUCTO { get; set; }
-        public string NOMBREPRO { get; set; }
-        public int IDTIPOPRO { get; set; }
-        public string DESCRIPCIONPRO { get; set; }
-        public int PRECIOPRO { get; set; }
-        public int CATIDAD { get; set; }
-        public Nullable<int> DESCUENTO { get; set; }
-        public Nullable<int> SUBTOTAL { get; set; }
-        public Nullable<int> TOTAL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Factura()
+        {
+            this.Facturas_Detalle = new HashSet<Facturas_Detalle>();
+        }
     
-        public virtual CATEGORIA_FACTURA CATEGORIA_FACTURA { get; set; }
-        public virtual CLIENTE CLIENTE { get; set; }
-        public virtual EMPLEADO EMPLEADO { get; set; }
-        public virtual FACTURA_DETALLE FACTURA_DETALLE { get; set; }
-        public virtual PRODUCTO PRODUCTO { get; set; }
-        public virtual TIPO_FACTURA TIPO_FACTURA { get; set; }
+        public int ID { get; set; }
+        public int CategoriaID { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public int TipoFacturaID { get; set; }
+        public int EmpleadoID { get; set; }
+        public int ClienteID { get; set; }
+        public int DescuentoTotal { get; set; }
+        public int SubTotal { get; set; }
+        public int Total { get; set; }
+        public bool Inactivo { get; set; }
+    
+        public virtual Categoria_Factura Categoria_Factura { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Empleado Empleado { get; set; }
+        public virtual Tipo_Factura Tipo_Factura { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Facturas_Detalle> Facturas_Detalle { get; set; }
     }
 }

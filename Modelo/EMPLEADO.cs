@@ -12,39 +12,36 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class EMPLEADO
+    public partial class Empleado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EMPLEADO()
+        public Empleado()
         {
-            this.COTIZACIONs = new HashSet<COTIZACION>();
-            this.FACTURAs = new HashSet<FACTURA>();
-            this.USUARIOs = new HashSet<USUARIO>();
+            this.Cotizaciones = new HashSet<Cotizacione>();
+            this.Facturas = new HashSet<Factura>();
+            this.Usuarios = new HashSet<Usuario>();
         }
     
-        public int IDEMPLEADO { get; set; }
-        public string NOMBREEMP { get; set; }
-        public string APELLIDOEMP { get; set; }
-        public int IDUSUARIO { get; set; }
-        public string NOMBREUSU { get; set; }
-        public string CONTRASEÑAUSU { get; set; }
-        public int IDCARGO { get; set; }
-        public string NOMBRECAR { get; set; }
-        public int SUELDO { get; set; }
-        public string DIRECCIONEMP { get; set; }
-        public int IDCIUDAD { get; set; }
-        public string TELEFONO { get; set; }
-        public string CEDULAEMP { get; set; }
-        public string CORREOEMP { get; set; }
-        public string ESTATUS { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+        public int UsuarioId { get; set; }
+        public int CargoId { get; set; }
+        public int Sueldo { get; set; }
+        public string Direccion { get; set; }
+        public int CiudadID { get; set; }
+        public string Telefono { get; set; }
+        public string Cedula { get; set; }
+        public string Correo { get; set; }
+        public bool Inactivo { get; set; }
     
-        public virtual CARGO CARGO { get; set; }
-        public virtual CIUDAD CIUDAD { get; set; }
+        public virtual Cargo Cargo { get; set; }
+        public virtual Ciudad Ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COTIZACION> COTIZACIONs { get; set; }
+        public virtual ICollection<Cotizacione> Cotizaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACTURA> FACTURAs { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIOs { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

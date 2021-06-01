@@ -12,28 +12,31 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class CLIENTE
+    public partial class Cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CLIENTE()
+        public Cliente()
         {
-            this.COTIZACIONs = new HashSet<COTIZACION>();
-            this.FACTURAs = new HashSet<FACTURA>();
+            this.Cotizaciones = new HashSet<Cotizacione>();
+            this.Facturas = new HashSet<Factura>();
+            this.Animales = new HashSet<Animale>();
         }
     
-        public int IDECLIENTE { get; set; }
-        public string NOMBRECLI { get; set; }
-        public string APELLIDOCLI { get; set; }
-        public string CEDULACLI { get; set; }
-        public string DIRECCION { get; set; }
-        public int IDCIUDAD { get; set; }
-        public string TELEFONOCLI { get; set; }
-        public string ESTATUS { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+        public string Cedula { get; set; }
+        public string Direccion { get; set; }
+        public int CiudadID { get; set; }
+        public string Telefono { get; set; }
+        public bool Inactivo { get; set; }
     
-        public virtual CIUDAD CIUDAD { get; set; }
+        public virtual Ciudad Ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COTIZACION> COTIZACIONs { get; set; }
+        public virtual ICollection<Cotizacione> Cotizaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACTURA> FACTURAs { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Animale> Animales { get; set; }
     }
 }

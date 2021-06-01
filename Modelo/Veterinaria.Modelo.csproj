@@ -53,59 +53,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ANIMAL.cs">
+    <Compile Include="Animale.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CARGO.cs">
+    <Compile Include="Cargo.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CATEGORIA_FACTURA.cs">
+    <Compile Include="Categoria_Factura.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CIUDAD.cs">
+    <Compile Include="Ciudad.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CLIENTE.cs">
+    <Compile Include="Cliente.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="COTIZACION.cs">
+    <Compile Include="Cotizacione.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EMPLEADO.cs">
+    <Compile Include="Empleado.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FACTURA.cs">
+    <Compile Include="Factura.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FACTURA_DETALLE.cs">
+    <Compile Include="Facturas_Detalle.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HISTORIAL_RECETA.cs">
+    <Compile Include="Historial_Recetas.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PRODUCTO.cs">
+    <Compile Include="Producto.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PROVEEDOR.cs">
+    <Compile Include="Proveedor.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RAZA.cs">
+    <Compile Include="Raza.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RECETA.cs">
+    <Compile Include="Receta.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TIPO_ANIMAL.cs">
+    <Compile Include="Tipo_Animal.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TIPO_FACTURA.cs">
+    <Compile Include="Tipo_Factura.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TIPO_PRODUCTO.cs">
+    <Compile Include="Tipo_Producto.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="USUARIO.cs">
+    <Compile Include="Usuario.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="VeterinariaModel.Context.cs">

@@ -12,22 +12,22 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class TIPO_ANIMAL
+    public partial class Tipo_Animal
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPO_ANIMAL()
+        public Tipo_Animal()
         {
-            this.ANIMALs = new HashSet<ANIMAL>();
-            this.RAZAs = new HashSet<RAZA>();
+            this.Animales = new HashSet<Animale>();
+            this.Razas = new HashSet<Raza>();
         }
     
-        public int IDTIPOANM { get; set; }
-        public string NOMBRETIPANM { get; set; }
-        public string ESTATUS { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ANIMAL> ANIMALs { get; set; }
+        public virtual ICollection<Animale> Animales { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RAZA> RAZAs { get; set; }
+        public virtual ICollection<Raza> Razas { get; set; }
     }
 }

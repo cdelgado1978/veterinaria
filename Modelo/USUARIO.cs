@@ -12,14 +12,14 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class USUARIO
+    public partial class Usuario
     {
-        public int IDUSUARIO { get; set; }
-        public int IDEMPLEADO { get; set; }
-        public string NOMBREUSU { get; set; }
-        public string CONTRASEÑA { get; set; }
-        public string ESTATUS { get; set; }
+        public int Id { get; set; }
+        public int EmpleadoId { get; set; }
+        public string Usuario1 { get; set; }
+        public string Contrasena { get; set; }
+        public bool Inactivo { get; set; }
     
-        public virtual EMPLEADO EMPLEADO { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

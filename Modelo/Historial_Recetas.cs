@@ -12,18 +12,17 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class HISTORIAL_RECETA
+    public partial class Historial_Recetas
     {
-        public int IDHIST { get; set; }
-        public int IDRECETA { get; set; }
-        public int IDANIMAL { get; set; }
-        public string NOMBREANM { get; set; }
-        public int IDDUEÑO { get; set; }
-        public System.DateTime FECHA { get; set; }
-        public string DIAGNOSTICO { get; set; }
-        public System.TimeSpan HORA { get; set; }
-        public string TRATAMIENTO { get; set; }
+        public int ID { get; set; }
+        public int RecetaId { get; set; }
+        public int AnimalId { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public string Diagnostico { get; set; }
+        public System.TimeSpan Hora { get; set; }
+        public string Tratamiento { get; set; }
+        public bool Inactivo { get; set; }
     
-        public virtual RECETA RECETA { get; set; }
+        public virtual Receta Receta { get; set; }
     }
 }

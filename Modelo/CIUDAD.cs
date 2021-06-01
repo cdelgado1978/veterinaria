@@ -12,22 +12,23 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class CIUDAD
+    public partial class Ciudad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CIUDAD()
+        public Ciudad()
         {
-            this.CLIENTEs = new HashSet<CLIENTE>();
-            this.EMPLEADOes = new HashSet<EMPLEADO>();
+            this.Clientes = new HashSet<Cliente>();
+            this.Empleados = new HashSet<Empleado>();
         }
     
-        public int IDCIUDAD { get; set; }
-        public string NOMBRECIU { get; set; }
-        public string ESTATUS { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Estatus { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CLIENTE> CLIENTEs { get; set; }
+        public virtual ICollection<Cliente> Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EMPLEADO> EMPLEADOes { get; set; }
+        public virtual ICollection<Empleado> Empleados { get; set; }
     }
 }

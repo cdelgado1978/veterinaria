@@ -25,23 +25,23 @@ namespace Veterinaria.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ANIMAL> ANIMALs { get; set; }
-        public virtual DbSet<CARGO> CARGOS { get; set; }
-        public virtual DbSet<CATEGORIA_FACTURA> CATEGORIA_FACTURA { get; set; }
-        public virtual DbSet<CIUDAD> CIUDADs { get; set; }
-        public virtual DbSet<CLIENTE> CLIENTEs { get; set; }
-        public virtual DbSet<COTIZACION> COTIZACIONs { get; set; }
-        public virtual DbSet<EMPLEADO> EMPLEADOes { get; set; }
-        public virtual DbSet<FACTURA> FACTURAs { get; set; }
-        public virtual DbSet<FACTURA_DETALLE> FACTURA_DETALLE { get; set; }
-        public virtual DbSet<HISTORIAL_RECETA> HISTORIAL_RECETA { get; set; }
-        public virtual DbSet<PRODUCTO> PRODUCTOes { get; set; }
-        public virtual DbSet<PROVEEDOR> PROVEEDORs { get; set; }
-        public virtual DbSet<RAZA> RAZAs { get; set; }
-        public virtual DbSet<RECETA> RECETAs { get; set; }
-        public virtual DbSet<TIPO_ANIMAL> TIPO_ANIMAL { get; set; }
-        public virtual DbSet<TIPO_FACTURA> TIPO_FACTURA { get; set; }
-        public virtual DbSet<TIPO_PRODUCTO> TIPO_PRODUCTO { get; set; }
-        public virtual DbSet<USUARIO> USUARIOs { get; set; }
+        public virtual DbSet<Animale> Animales { get; set; }
+        public virtual DbSet<Cargo> Cargos { get; set; }
+        public virtual DbSet<Categoria_Factura> Categoria_Factura { get; set; }
+        public virtual DbSet<Ciudad> Ciudads { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Cotizacione> Cotizaciones { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<Factura> Facturas { get; set; }
+        public virtual DbSet<Historial_Recetas> Historial_Recetas { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<Proveedor> Proveedors { get; set; }
+        public virtual DbSet<Raza> Razas { get; set; }
+        public virtual DbSet<Receta> Recetas { get; set; }
+        public virtual DbSet<Tipo_Animal> Tipo_Animal { get; set; }
+        public virtual DbSet<Tipo_Factura> Tipo_Factura { get; set; }
+        public virtual DbSet<Tipo_Producto> Tipo_Producto { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Facturas_Detalle> Facturas_Detalle { get; set; }
     }
 }

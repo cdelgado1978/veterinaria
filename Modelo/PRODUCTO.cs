@@ -12,30 +12,27 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODUCTO
+    public partial class Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PRODUCTO()
+        public Producto()
         {
-            this.COTIZACIONs = new HashSet<COTIZACION>();
-            this.FACTURAs = new HashSet<FACTURA>();
+            this.Cotizaciones = new HashSet<Cotizacione>();
         }
     
-        public int IDPRODUCTO { get; set; }
-        public string NOMBREPRO { get; set; }
-        public int IDTIPOPRO { get; set; }
-        public string DESCRIPCIONPRO { get; set; }
-        public int IDPROVEEDOR { get; set; }
-        public int COSTOPRO { get; set; }
-        public int PRECIOPRO { get; set; }
-        public int CANTIDADPRO { get; set; }
-        public string ESTATUS { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public int TipoProductoId { get; set; }
+        public string Descripcion { get; set; }
+        public int ProveedorId { get; set; }
+        public int Costo { get; set; }
+        public int Precio { get; set; }
+        public int Cantidad { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COTIZACION> COTIZACIONs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACTURA> FACTURAs { get; set; }
-        public virtual PROVEEDOR PROVEEDOR { get; set; }
-        public virtual TIPO_PRODUCTO TIPO_PRODUCTO { get; set; }
+        public virtual ICollection<Cotizacione> Cotizaciones { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
+        public virtual Tipo_Producto Tipo_Producto { get; set; }
     }
 }

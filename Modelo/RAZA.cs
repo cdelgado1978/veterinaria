@@ -12,21 +12,21 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class RAZA
+    public partial class Raza
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RAZA()
+        public Raza()
         {
-            this.ANIMALs = new HashSet<ANIMAL>();
+            this.Animales = new HashSet<Animale>();
         }
     
-        public int IDRAZA { get; set; }
-        public string NOMBRERAZA { get; set; }
-        public int IDTIPOANM { get; set; }
-        public string ESTATUS { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public int TipoAnimalId { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ANIMAL> ANIMALs { get; set; }
-        public virtual TIPO_ANIMAL TIPO_ANIMAL { get; set; }
+        public virtual ICollection<Animale> Animales { get; set; }
+        public virtual Tipo_Animal Tipo_Animal { get; set; }
     }
 }

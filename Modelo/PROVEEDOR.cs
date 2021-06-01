@@ -12,22 +12,23 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class PROVEEDOR
+    public partial class Proveedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROVEEDOR()
+        public Proveedor()
         {
-            this.PRODUCTOes = new HashSet<PRODUCTO>();
+            this.Productoes = new HashSet<Producto>();
         }
     
-        public int IDPROVEEDOR { get; set; }
-        public string NOMBREPROV { get; set; }
-        public string DIRECCION { get; set; }
-        public int IDTIPOPROV { get; set; }
-        public string TEELFONOPROV { get; set; }
-        public string ESTATUS { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Dirección { get; set; }
+        public int TipoProveedorID { get; set; }
+        public string Telefono { get; set; }
+        public string Estatus { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRODUCTO> PRODUCTOes { get; set; }
+        public virtual ICollection<Producto> Productoes { get; set; }
     }
 }

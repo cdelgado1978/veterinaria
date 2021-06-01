@@ -12,19 +12,19 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class TIPO_FACTURA
+    public partial class Tipo_Factura
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPO_FACTURA()
+        public Tipo_Factura()
         {
-            this.FACTURAs = new HashSet<FACTURA>();
+            this.Facturas = new HashSet<Factura>();
         }
     
-        public int IDTIPOFACT { get; set; }
-        public string NOMBRETIPFAC { get; set; }
-        public string ESTATUS { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACTURA> FACTURAs { get; set; }
+        public virtual ICollection<Factura> Facturas { get; set; }
     }
 }

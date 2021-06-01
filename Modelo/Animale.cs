@@ -12,27 +12,27 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class ANIMAL
+    public partial class Animale
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ANIMAL()
+        public Animale()
         {
-            this.RECETAs = new HashSet<RECETA>();
+            this.Recetas = new HashSet<Receta>();
         }
     
-        public int IDANIMAL { get; set; }
-        public string NOMBREANM { get; set; }
-        public int IDTIPO { get; set; }
-        public int IDRAZA { get; set; }
-        public int EDAD { get; set; }
-        public string NOMBREPRO { get; set; }
-        public string DIRECCION { get; set; }
-        public string TELEFONO { get; set; }
-        public string ESTATUS { get; set; }
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public int TipoID { get; set; }
+        public int RazaID { get; set; }
+        public int Edad { get; set; }
+        public string Direccion { get; set; }
+        public bool Inactivo { get; set; }
+        public int ClienteId { get; set; }
     
-        public virtual RAZA RAZA { get; set; }
-        public virtual TIPO_ANIMAL TIPO_ANIMAL { get; set; }
+        public virtual Raza Raza { get; set; }
+        public virtual Tipo_Animal Tipo_Animal { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RECETA> RECETAs { get; set; }
+        public virtual ICollection<Receta> Recetas { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

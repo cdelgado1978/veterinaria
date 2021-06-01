@@ -20,6 +20,7 @@ namespace Veterinaria
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             var productos = new ProductoControlador();
 
             dataGridView1.DataSource = productos.ObtenerProductos();
