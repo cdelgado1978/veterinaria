@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc74009e91e743dbbfe50ee8ca090ce6" Name="Diagram1">
+        <EntityTypeShape EntityType="VeterinariaModel.ANIMAL" Width="1.5" PointX="17.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.CARGO" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.CATEGORIA_FACTURA" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.CIUDAD" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.CLIENTE" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.COTIZACION" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.EMPLEADO" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.FACTURA" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.FACTURA_DETALLE" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.HISTORIAL_RECETA" Width="1.5" PointX="21.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.PRODUCTO" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.PROVEEDOR" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.RAZA" Width="1.5" PointX="15" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.RECETA" Width="1.5" PointX="19.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.TIPO_ANIMAL" Width="1.5" PointX="12.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.TIPO_FACTURA" Width="1.5" PointX="6" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.TIPO_PRODUCTO" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="VeterinariaModel.USUARIO" Width="1.5" PointX="6.25" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="VeterinariaModel.FK_ANIMAL_RAZA" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_ANIMAL_TIPO_ANIMAL" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_RECETA_ANIMAL" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_EMPLEADO_CARGOS" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_FACTURA_CATEGORIA_FACTURA" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_CLIENTE_CIUDAD" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_EMPLEADO_CIUDAD" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_COTIZACION_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_FACTURA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_COTIZACION_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_COTIZACION_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_FACTURA_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_USUARIO_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_FACTURA_DETALLE_FACTURA" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_FACTURA_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_FACTURA_TIPO_FACTURA" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_HISTORIAL_RECETA_RECETA" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_PRODUCTO_PROVEEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_PRODUCTO_TIPO_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="VeterinariaModel.FK_RAZA_TIPO_ANIMAL" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

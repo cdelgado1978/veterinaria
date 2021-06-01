@@ -1,0 +1,1461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VeterinariaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ANIMAL">
+          <Key>
+            <PropertyRef Name="IDANIMAL" />
+          </Key>
+          <Property Name="IDANIMAL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBREANM" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDTIPO" Type="int" Nullable="false" />
+          <Property Name="IDRAZA" Type="int" Nullable="false" />
+          <Property Name="EDAD" Type="int" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="CARGOS">
+          <Key>
+            <PropertyRef Name="IDCARGO" />
+          </Key>
+          <Property Name="IDCARGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRECAR" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="CATEGORIA_FACTURA">
+          <Key>
+            <PropertyRef Name="IDCATEGIRIAFAC" />
+          </Key>
+          <Property Name="IDCATEGIRIAFAC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRCATE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="CIUDAD">
+          <Key>
+            <PropertyRef Name="IDCIUDAD" />
+          </Key>
+          <Property Name="IDCIUDAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRECIU" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="IDECLIENTE" />
+          </Key>
+          <Property Name="IDECLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRECLI" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="APELLIDOCLI" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CEDULACLI" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDCIUDAD" Type="int" Nullable="false" />
+          <Property Name="TELEFONOCLI" Type="varchar" MaxLength="12" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="COTIZACION">
+          <Key>
+            <PropertyRef Name="IDCOTIZACION" />
+          </Key>
+          <Property Name="IDCOTIZACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="IDEMPLEADO" Type="int" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="int" Nullable="false" />
+          <Property Name="CATIDAD" Type="int" Nullable="false" />
+          <Property Name="DESCUENTO" Type="int" />
+          <Property Name="SUBTOTAL" Type="int" />
+          <Property Name="TOTAL" Type="int" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="IDEMPLEADO" />
+          </Key>
+          <Property Name="IDEMPLEADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBREEMP" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="APELLIDOEMP" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="NOMBREUSU" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CONTRASEÑAUSU" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="IDCARGO" Type="int" Nullable="false" />
+          <Property Name="NOMBRECAR" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SUELDO" Type="int" Nullable="false" />
+          <Property Name="DIRECCIONEMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDCIUDAD" Type="int" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="12" />
+          <Property Name="CEDULAEMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CORREOEMP" Type="varchar" MaxLength="60" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="IDFACTURA" />
+          </Key>
+          <Property Name="IDFACTURA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCATEGORIA" Type="int" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="IDTIPOFAC" Type="int" Nullable="false" />
+          <Property Name="IDEMPLEADO" Type="int" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="int" Nullable="false" />
+          <Property Name="CATIDAD" Type="int" Nullable="false" />
+          <Property Name="DESCUENTO" Type="int" />
+          <Property Name="SUBTOTAL" Type="int" />
+          <Property Name="TOTAL" Type="int" />
+        </EntityType>
+        <EntityType Name="FACTURA_DETALLE">
+          <Key>
+            <PropertyRef Name="IDDETALLE" />
+          </Key>
+          <Property Name="IDDETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDFACTURA" Type="int" Nullable="false" />
+          <Property Name="IDCATEGORIA" Type="int" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="IDTIPOFAC" Type="int" Nullable="false" />
+          <Property Name="IDEMPLEADO" Type="int" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="int" Nullable="false" />
+          <Property Name="CATIDAD" Type="int" Nullable="false" />
+          <Property Name="DESCUENTO" Type="int" />
+          <Property Name="SUBTOTAL" Type="int" />
+          <Property Name="TOTAL" Type="int" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_RECETA">
+          <Key>
+            <PropertyRef Name="IDHIST" />
+          </Key>
+          <Property Name="IDHIST" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDRECETA" Type="int" Nullable="false" />
+          <Property Name="IDANIMAL" Type="int" Nullable="false" />
+          <Property Name="NOMBREANM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDDUEÑO" Type="int" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="DIAGNOSTICO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HORA" Type="time" Precision="7" Nullable="false" />
+          <Property Name="TRATAMIENTO" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDPROVEEDOR" Type="int" Nullable="false" />
+          <Property Name="COSTOPRO" Type="int" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="int" Nullable="false" />
+          <Property Name="CANTIDADPRO" Type="int" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="PROVEEDOR">
+          <Key>
+            <PropertyRef Name="IDPROVEEDOR" />
+          </Key>
+          <Property Name="IDPROVEEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBREPROV" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDTIPOPROV" Type="int" Nullable="false" />
+          <Property Name="TEELFONOPROV" Type="varchar" MaxLength="12" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="RAZA">
+          <Key>
+            <PropertyRef Name="IDRAZA" />
+          </Key>
+          <Property Name="IDRAZA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRERAZA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDTIPOANM" Type="int" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="RECETA">
+          <Key>
+            <PropertyRef Name="IDRECETA" />
+          </Key>
+          <Property Name="IDRECETA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDANIMAL" Type="int" Nullable="false" />
+          <Property Name="NOMBREANM" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDTIPO" Type="int" Nullable="false" />
+          <Property Name="IDRAZA" Type="int" Nullable="false" />
+          <Property Name="EDAD" Type="int" Nullable="false" />
+          <Property Name="PADECIMIENTO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PRODUCTOIND" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DOSIS" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PERSONARES" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TIPO_ANIMAL">
+          <Key>
+            <PropertyRef Name="IDTIPOANM" />
+          </Key>
+          <Property Name="IDTIPOANM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRETIPANM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TIPO_FACTURA">
+          <Key>
+            <PropertyRef Name="IDTIPOFACT" />
+          </Key>
+          <Property Name="IDTIPOFACT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRETIPFAC" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TIPO_PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDTIPOPRO" />
+          </Key>
+          <Property Name="IDTIPOPRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRETIPPRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+          </Key>
+          <Property Name="IDUSUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEMPLEADO" Type="int" Nullable="false" />
+          <Property Name="NOMBREUSU" Type="varchar" MaxLength="50" />
+          <Property Name="CONTRASEÑA" Type="varchar" MaxLength="4" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK_ANIMAL_RAZA">
+          <End Role="RAZA" Type="Self.RAZA" Multiplicity="1" />
+          <End Role="ANIMAL" Type="Self.ANIMAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAZA">
+              <PropertyRef Name="IDRAZA" />
+            </Principal>
+            <Dependent Role="ANIMAL">
+              <PropertyRef Name="IDRAZA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANIMAL_TIPO_ANIMAL">
+          <End Role="TIPO_ANIMAL" Type="Self.TIPO_ANIMAL" Multiplicity="1" />
+          <End Role="ANIMAL" Type="Self.ANIMAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_ANIMAL">
+              <PropertyRef Name="IDTIPOANM" />
+            </Principal>
+            <Dependent Role="ANIMAL">
+              <PropertyRef Name="IDTIPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_CIUDAD">
+          <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDAD">
+              <PropertyRef Name="IDCIUDAD" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="IDCIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COTIZACION_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="COTIZACION" Type="Self.COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IDECLIENTE" />
+            </Principal>
+            <Dependent Role="COTIZACION">
+              <PropertyRef Name="IDCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COTIZACION_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="COTIZACION" Type="Self.COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Principal>
+            <Dependent Role="COTIZACION">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COTIZACION_PRODUCTO">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+          <End Role="COTIZACION" Type="Self.COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="COTIZACION">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_CARGOS">
+          <End Role="CARGOS" Type="Self.CARGOS" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARGOS">
+              <PropertyRef Name="IDCARGO" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="IDCARGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_CIUDAD">
+          <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDAD">
+              <PropertyRef Name="IDCIUDAD" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="IDCIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_CATEGORIA_FACTURA">
+          <End Role="CATEGORIA_FACTURA" Type="Self.CATEGORIA_FACTURA" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIA_FACTURA">
+              <PropertyRef Name="IDCATEGIRIAFAC" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDCATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IDECLIENTE" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_DETALLE_FACTURA">
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="1" />
+          <End Role="FACTURA_DETALLE" Type="Self.FACTURA_DETALLE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FACTURA">
+              <PropertyRef Name="IDFACTURA" />
+            </Principal>
+            <Dependent Role="FACTURA_DETALLE">
+              <PropertyRef Name="IDDETALLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_PRODUCTO">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_TIPO_FACTURA">
+          <End Role="TIPO_FACTURA" Type="Self.TIPO_FACTURA" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_FACTURA">
+              <PropertyRef Name="IDTIPOFACT" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDTIPOFAC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_RECETA_RECETA">
+          <End Role="RECETA" Type="Self.RECETA" Multiplicity="1" />
+          <End Role="HISTORIAL_RECETA" Type="Self.HISTORIAL_RECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECETA">
+              <PropertyRef Name="IDRECETA" />
+            </Principal>
+            <Dependent Role="HISTORIAL_RECETA">
+              <PropertyRef Name="IDRECETA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_PROVEEDOR">
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDOR">
+              <PropertyRef Name="IDPROVEEDOR" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="IDPROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_TIPO_PRODUCTO">
+          <End Role="TIPO_PRODUCTO" Type="Self.TIPO_PRODUCTO" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_PRODUCTO">
+              <PropertyRef Name="IDTIPOPRO" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="IDTIPOPRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAZA_TIPO_ANIMAL">
+          <End Role="TIPO_ANIMAL" Type="Self.TIPO_ANIMAL" Multiplicity="1" />
+          <End Role="RAZA" Type="Self.RAZA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_ANIMAL">
+              <PropertyRef Name="IDTIPOANM" />
+            </Principal>
+            <Dependent Role="RAZA">
+              <PropertyRef Name="IDTIPOANM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECETA_ANIMAL">
+          <End Role="ANIMAL" Type="Self.ANIMAL" Multiplicity="1" />
+          <End Role="RECETA" Type="Self.RECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANIMAL">
+              <PropertyRef Name="IDANIMAL" />
+            </Principal>
+            <Dependent Role="RECETA">
+              <PropertyRef Name="IDANIMAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VeterinariaModelStoreContainer">
+          <EntitySet Name="ANIMAL" EntityType="Self.ANIMAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CARGOS" EntityType="Self.CARGOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CATEGORIA_FACTURA" EntityType="Self.CATEGORIA_FACTURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CIUDAD" EntityType="Self.CIUDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COTIZACION" EntityType="Self.COTIZACION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACTURA_DETALLE" EntityType="Self.FACTURA_DETALLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HISTORIAL_RECETA" EntityType="Self.HISTORIAL_RECETA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAZA" EntityType="Self.RAZA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RECETA" EntityType="Self.RECETA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_ANIMAL" EntityType="Self.TIPO_ANIMAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_FACTURA" EntityType="Self.TIPO_FACTURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ANIMAL_RAZA" Association="Self.FK_ANIMAL_RAZA">
+            <End Role="RAZA" EntitySet="RAZA" />
+            <End Role="ANIMAL" EntitySet="ANIMAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANIMAL_TIPO_ANIMAL" Association="Self.FK_ANIMAL_TIPO_ANIMAL">
+            <End Role="TIPO_ANIMAL" EntitySet="TIPO_ANIMAL" />
+            <End Role="ANIMAL" EntitySet="ANIMAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_CIUDAD" Association="Self.FK_CLIENTE_CIUDAD">
+            <End Role="CIUDAD" EntitySet="CIUDAD" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COTIZACION_CLIENTE" Association="Self.FK_COTIZACION_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="COTIZACION" EntitySet="COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COTIZACION_EMPLEADO" Association="Self.FK_COTIZACION_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="COTIZACION" EntitySet="COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COTIZACION_PRODUCTO" Association="Self.FK_COTIZACION_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="COTIZACION" EntitySet="COTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_CARGOS" Association="Self.FK_EMPLEADO_CARGOS">
+            <End Role="CARGOS" EntitySet="CARGOS" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_CIUDAD" Association="Self.FK_EMPLEADO_CIUDAD">
+            <End Role="CIUDAD" EntitySet="CIUDAD" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_CATEGORIA_FACTURA" Association="Self.FK_FACTURA_CATEGORIA_FACTURA">
+            <End Role="CATEGORIA_FACTURA" EntitySet="CATEGORIA_FACTURA" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_CLIENTE" Association="Self.FK_FACTURA_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_DETALLE_FACTURA" Association="Self.FK_FACTURA_DETALLE_FACTURA">
+            <End Role="FACTURA" EntitySet="FACTURA" />
+            <End Role="FACTURA_DETALLE" EntitySet="FACTURA_DETALLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_EMPLEADO" Association="Self.FK_FACTURA_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_PRODUCTO" Association="Self.FK_FACTURA_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_TIPO_FACTURA" Association="Self.FK_FACTURA_TIPO_FACTURA">
+            <End Role="TIPO_FACTURA" EntitySet="TIPO_FACTURA" />
+            <End Role="FACTURA" EntitySet="FACTURA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_RECETA_RECETA" Association="Self.FK_HISTORIAL_RECETA_RECETA">
+            <End Role="RECETA" EntitySet="RECETA" />
+            <End Role="HISTORIAL_RECETA" EntitySet="HISTORIAL_RECETA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_PROVEEDOR" Association="Self.FK_PRODUCTO_PROVEEDOR">
+            <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_TIPO_PRODUCTO" Association="Self.FK_PRODUCTO_TIPO_PRODUCTO">
+            <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAZA_TIPO_ANIMAL" Association="Self.FK_RAZA_TIPO_ANIMAL">
+            <End Role="TIPO_ANIMAL" EntitySet="TIPO_ANIMAL" />
+            <End Role="RAZA" EntitySet="RAZA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECETA_ANIMAL" Association="Self.FK_RECETA_ANIMAL">
+            <End Role="ANIMAL" EntitySet="ANIMAL" />
+            <End Role="RECETA" EntitySet="RECETA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_EMPLEADO" Association="Self.FK_USUARIO_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VeterinariaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ANIMAL">
+          <Key>
+            <PropertyRef Name="IDANIMAL" />
+          </Key>
+          <Property Name="IDANIMAL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBREANM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPO" Type="Int32" Nullable="false" />
+          <Property Name="IDRAZA" Type="Int32" Nullable="false" />
+          <Property Name="EDAD" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RAZA" Relationship="Self.FK_ANIMAL_RAZA" FromRole="ANIMAL" ToRole="RAZA" />
+          <NavigationProperty Name="TIPO_ANIMAL" Relationship="Self.FK_ANIMAL_TIPO_ANIMAL" FromRole="ANIMAL" ToRole="TIPO_ANIMAL" />
+          <NavigationProperty Name="RECETAs" Relationship="Self.FK_RECETA_ANIMAL" FromRole="ANIMAL" ToRole="RECETA" />
+        </EntityType>
+        <EntityType Name="CARGO">
+          <Key>
+            <PropertyRef Name="IDCARGO" />
+          </Key>
+          <Property Name="IDCARGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRECAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EMPLEADOes" Relationship="Self.FK_EMPLEADO_CARGOS" FromRole="CARGOS" ToRole="EMPLEADO" />
+        </EntityType>
+        <EntityType Name="CATEGORIA_FACTURA">
+          <Key>
+            <PropertyRef Name="IDCATEGIRIAFAC" />
+          </Key>
+          <Property Name="IDCATEGIRIAFAC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRCATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FACTURAs" Relationship="Self.FK_FACTURA_CATEGORIA_FACTURA" FromRole="CATEGORIA_FACTURA" ToRole="FACTURA" />
+        </EntityType>
+        <EntityType Name="CIUDAD">
+          <Key>
+            <PropertyRef Name="IDCIUDAD" />
+          </Key>
+          <Property Name="IDCIUDAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRECIU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTEs" Relationship="Self.FK_CLIENTE_CIUDAD" FromRole="CIUDAD" ToRole="CLIENTE" />
+          <NavigationProperty Name="EMPLEADOes" Relationship="Self.FK_EMPLEADO_CIUDAD" FromRole="CIUDAD" ToRole="EMPLEADO" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="IDECLIENTE" />
+          </Key>
+          <Property Name="IDECLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRECLI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDOCLI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEDULACLI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCIUDAD" Type="Int32" Nullable="false" />
+          <Property Name="TELEFONOCLI" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CIUDAD" Relationship="Self.FK_CLIENTE_CIUDAD" FromRole="CLIENTE" ToRole="CIUDAD" />
+          <NavigationProperty Name="COTIZACIONs" Relationship="Self.FK_COTIZACION_CLIENTE" FromRole="CLIENTE" ToRole="COTIZACION" />
+          <NavigationProperty Name="FACTURAs" Relationship="Self.FK_FACTURA_CLIENTE" FromRole="CLIENTE" ToRole="FACTURA" />
+        </EntityType>
+        <EntityType Name="COTIZACION">
+          <Key>
+            <PropertyRef Name="IDCOTIZACION" />
+          </Key>
+          <Property Name="IDCOTIZACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDEMPLEADO" Type="Int32" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="Int32" Nullable="false" />
+          <Property Name="CATIDAD" Type="Int32" Nullable="false" />
+          <Property Name="DESCUENTO" Type="Int32" />
+          <Property Name="SUBTOTAL" Type="Int32" />
+          <Property Name="TOTAL" Type="Int32" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_COTIZACION_CLIENTE" FromRole="COTIZACION" ToRole="CLIENTE" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_COTIZACION_EMPLEADO" FromRole="COTIZACION" ToRole="EMPLEADO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_COTIZACION_PRODUCTO" FromRole="COTIZACION" ToRole="PRODUCTO" />
+        </EntityType>
+        <EntityType Name="EMPLEADO">
+          <Key>
+            <PropertyRef Name="IDEMPLEADO" />
+          </Key>
+          <Property Name="IDEMPLEADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBREEMP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDOEMP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREUSU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASEÑAUSU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCARGO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRECAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUELDO" Type="Int32" Nullable="false" />
+          <Property Name="DIRECCIONEMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCIUDAD" Type="Int32" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="CEDULAEMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CORREOEMP" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CARGO" Relationship="Self.FK_EMPLEADO_CARGOS" FromRole="EMPLEADO" ToRole="CARGOS" />
+          <NavigationProperty Name="CIUDAD" Relationship="Self.FK_EMPLEADO_CIUDAD" FromRole="EMPLEADO" ToRole="CIUDAD" />
+          <NavigationProperty Name="COTIZACIONs" Relationship="Self.FK_COTIZACION_EMPLEADO" FromRole="EMPLEADO" ToRole="COTIZACION" />
+          <NavigationProperty Name="FACTURAs" Relationship="Self.FK_FACTURA_EMPLEADO" FromRole="EMPLEADO" ToRole="FACTURA" />
+          <NavigationProperty Name="USUARIOs" Relationship="Self.FK_USUARIO_EMPLEADO" FromRole="EMPLEADO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="IDFACTURA" />
+          </Key>
+          <Property Name="IDFACTURA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCATEGORIA" Type="Int32" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDTIPOFAC" Type="Int32" Nullable="false" />
+          <Property Name="IDEMPLEADO" Type="Int32" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="Int32" Nullable="false" />
+          <Property Name="CATIDAD" Type="Int32" Nullable="false" />
+          <Property Name="DESCUENTO" Type="Int32" />
+          <Property Name="SUBTOTAL" Type="Int32" />
+          <Property Name="TOTAL" Type="Int32" />
+          <NavigationProperty Name="CATEGORIA_FACTURA" Relationship="Self.FK_FACTURA_CATEGORIA_FACTURA" FromRole="FACTURA" ToRole="CATEGORIA_FACTURA" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_FACTURA_CLIENTE" FromRole="FACTURA" ToRole="CLIENTE" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_FACTURA_EMPLEADO" FromRole="FACTURA" ToRole="EMPLEADO" />
+          <NavigationProperty Name="FACTURA_DETALLE" Relationship="Self.FK_FACTURA_DETALLE_FACTURA" FromRole="FACTURA" ToRole="FACTURA_DETALLE" />
+          <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_FACTURA_PRODUCTO" FromRole="FACTURA" ToRole="PRODUCTO" />
+          <NavigationProperty Name="TIPO_FACTURA" Relationship="Self.FK_FACTURA_TIPO_FACTURA" FromRole="FACTURA" ToRole="TIPO_FACTURA" />
+        </EntityType>
+        <EntityType Name="FACTURA_DETALLE">
+          <Key>
+            <PropertyRef Name="IDDETALLE" />
+          </Key>
+          <Property Name="IDDETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDFACTURA" Type="Int32" Nullable="false" />
+          <Property Name="IDCATEGORIA" Type="Int32" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDTIPOFAC" Type="Int32" Nullable="false" />
+          <Property Name="IDEMPLEADO" Type="Int32" Nullable="false" />
+          <Property Name="IDCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREPRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="Int32" Nullable="false" />
+          <Property Name="CATIDAD" Type="Int32" Nullable="false" />
+          <Property Name="DESCUENTO" Type="Int32" />
+          <Property Name="SUBTOTAL" Type="Int32" />
+          <Property Name="TOTAL" Type="Int32" />
+          <NavigationProperty Name="FACTURA" Relationship="Self.FK_FACTURA_DETALLE_FACTURA" FromRole="FACTURA_DETALLE" ToRole="FACTURA" />
+        </EntityType>
+        <EntityType Name="HISTORIAL_RECETA">
+          <Key>
+            <PropertyRef Name="IDHIST" />
+          </Key>
+          <Property Name="IDHIST" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDRECETA" Type="Int32" Nullable="false" />
+          <Property Name="IDANIMAL" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREANM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDDUEÑO" Type="Int32" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DIAGNOSTICO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HORA" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TRATAMIENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RECETA" Relationship="Self.FK_HISTORIAL_RECETA_RECETA" FromRole="HISTORIAL_RECETA" ToRole="RECETA" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBREPRO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPOPRO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCIONPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDPROVEEDOR" Type="Int32" Nullable="false" />
+          <Property Name="COSTOPRO" Type="Int32" Nullable="false" />
+          <Property Name="PRECIOPRO" Type="Int32" Nullable="false" />
+          <Property Name="CANTIDADPRO" Type="Int32" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="COTIZACIONs" Relationship="Self.FK_COTIZACION_PRODUCTO" FromRole="PRODUCTO" ToRole="COTIZACION" />
+          <NavigationProperty Name="FACTURAs" Relationship="Self.FK_FACTURA_PRODUCTO" FromRole="PRODUCTO" ToRole="FACTURA" />
+          <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK_PRODUCTO_PROVEEDOR" FromRole="PRODUCTO" ToRole="PROVEEDOR" />
+          <NavigationProperty Name="TIPO_PRODUCTO" Relationship="Self.FK_PRODUCTO_TIPO_PRODUCTO" FromRole="PRODUCTO" ToRole="TIPO_PRODUCTO" />
+        </EntityType>
+        <EntityType Name="PROVEEDOR">
+          <Key>
+            <PropertyRef Name="IDPROVEEDOR" />
+          </Key>
+          <Property Name="IDPROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBREPROV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPOPROV" Type="Int32" Nullable="false" />
+          <Property Name="TEELFONOPROV" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCTOes" Relationship="Self.FK_PRODUCTO_PROVEEDOR" FromRole="PROVEEDOR" ToRole="PRODUCTO" />
+        </EntityType>
+        <EntityType Name="RAZA">
+          <Key>
+            <PropertyRef Name="IDRAZA" />
+          </Key>
+          <Property Name="IDRAZA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRERAZA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPOANM" Type="Int32" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ANIMALs" Relationship="Self.FK_ANIMAL_RAZA" FromRole="RAZA" ToRole="ANIMAL" />
+          <NavigationProperty Name="TIPO_ANIMAL" Relationship="Self.FK_RAZA_TIPO_ANIMAL" FromRole="RAZA" ToRole="TIPO_ANIMAL" />
+        </EntityType>
+        <EntityType Name="RECETA">
+          <Key>
+            <PropertyRef Name="IDRECETA" />
+          </Key>
+          <Property Name="IDRECETA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDANIMAL" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREANM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDTIPO" Type="Int32" Nullable="false" />
+          <Property Name="IDRAZA" Type="Int32" Nullable="false" />
+          <Property Name="EDAD" Type="Int32" Nullable="false" />
+          <Property Name="PADECIMIENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRODUCTOIND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOSIS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PERSONARES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ANIMAL" Relationship="Self.FK_RECETA_ANIMAL" FromRole="RECETA" ToRole="ANIMAL" />
+          <NavigationProperty Name="HISTORIAL_RECETA" Relationship="Self.FK_HISTORIAL_RECETA_RECETA" FromRole="RECETA" ToRole="HISTORIAL_RECETA" />
+        </EntityType>
+        <EntityType Name="TIPO_ANIMAL">
+          <Key>
+            <PropertyRef Name="IDTIPOANM" />
+          </Key>
+          <Property Name="IDTIPOANM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRETIPANM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ANIMALs" Relationship="Self.FK_ANIMAL_TIPO_ANIMAL" FromRole="TIPO_ANIMAL" ToRole="ANIMAL" />
+          <NavigationProperty Name="RAZAs" Relationship="Self.FK_RAZA_TIPO_ANIMAL" FromRole="TIPO_ANIMAL" ToRole="RAZA" />
+        </EntityType>
+        <EntityType Name="TIPO_FACTURA">
+          <Key>
+            <PropertyRef Name="IDTIPOFACT" />
+          </Key>
+          <Property Name="IDTIPOFACT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRETIPFAC" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FACTURAs" Relationship="Self.FK_FACTURA_TIPO_FACTURA" FromRole="TIPO_FACTURA" ToRole="FACTURA" />
+        </EntityType>
+        <EntityType Name="TIPO_PRODUCTO">
+          <Key>
+            <PropertyRef Name="IDTIPOPRO" />
+          </Key>
+          <Property Name="IDTIPOPRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRETIPPRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCTOes" Relationship="Self.FK_PRODUCTO_TIPO_PRODUCTO" FromRole="TIPO_PRODUCTO" ToRole="PRODUCTO" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+          </Key>
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEMPLEADO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBREUSU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONTRASEÑA" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="ESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EMPLEADO" Relationship="Self.FK_USUARIO_EMPLEADO" FromRole="USUARIO" ToRole="EMPLEADO" />
+        </EntityType>
+        <Association Name="FK_ANIMAL_RAZA">
+          <End Role="RAZA" Type="Self.RAZA" Multiplicity="1" />
+          <End Role="ANIMAL" Type="Self.ANIMAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAZA">
+              <PropertyRef Name="IDRAZA" />
+            </Principal>
+            <Dependent Role="ANIMAL">
+              <PropertyRef Name="IDRAZA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANIMAL_TIPO_ANIMAL">
+          <End Role="TIPO_ANIMAL" Type="Self.TIPO_ANIMAL" Multiplicity="1" />
+          <End Role="ANIMAL" Type="Self.ANIMAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_ANIMAL">
+              <PropertyRef Name="IDTIPOANM" />
+            </Principal>
+            <Dependent Role="ANIMAL">
+              <PropertyRef Name="IDTIPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECETA_ANIMAL">
+          <End Role="ANIMAL" Type="Self.ANIMAL" Multiplicity="1" />
+          <End Role="RECETA" Type="Self.RECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANIMAL">
+              <PropertyRef Name="IDANIMAL" />
+            </Principal>
+            <Dependent Role="RECETA">
+              <PropertyRef Name="IDANIMAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_CARGOS">
+          <End Role="CARGOS" Type="Self.CARGO" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARGOS">
+              <PropertyRef Name="IDCARGO" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="IDCARGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_CATEGORIA_FACTURA">
+          <End Role="CATEGORIA_FACTURA" Type="Self.CATEGORIA_FACTURA" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIA_FACTURA">
+              <PropertyRef Name="IDCATEGIRIAFAC" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDCATEGORIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_CIUDAD">
+          <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDAD">
+              <PropertyRef Name="IDCIUDAD" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="IDCIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EMPLEADO_CIUDAD">
+          <End Role="CIUDAD" Type="Self.CIUDAD" Multiplicity="1" />
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDAD">
+              <PropertyRef Name="IDCIUDAD" />
+            </Principal>
+            <Dependent Role="EMPLEADO">
+              <PropertyRef Name="IDCIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COTIZACION_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="COTIZACION" Type="Self.COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IDECLIENTE" />
+            </Principal>
+            <Dependent Role="COTIZACION">
+              <PropertyRef Name="IDCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="IDECLIENTE" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDCLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COTIZACION_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="COTIZACION" Type="Self.COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Principal>
+            <Dependent Role="COTIZACION">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COTIZACION_PRODUCTO">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+          <End Role="COTIZACION" Type="Self.COTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="COTIZACION">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_EMPLEADO">
+          <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLEADO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="IDEMPLEADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_DETALLE_FACTURA">
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="1" />
+          <End Role="FACTURA_DETALLE" Type="Self.FACTURA_DETALLE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="FACTURA">
+              <PropertyRef Name="IDFACTURA" />
+            </Principal>
+            <Dependent Role="FACTURA_DETALLE">
+              <PropertyRef Name="IDDETALLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_PRODUCTO">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURA_TIPO_FACTURA">
+          <End Role="TIPO_FACTURA" Type="Self.TIPO_FACTURA" Multiplicity="1" />
+          <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_FACTURA">
+              <PropertyRef Name="IDTIPOFACT" />
+            </Principal>
+            <Dependent Role="FACTURA">
+              <PropertyRef Name="IDTIPOFAC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HISTORIAL_RECETA_RECETA">
+          <End Role="RECETA" Type="Self.RECETA" Multiplicity="1" />
+          <End Role="HISTORIAL_RECETA" Type="Self.HISTORIAL_RECETA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RECETA">
+              <PropertyRef Name="IDRECETA" />
+            </Principal>
+            <Dependent Role="HISTORIAL_RECETA">
+              <PropertyRef Name="IDRECETA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_PROVEEDOR">
+          <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDOR">
+              <PropertyRef Name="IDPROVEEDOR" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="IDPROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUCTO_TIPO_PRODUCTO">
+          <End Role="TIPO_PRODUCTO" Type="Self.TIPO_PRODUCTO" Multiplicity="1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_PRODUCTO">
+              <PropertyRef Name="IDTIPOPRO" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="IDTIPOPRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAZA_TIPO_ANIMAL">
+          <End Role="TIPO_ANIMAL" Type="Self.TIPO_ANIMAL" Multiplicity="1" />
+          <End Role="RAZA" Type="Self.RAZA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_ANIMAL">
+              <PropertyRef Name="IDTIPOANM" />
+            </Principal>
+            <Dependent Role="RAZA">
+              <PropertyRef Name="IDTIPOANM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VeterinariaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANIMALs" EntityType="Self.ANIMAL" />
+          <EntitySet Name="CARGOS" EntityType="Self.CARGO" />
+          <EntitySet Name="CATEGORIA_FACTURA" EntityType="Self.CATEGORIA_FACTURA" />
+          <EntitySet Name="CIUDADs" EntityType="Self.CIUDAD" />
+          <EntitySet Name="CLIENTEs" EntityType="Self.CLIENTE" />
+          <EntitySet Name="COTIZACIONs" EntityType="Self.COTIZACION" />
+          <EntitySet Name="EMPLEADOes" EntityType="Self.EMPLEADO" />
+          <EntitySet Name="FACTURAs" EntityType="Self.FACTURA" />
+          <EntitySet Name="FACTURA_DETALLE" EntityType="Self.FACTURA_DETALLE" />
+          <EntitySet Name="HISTORIAL_RECETA" EntityType="Self.HISTORIAL_RECETA" />
+          <EntitySet Name="PRODUCTOes" EntityType="Self.PRODUCTO" />
+          <EntitySet Name="PROVEEDORs" EntityType="Self.PROVEEDOR" />
+          <EntitySet Name="RAZAs" EntityType="Self.RAZA" />
+          <EntitySet Name="RECETAs" EntityType="Self.RECETA" />
+          <EntitySet Name="TIPO_ANIMAL" EntityType="Self.TIPO_ANIMAL" />
+          <EntitySet Name="TIPO_FACTURA" EntityType="Self.TIPO_FACTURA" />
+          <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" />
+          <EntitySet Name="USUARIOs" EntityType="Self.USUARIO" />
+          <AssociationSet Name="FK_ANIMAL_RAZA" Association="Self.FK_ANIMAL_RAZA">
+            <End Role="RAZA" EntitySet="RAZAs" />
+            <End Role="ANIMAL" EntitySet="ANIMALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANIMAL_TIPO_ANIMAL" Association="Self.FK_ANIMAL_TIPO_ANIMAL">
+            <End Role="TIPO_ANIMAL" EntitySet="TIPO_ANIMAL" />
+            <End Role="ANIMAL" EntitySet="ANIMALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECETA_ANIMAL" Association="Self.FK_RECETA_ANIMAL">
+            <End Role="ANIMAL" EntitySet="ANIMALs" />
+            <End Role="RECETA" EntitySet="RECETAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_CARGOS" Association="Self.FK_EMPLEADO_CARGOS">
+            <End Role="CARGOS" EntitySet="CARGOS" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_CATEGORIA_FACTURA" Association="Self.FK_FACTURA_CATEGORIA_FACTURA">
+            <End Role="CATEGORIA_FACTURA" EntitySet="CATEGORIA_FACTURA" />
+            <End Role="FACTURA" EntitySet="FACTURAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_CIUDAD" Association="Self.FK_CLIENTE_CIUDAD">
+            <End Role="CIUDAD" EntitySet="CIUDADs" />
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EMPLEADO_CIUDAD" Association="Self.FK_EMPLEADO_CIUDAD">
+            <End Role="CIUDAD" EntitySet="CIUDADs" />
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COTIZACION_CLIENTE" Association="Self.FK_COTIZACION_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="COTIZACION" EntitySet="COTIZACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_CLIENTE" Association="Self.FK_FACTURA_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTEs" />
+            <End Role="FACTURA" EntitySet="FACTURAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COTIZACION_EMPLEADO" Association="Self.FK_COTIZACION_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="COTIZACION" EntitySet="COTIZACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COTIZACION_PRODUCTO" Association="Self.FK_COTIZACION_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+            <End Role="COTIZACION" EntitySet="COTIZACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_EMPLEADO" Association="Self.FK_FACTURA_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="FACTURA" EntitySet="FACTURAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_EMPLEADO" Association="Self.FK_USUARIO_EMPLEADO">
+            <End Role="EMPLEADO" EntitySet="EMPLEADOes" />
+            <End Role="USUARIO" EntitySet="USUARIOs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_DETALLE_FACTURA" Association="Self.FK_FACTURA_DETALLE_FACTURA">
+            <End Role="FACTURA" EntitySet="FACTURAs" />
+            <End Role="FACTURA_DETALLE" EntitySet="FACTURA_DETALLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_PRODUCTO" Association="Self.FK_FACTURA_PRODUCTO">
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+            <End Role="FACTURA" EntitySet="FACTURAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURA_TIPO_FACTURA" Association="Self.FK_FACTURA_TIPO_FACTURA">
+            <End Role="TIPO_FACTURA" EntitySet="TIPO_FACTURA" />
+            <End Role="FACTURA" EntitySet="FACTURAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HISTORIAL_RECETA_RECETA" Association="Self.FK_HISTORIAL_RECETA_RECETA">
+            <End Role="RECETA" EntitySet="RECETAs" />
+            <End Role="HISTORIAL_RECETA" EntitySet="HISTORIAL_RECETA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_PROVEEDOR" Association="Self.FK_PRODUCTO_PROVEEDOR">
+            <End Role="PROVEEDOR" EntitySet="PROVEEDORs" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUCTO_TIPO_PRODUCTO" Association="Self.FK_PRODUCTO_TIPO_PRODUCTO">
+            <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAZA_TIPO_ANIMAL" Association="Self.FK_RAZA_TIPO_ANIMAL">
+            <End Role="TIPO_ANIMAL" EntitySet="TIPO_ANIMAL" />
+            <End Role="RAZA" EntitySet="RAZAs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VeterinariaModelStoreContainer" CdmEntityContainer="VeterinariaEntities">
+          <EntitySetMapping Name="ANIMALs">
+            <EntityTypeMapping TypeName="VeterinariaModel.ANIMAL">
+              <MappingFragment StoreEntitySet="ANIMAL">
+                <ScalarProperty Name="IDANIMAL" ColumnName="IDANIMAL" />
+                <ScalarProperty Name="NOMBREANM" ColumnName="NOMBREANM" />
+                <ScalarProperty Name="IDTIPO" ColumnName="IDTIPO" />
+                <ScalarProperty Name="IDRAZA" ColumnName="IDRAZA" />
+                <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+                <ScalarProperty Name="NOMBREPRO" ColumnName="NOMBREPRO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CARGOS">
+            <EntityTypeMapping TypeName="VeterinariaModel.CARGO">
+              <MappingFragment StoreEntitySet="CARGOS">
+                <ScalarProperty Name="IDCARGO" ColumnName="IDCARGO" />
+                <ScalarProperty Name="NOMBRECAR" ColumnName="NOMBRECAR" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CATEGORIA_FACTURA">
+            <EntityTypeMapping TypeName="VeterinariaModel.CATEGORIA_FACTURA">
+              <MappingFragment StoreEntitySet="CATEGORIA_FACTURA">
+                <ScalarProperty Name="IDCATEGIRIAFAC" ColumnName="IDCATEGIRIAFAC" />
+                <ScalarProperty Name="NOMBRCATE" ColumnName="NOMBRCATE" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CIUDADs">
+            <EntityTypeMapping TypeName="VeterinariaModel.CIUDAD">
+              <MappingFragment StoreEntitySet="CIUDAD">
+                <ScalarProperty Name="IDCIUDAD" ColumnName="IDCIUDAD" />
+                <ScalarProperty Name="NOMBRECIU" ColumnName="NOMBRECIU" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTEs">
+            <EntityTypeMapping TypeName="VeterinariaModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="IDECLIENTE" ColumnName="IDECLIENTE" />
+                <ScalarProperty Name="NOMBRECLI" ColumnName="NOMBRECLI" />
+                <ScalarProperty Name="APELLIDOCLI" ColumnName="APELLIDOCLI" />
+                <ScalarProperty Name="CEDULACLI" ColumnName="CEDULACLI" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="IDCIUDAD" ColumnName="IDCIUDAD" />
+                <ScalarProperty Name="TELEFONOCLI" ColumnName="TELEFONOCLI" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COTIZACIONs">
+            <EntityTypeMapping TypeName="VeterinariaModel.COTIZACION">
+              <MappingFragment StoreEntitySet="COTIZACION">
+                <ScalarProperty Name="IDCOTIZACION" ColumnName="IDCOTIZACION" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="IDEMPLEADO" ColumnName="IDEMPLEADO" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="NOMBREPRO" ColumnName="NOMBREPRO" />
+                <ScalarProperty Name="IDTIPOPRO" ColumnName="IDTIPOPRO" />
+                <ScalarProperty Name="DESCRIPCIONPRO" ColumnName="DESCRIPCIONPRO" />
+                <ScalarProperty Name="PRECIOPRO" ColumnName="PRECIOPRO" />
+                <ScalarProperty Name="CATIDAD" ColumnName="CATIDAD" />
+                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLEADOes">
+            <EntityTypeMapping TypeName="VeterinariaModel.EMPLEADO">
+              <MappingFragment StoreEntitySet="EMPLEADO">
+                <ScalarProperty Name="IDEMPLEADO" ColumnName="IDEMPLEADO" />
+                <ScalarProperty Name="NOMBREEMP" ColumnName="NOMBREEMP" />
+                <ScalarProperty Name="APELLIDOEMP" ColumnName="APELLIDOEMP" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="NOMBREUSU" ColumnName="NOMBREUSU" />
+                <ScalarProperty Name="CONTRASEÑAUSU" ColumnName="CONTRASEÑAUSU" />
+                <ScalarProperty Name="IDCARGO" ColumnName="IDCARGO" />
+                <ScalarProperty Name="NOMBRECAR" ColumnName="NOMBRECAR" />
+                <ScalarProperty Name="SUELDO" ColumnName="SUELDO" />
+                <ScalarProperty Name="DIRECCIONEMP" ColumnName="DIRECCIONEMP" />
+                <ScalarProperty Name="IDCIUDAD" ColumnName="IDCIUDAD" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CEDULAEMP" ColumnName="CEDULAEMP" />
+                <ScalarProperty Name="CORREOEMP" ColumnName="CORREOEMP" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURAs">
+            <EntityTypeMapping TypeName="VeterinariaModel.FACTURA">
+              <MappingFragment StoreEntitySet="FACTURA">
+                <ScalarProperty Name="IDFACTURA" ColumnName="IDFACTURA" />
+                <ScalarProperty Name="IDCATEGORIA" ColumnName="IDCATEGORIA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="IDTIPOFAC" ColumnName="IDTIPOFAC" />
+                <ScalarProperty Name="IDEMPLEADO" ColumnName="IDEMPLEADO" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="NOMBREPRO" ColumnName="NOMBREPRO" />
+                <ScalarProperty Name="IDTIPOPRO" ColumnName="IDTIPOPRO" />
+                <ScalarProperty Name="DESCRIPCIONPRO" ColumnName="DESCRIPCIONPRO" />
+                <ScalarProperty Name="PRECIOPRO" ColumnName="PRECIOPRO" />
+                <ScalarProperty Name="CATIDAD" ColumnName="CATIDAD" />
+                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURA_DETALLE">
+            <EntityTypeMapping TypeName="VeterinariaModel.FACTURA_DETALLE">
+              <MappingFragment StoreEntitySet="FACTURA_DETALLE">
+                <ScalarProperty Name="IDDETALLE" ColumnName="IDDETALLE" />
+                <ScalarProperty Name="IDFACTURA" ColumnName="IDFACTURA" />
+                <ScalarProperty Name="IDCATEGORIA" ColumnName="IDCATEGORIA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="IDTIPOFAC" ColumnName="IDTIPOFAC" />
+                <ScalarProperty Name="IDEMPLEADO" ColumnName="IDEMPLEADO" />
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="NOMBREPRO" ColumnName="NOMBREPRO" />
+                <ScalarProperty Name="IDTIPOPRO" ColumnName="IDTIPOPRO" />
+                <ScalarProperty Name="DESCRIPCIONPRO" ColumnName="DESCRIPCIONPRO" />
+                <ScalarProperty Name="PRECIOPRO" ColumnName="PRECIOPRO" />
+                <ScalarProperty Name="CATIDAD" ColumnName="CATIDAD" />
+                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIAL_RECETA">
+            <EntityTypeMapping TypeName="VeterinariaModel.HISTORIAL_RECETA">
+              <MappingFragment StoreEntitySet="HISTORIAL_RECETA">
+                <ScalarProperty Name="IDHIST" ColumnName="IDHIST" />
+                <ScalarProperty Name="IDRECETA" ColumnName="IDRECETA" />
+                <ScalarProperty Name="IDANIMAL" ColumnName="IDANIMAL" />
+                <ScalarProperty Name="NOMBREANM" ColumnName="NOMBREANM" />
+                <ScalarProperty Name="IDDUEÑO" ColumnName="IDDUEÑO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="DIAGNOSTICO" ColumnName="DIAGNOSTICO" />
+                <ScalarProperty Name="HORA" ColumnName="HORA" />
+                <ScalarProperty Name="TRATAMIENTO" ColumnName="TRATAMIENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTOes">
+            <EntityTypeMapping TypeName="VeterinariaModel.PRODUCTO">
+              <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="NOMBREPRO" ColumnName="NOMBREPRO" />
+                <ScalarProperty Name="IDTIPOPRO" ColumnName="IDTIPOPRO" />
+                <ScalarProperty Name="DESCRIPCIONPRO" ColumnName="DESCRIPCIONPRO" />
+                <ScalarProperty Name="IDPROVEEDOR" ColumnName="IDPROVEEDOR" />
+                <ScalarProperty Name="COSTOPRO" ColumnName="COSTOPRO" />
+                <ScalarProperty Name="PRECIOPRO" ColumnName="PRECIOPRO" />
+                <ScalarProperty Name="CANTIDADPRO" ColumnName="CANTIDADPRO" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROVEEDORs">
+            <EntityTypeMapping TypeName="VeterinariaModel.PROVEEDOR">
+              <MappingFragment StoreEntitySet="PROVEEDOR">
+                <ScalarProperty Name="IDPROVEEDOR" ColumnName="IDPROVEEDOR" />
+                <ScalarProperty Name="NOMBREPROV" ColumnName="NOMBREPROV" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="IDTIPOPROV" ColumnName="IDTIPOPROV" />
+                <ScalarProperty Name="TEELFONOPROV" ColumnName="TEELFONOPROV" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAZAs">
+            <EntityTypeMapping TypeName="VeterinariaModel.RAZA">
+              <MappingFragment StoreEntitySet="RAZA">
+                <ScalarProperty Name="IDRAZA" ColumnName="IDRAZA" />
+                <ScalarProperty Name="NOMBRERAZA" ColumnName="NOMBRERAZA" />
+                <ScalarProperty Name="IDTIPOANM" ColumnName="IDTIPOANM" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECETAs">
+            <EntityTypeMapping TypeName="VeterinariaModel.RECETA">
+              <MappingFragment StoreEntitySet="RECETA">
+                <ScalarProperty Name="IDRECETA" ColumnName="IDRECETA" />
+                <ScalarProperty Name="IDANIMAL" ColumnName="IDANIMAL" />
+                <ScalarProperty Name="NOMBREANM" ColumnName="NOMBREANM" />
+                <ScalarProperty Name="IDTIPO" ColumnName="IDTIPO" />
+                <ScalarProperty Name="IDRAZA" ColumnName="IDRAZA" />
+                <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+                <ScalarProperty Name="PADECIMIENTO" ColumnName="PADECIMIENTO" />
+                <ScalarProperty Name="PRODUCTOIND" ColumnName="PRODUCTOIND" />
+                <ScalarProperty Name="DOSIS" ColumnName="DOSIS" />
+                <ScalarProperty Name="PERSONARES" ColumnName="PERSONARES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_ANIMAL">
+            <EntityTypeMapping TypeName="VeterinariaModel.TIPO_ANIMAL">
+              <MappingFragment StoreEntitySet="TIPO_ANIMAL">
+                <ScalarProperty Name="IDTIPOANM" ColumnName="IDTIPOANM" />
+                <ScalarProperty Name="NOMBRETIPANM" ColumnName="NOMBRETIPANM" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_FACTURA">
+            <EntityTypeMapping TypeName="VeterinariaModel.TIPO_FACTURA">
+              <MappingFragment StoreEntitySet="TIPO_FACTURA">
+                <ScalarProperty Name="IDTIPOFACT" ColumnName="IDTIPOFACT" />
+                <ScalarProperty Name="NOMBRETIPFAC" ColumnName="NOMBRETIPFAC" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_PRODUCTO">
+            <EntityTypeMapping TypeName="VeterinariaModel.TIPO_PRODUCTO">
+              <MappingFragment StoreEntitySet="TIPO_PRODUCTO">
+                <ScalarProperty Name="IDTIPOPRO" ColumnName="IDTIPOPRO" />
+                <ScalarProperty Name="NOMBRETIPPRO" ColumnName="NOMBRETIPPRO" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOs">
+            <EntityTypeMapping TypeName="VeterinariaModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDEMPLEADO" ColumnName="IDEMPLEADO" />
+                <ScalarProperty Name="NOMBREUSU" ColumnName="NOMBREUSU" />
+                <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
