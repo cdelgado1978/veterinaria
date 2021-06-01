@@ -1,7 +1,7 @@
 ﻿
 namespace Veterinaria
 {
-    partial class Form1
+    partial class FrmListaProductos
     {
         /// <summary>
         /// Required designer variable.

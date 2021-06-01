@@ -15,10 +15,13 @@ namespace Veterinaria.Controlador
         {
             entidades = new VeterinariaEntities();
         }
+
+
         public List<PRODUCTO> ObtenerProductos()
         {
             return entidades.PRODUCTOes.ToList();
         }
+
     }
 
 }

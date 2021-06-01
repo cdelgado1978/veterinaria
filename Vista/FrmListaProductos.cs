@@ -11,9 +11,9 @@ using Veterinaria.Controlador;
 
 namespace Veterinaria
 {
-    public partial class Form1 : Form
+    public partial class FrmListaProductos : Form
     {
-        public Form1()
+        public FrmListaProductos()
         {
             InitializeComponent();
         }
