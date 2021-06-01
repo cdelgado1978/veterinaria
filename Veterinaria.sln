@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vista", "Vista", "{BB7546C1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelo", "Modelo", "{8AAAB9B1-F4A9-490F-899D-4C49462FD9F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veterinaria.Controlador", "Controlador\Veterinaria.Controlador\Veterinaria.Controlador.csproj", "{31FD9212-5B86-4DC6-A8F1-51F6E2D36EE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veterinaria.Controlador", "Controlador\Veterinaria.Controlador.csproj", "{31FD9212-5B86-4DC6-A8F1-51F6E2D36EE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veterinaria.Modelo", "Modelo\Veterinaria.Modelo\Veterinaria.Modelo.csproj", "{CBBEFB49-0CAC-4CFC-A2F2-A79FA57B2C52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veterinaria.Modelo", "Modelo\Veterinaria.Modelo.csproj", "{CBBEFB49-0CAC-4CFC-A2F2-A79FA57B2C52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veterinaria.Vista", "Vista\Veterinaria.Vista.csproj", "{05FEA417-B22A-4DF7-A7AF-4AA3402C085C}"
 EndProject
