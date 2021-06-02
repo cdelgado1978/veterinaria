@@ -72,6 +72,7 @@
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ProductoDTO.cs" />
+    <Compile Include="DTO\TipoProductoDto.cs" />
     <Compile Include="Empleado.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>

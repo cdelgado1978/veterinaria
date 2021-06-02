@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -11,25 +10,23 @@ using Veterinaria.Modelo.DTO;
 namespace Veterinaria.Controlador
 {
     public class ProductoControlador : IControlador<Producto>
-
     {
-        private readonly VeterinariaEntities entidades;
+        private readonly VeterinariaEntities db;
 
         public ProductoControlador()
         {
-            entidades = new VeterinariaEntities();
+            db = new VeterinariaEntities();
         }
 
         public Producto Obtener(int id)
         {
-            return entidades.Productos.FirstOrDefault(p => p.Id == id);
+            return db.Productos.FirstOrDefault(p => p.Id == id);
 
         }
-
-
+        
         public List<ProductoDto> ObtenerTodos()
         {
-            var _result = entidades.Productos.ToList();
+            var _result = db.Productos.ToList();
 
             List<ProductoDto> _productos = new List<ProductoDto>();
 
@@ -39,10 +36,10 @@ namespace Veterinaria.Controlador
                 {
                     Id = p.Id,
                     Nombre = p.Nombre,
-                    TipoProductoId = p.TipoProductoId,
+                    //TipoProductoId = p.TipoProductoId,
                     TipoProductoNombre = p.Tipo_Producto.Nombre,
                     Descripcion = p.Descripcion,
-                    ProveedorId = p.ProveedorId,
+                    //ProveedorId = p.ProveedorId,
                     ProveedorNombre = p.Proveedor.Nombre,
                     Costo = p.Costo,
                     Precio = p.Precio,
@@ -56,47 +53,45 @@ namespace Veterinaria.Controlador
         }
 
         public Producto Agregar(Producto entidad)
+        {
+            if (entidad != null)
             {
-                if (entidad != null)
-                {
-                    entidades.Productos.Add(entidad);
-                    entidades.SaveChanges();
+                db.Productos.Add(entidad);
+                db.SaveChanges();
 
-
-                }
-
-                return entidad;
 
             }
 
-            public void Editar(Producto entidad)
-            {
-                //if (entidad == null) throw new Exception("Entidad Invalidad");
+            return entidad;
 
-                var producto = entidades.Productos.Find(entidad);
-                if (producto != null)
-                {
-                    entidades.Productos.AddOrUpdate(entidad);
-                    entidades.SaveChanges();
-                }
-            }
-
-            public void Borrar(Producto entidad)
-            {
-                //if (entidad == null) throw new Exception("Entidad Invalidad");
-
-                var producto = entidades.Productos.Find(entidad);
-                if (producto != null)
-                {
-                    producto.Inactivo = true;
-
-                    entidades.Productos.AddOrUpdate(entidad);
-                    entidades.SaveChanges();
-                }
-
-            }
         }
 
+        public void Editar(Producto entidad)
+        {
+            //if (entidad == null) throw new Exception("Entidad Invalidad");
 
+            var producto = db.Productos.Find(entidad);
+            if (producto != null)
+            {
+                db.Productos.AddOrUpdate(entidad);
+                db.SaveChanges();
+            }
+        }
+        
+        public void Borrar(Producto entidad)
+        {
+            //if (entidad == null) throw new Exception("Entidad Invalidad");
 
+            var producto = db.Productos.Find(entidad);
+            if (producto != null)
+            {
+                producto.Inactivo = true;
+
+                db.Productos.AddOrUpdate(producto);
+                db.SaveChanges();
+            }
+
+        }
+        
     }
+}

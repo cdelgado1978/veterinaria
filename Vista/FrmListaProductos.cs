@@ -8,22 +8,50 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
+using Veterinaria.Modelo;
 
 namespace Veterinaria
 {
     public partial class FrmListaProductos : Form
     {
+        private ProductoControlador productosControlador;
+
         public FrmListaProductos()
         {
             InitializeComponent();
+
+
+            productosControlador = new ProductoControlador();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            var productos = new ProductoControlador();
 
-            dataGridView1.DataSource = productos.ObtenerTodos();
+            dataGridView1.DataSource = productosControlador.ObtenerTodos();
+
+           
         }
+
+        private void NuevoProducto(Producto newProd)
+        {
+            var newproducto = new Producto();
+
+           
+            newproducto.Nombre = newProd.Nombre;
+            newproducto.Descripcion= newProd.Descripcion;
+
+
+            productosControlador.Agregar(newproducto);
+
+        }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    NuevoProducto(new Producto()
+        //    {
+        //        Id = txtID.Text
+        //    });
+        //}
     }
 }
