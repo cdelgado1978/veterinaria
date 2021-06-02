@@ -20,11 +20,11 @@ namespace Veterinaria.Modelo
         public int EmpleadoID { get; set; }
         public int ProductoID { get; set; }
         public int TipoProductoId { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
         public int Cantidad { get; set; }
-        public int Descuento { get; set; }
-        public int SubTotal { get; set; }
-        public int Total { get; set; }
+        public decimal Descuento { get; set; }
+        public decimal SubTotal { get; set; }
+        public decimal Total { get; set; }
         public bool Inactivo { get; set; }
     
         public virtual Factura Factura { get; set; }

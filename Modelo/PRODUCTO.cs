@@ -25,8 +25,8 @@ namespace Veterinaria.Modelo
         public int TipoProductoId { get; set; }
         public string Descripcion { get; set; }
         public int ProveedorId { get; set; }
-        public int Costo { get; set; }
-        public int Precio { get; set; }
+        public decimal Costo { get; set; }
+        public decimal Precio { get; set; }
         public int Cantidad { get; set; }
         public bool Inactivo { get; set; }
     

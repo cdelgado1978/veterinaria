@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bc74009e91e743dbbfe50ee8ca090ce6" Name="Diagram1" ZoomLevel="73">
+      <Diagram DiagramId="bc74009e91e743dbbfe50ee8ca090ce6" Name="Diagram1" ZoomLevel="63">
         <EntityTypeShape EntityType="VeterinariaModel.Animale" Width="1.5" PointX="15.25" PointY="4.625" />
         <EntityTypeShape EntityType="VeterinariaModel.Cargo" Width="1.5" PointX="0.75" PointY="4.125" />
         <EntityTypeShape EntityType="VeterinariaModel.Categoria_Factura" Width="1.5" PointX="6" PointY="13" />
@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="VeterinariaModel.Proveedor" Width="1.5" PointX="0.75" PointY="15.75" />
         <EntityTypeShape EntityType="VeterinariaModel.Raza" Width="1.5" PointX="13" PointY="7.25" />
         <EntityTypeShape EntityType="VeterinariaModel.Receta" Width="1.5" PointX="17.5" PointY="4.875" />
-        <EntityTypeShape EntityType="VeterinariaModel.Tipo_Animal" Width="1.5" PointX="10.75" PointY="3.25" />
+        <EntityTypeShape EntityType="VeterinariaModel.Tipo_Animal" Width="1.5" PointX="13" PointY="4.5" />
         <EntityTypeShape EntityType="VeterinariaModel.Tipo_Factura" Width="1.5" PointX="6" PointY="15.625" />
         <EntityTypeShape EntityType="VeterinariaModel.Tipo_Producto" Width="1.5" PointX="0.75" PointY="18.875" />
         <EntityTypeShape EntityType="VeterinariaModel.Usuario" Width="1.5" PointX="5.25" PointY="4.875" />

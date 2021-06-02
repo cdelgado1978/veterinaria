@@ -26,9 +26,9 @@ namespace Veterinaria.Modelo
         public int TipoFacturaID { get; set; }
         public int EmpleadoID { get; set; }
         public int ClienteID { get; set; }
-        public int DescuentoTotal { get; set; }
-        public int SubTotal { get; set; }
-        public int Total { get; set; }
+        public decimal DescuentoTotal { get; set; }
+        public decimal SubTotal { get; set; }
+        public decimal Total { get; set; }
         public bool Inactivo { get; set; }
     
         public virtual Categoria_Factura Categoria_Factura { get; set; }

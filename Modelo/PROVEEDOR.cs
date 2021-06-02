@@ -25,7 +25,6 @@ namespace Veterinaria.Modelo
         public string Dirección { get; set; }
         public int TipoProveedorID { get; set; }
         public string Telefono { get; set; }
-        public string Estatus { get; set; }
         public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

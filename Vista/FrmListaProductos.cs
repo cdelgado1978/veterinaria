@@ -23,7 +23,7 @@ namespace Veterinaria
 
             var productos = new ProductoControlador();
 
-            dataGridView1.DataSource = productos.ObtenerProductos();
+            dataGridView1.DataSource = productos.ObtenerTodos();
         }
     }
 }

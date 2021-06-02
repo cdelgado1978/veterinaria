@@ -20,11 +20,11 @@ namespace Veterinaria.Modelo
         public int ClienteID { get; set; }
         public int ProductoID { get; set; }
         public int TipoProductoID { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
         public int Cantidad { get; set; }
-        public Nullable<int> Descuento { get; set; }
-        public Nullable<int> SubTotal { get; set; }
-        public Nullable<int> Total { get; set; }
+        public Nullable<decimal> Descuento { get; set; }
+        public Nullable<decimal> SubTotal { get; set; }
+        public Nullable<decimal> Total { get; set; }
         public bool Inactivo { get; set; }
     
         public virtual Cliente Cliente { get; set; }

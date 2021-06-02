@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IControlador.cs" />
     <Compile Include="ProductoControlador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
