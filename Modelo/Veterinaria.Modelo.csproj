@@ -71,6 +71,7 @@
     <Compile Include="Cotizacione.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\AnimalDto1.cs" />
     <Compile Include="DTO\ProductoDTO.cs" />
     <Compile Include="DTO\TipoProductoDto.cs" />
     <Compile Include="Empleado.cs">
