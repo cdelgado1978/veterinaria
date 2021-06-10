@@ -16,6 +16,7 @@ namespace Veterinaria.Controlador
 
         public Animale Obtener(int id)
         {
+       
             return db.Animales.FirstOrDefault(a => a.ID == id);
 
         }
