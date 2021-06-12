@@ -56,9 +56,7 @@
     <Compile Include="ProductoControlador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razacontrolador.cs" />
-    <Compile Include="RazasDto.cs" />
     <Compile Include="TipoAnimalControlador.cs" />
-    <Compile Include="TipoAnimalDto.cs" />
     <Compile Include="TipoProductoControlador.cs" />
   </ItemGroup>
   <ItemGroup>

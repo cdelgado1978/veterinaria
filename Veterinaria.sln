@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controlador", "Controlador", "{F7AF1DED-C12F-4FCA-A7E9-20552F31E75E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vista", "Vista", "{BB7546C1-D863-4151-816F-117874D3A9B5}"
+	ProjectSection(SolutionItems) = preProject
+		Vista\PuppiesLogo.png = Vista\PuppiesLogo.png
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelo", "Modelo", "{8AAAB9B1-F4A9-490F-899D-4C49462FD9F6}"
 EndProject

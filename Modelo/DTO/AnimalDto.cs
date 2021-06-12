@@ -1,6 +1,6 @@
-﻿namespace Veterinaria.Controlador
+﻿namespace Veterinaria.Modelo.DTO
 {
-    public  class AnimalDto
+    public class AnimalDto
     {
         public int Id { get; set; }
         public string NombreAnimal { get; set; }

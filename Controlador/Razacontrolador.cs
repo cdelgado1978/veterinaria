@@ -2,6 +2,7 @@
 using System.Data.Entity.Migrations;
 using System.Linq;
 using Veterinaria.Modelo;
+using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Controlador
 {
