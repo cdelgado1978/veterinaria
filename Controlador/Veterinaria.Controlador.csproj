@@ -62,6 +62,8 @@
     <Compile Include="ClienteDTO.cs" />
     <Compile Include="CotizacionesControlador.cs" />
     <Compile Include="CotizacionesDTO.cs" />
+    <Compile Include="EmpleadoDTO.cs" />
+    <Compile Include="EmpleadosControlador.cs" />
     <Compile Include="IControlador.cs" />
     <Compile Include="ProductoControlador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
