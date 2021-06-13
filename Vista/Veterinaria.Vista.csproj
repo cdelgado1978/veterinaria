@@ -35,6 +35,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Veterinaria.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -42,9 +48,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\CesarDelgado-PC\Downloads\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,16 +67,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmListaProductos.cs">
+    <Compile Include="formExtension.cs" />
+    <Compile Include="Formularios\Productos\FrmListaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListaProductos.Designer.cs">
+    <Compile Include="Formularios\Productos\FrmListaProductos.Designer.cs">
       <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmNuevoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmNuevoProveedor.Designer.cs">
+      <DependentUpon>frmNuevoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Productos\frmNuevoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Productos\frmNuevoProducto.Designer.cs">
+      <DependentUpon>frmNuevoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmListaProductos.resx">
+    <EmbeddedResource Include="Formularios\Productos\FrmListaProductos.resx">
       <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\frmNuevoProveedor.resx">
+      <DependentUpon>frmNuevoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Productos\frmNuevoProducto.resx">
+      <DependentUpon>frmNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -99,6 +148,16 @@
       <Project>{CBBEFB49-0CAC-4CFC-A2F2-A79FA57B2C52}</Project>
       <Name>Veterinaria.Modelo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\20uIob.jpg" />
+    <Content Include="Images\Icon.ico" />
+    <Content Include="Images\Icon.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\print-w.ico" />
+    <Content Include="Images\print-w.png" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\PuppiesLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
