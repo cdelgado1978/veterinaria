@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Veterinaria.Formularios.Proveedores;
 
 namespace Veterinaria
 {
@@ -63,6 +64,7 @@ namespace Veterinaria
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
+            AbrirFormularios<frmProveedores>();
             OcultaSubMenu();
         }
 

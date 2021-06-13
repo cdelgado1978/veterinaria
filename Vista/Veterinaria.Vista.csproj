@@ -68,11 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="formExtension.cs" />
-    <Compile Include="Productos\FrmListaProductos.cs">
+    <Compile Include="Formularios\Productos\FrmListaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\FrmListaProductos.Designer.cs">
+    <Compile Include="Formularios\Productos\FrmListaProductos.Designer.cs">
       <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmNuevoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmNuevoProveedor.Designer.cs">
+      <DependentUpon>frmNuevoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proveedores\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -80,21 +92,27 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\frmNuevoProducto.cs">
+    <Compile Include="Formularios\Productos\frmNuevoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\frmNuevoProducto.Designer.cs">
+    <Compile Include="Formularios\Productos\frmNuevoProducto.Designer.cs">
       <DependentUpon>frmNuevoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Productos\FrmListaProductos.resx">
+    <EmbeddedResource Include="Formularios\Productos\FrmListaProductos.resx">
       <DependentUpon>FrmListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\frmNuevoProveedor.resx">
+      <DependentUpon>frmNuevoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proveedores\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\frmNuevoProducto.resx">
+    <EmbeddedResource Include="Formularios\Productos\frmNuevoProducto.resx">
       <DependentUpon>frmNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
-using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Productos
 {
-    public partial class frmNuevoProducto : Form
+    public partial class frmNuevoProveedor : Form
     {
         private readonly ProductoControlador productosControlador;
         private readonly ProveedoresControlador proveedorControlador;
         private readonly TipoProductoControlador tipoProductoControlador;
 
 
-        public event Action<bool> ProductoCreado;
+        public event Action<bool> Creado;
 
-        public frmNuevoProducto()
+        public frmNuevoProveedor()
         {
 
             productosControlador = new ProductoControlador();
@@ -87,7 +80,7 @@ namespace Veterinaria.Productos
 
             NuevoProducto(_nuevoProducto);
 
-            ProductoCreado(true);
+            Creado(true);
 
             this.Close();
 

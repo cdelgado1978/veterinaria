@@ -79,5 +79,8 @@ namespace Veterinaria.Controlador
             }
         }
     }
+
+
+    //public class TipoProveedorControlador: IControlador<Tipo>
 }
 

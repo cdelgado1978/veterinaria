@@ -1,48 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
-using Veterinaria.Modelo;
-using Veterinaria.Productos;
+using Veterinaria.Proveedores;
 
-namespace Veterinaria
+namespace Veterinaria.Formularios.Proveedores
 {
-    public partial class FrmListaProductos : Form
+    public partial class frmProveedores : Form
     {
-        private ProductoControlador productosControlador;
+        private readonly ProveedoresControlador proveedorController;
 
-        public FrmListaProductos()
+        public frmProveedores()
         {
+
+            proveedorController = new ProveedoresControlador();
             InitializeComponent();
-
-            productosControlador = new ProductoControlador();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-
-            ActualizaDBGrid();
-
-        }
-
-        public void ActualizaDBGrid()
-        {
-
-            dgListaProductos.DataSource = productosControlador.ObtenerTodos();
 
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
+            AbrirPopup<frmNuevoProveedor>();
+        }
 
-            AbrirPopup<frmNuevoProducto>();
-
+        private void frmProveedores_Load(object sender, EventArgs e)
+        {
+            ActualizaDBGrid();
         }
 
         public void AbrirPopup<T>() where T : Form, new()
@@ -66,12 +53,12 @@ namespace Veterinaria
 
                 var _type = formulario.GetType();
 
-                if (_type.Name == "frmNuevoProducto")
+                if (_type.Name == "frmNuevoProveedor")
                 {
 
-                    var frmNuevo = formulario as frmNuevoProducto;
+                    var frmNuevo = formulario as frmNuevoProveedor;
 
-                    frmNuevo.ProductoCreado += (bool Creado) =>
+                    frmNuevo.Creado += (bool Creado) =>
                     {
                         if (Creado)
                         {
@@ -89,5 +76,10 @@ namespace Veterinaria
 
         }
 
+        private void ActualizaDBGrid()
+        {
+            dgProveedores.DataSource = proveedorController.ObtenerTodos();
+
+        }
     }
 }
