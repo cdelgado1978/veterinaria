@@ -72,7 +72,12 @@
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\AnimalDto.cs" />
+    <Compile Include="DTO\CategoriaFacturaDTO.cs" />
+    <Compile Include="DTO\CiudadDto.cs" />
+    <Compile Include="DTO\ClienteDTO.cs" />
+    <Compile Include="DTO\CotizacionesDTO.cs" />
     <Compile Include="DTO\ProductoDTO.cs" />
+    <Compile Include="DTO\ProveedorDto.cs" />
     <Compile Include="DTO\RazasDto.cs" />
     <Compile Include="DTO\TipoAnimalDto.cs" />
     <Compile Include="DTO\TipoProductoDto.cs" />

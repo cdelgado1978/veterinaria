@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veterinaria.Modelo;
+using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Controlador
 {
-    public class CategoriaFacControlador : IControlador<Categoria_Factura>
+    public class CategoriaFacturaControlador : IControlador<Categoria_Factura>
     {
         private readonly VeterinariaEntities db;
 
-        public CategoriaFacControlador()
+        public CategoriaFacturaControlador()
         {
             db = new VeterinariaEntities();
         }
@@ -23,15 +21,15 @@ namespace Veterinaria.Controlador
 
         }
 
-        public List<CategoriaFacDTO> ObtenerTodos()
+        public List<CategoriaFacturaDTO> ObtenerTodos()
         {
             var _result = db.Categoria_Factura.ToList();
 
-            List<CategoriaFacDTO> _categoriaFac = new List<CategoriaFacDTO>();
+            List<CategoriaFacturaDTO> _categoriaFac = new List<CategoriaFacturaDTO>();
 
             _result.ForEach(c =>
             {
-                _categoriaFac.Add(new CategoriaFacDTO()
+                _categoriaFac.Add(new CategoriaFacturaDTO()
                 {
                     Id = c.ID,
                     Nombre = c.Nombre,

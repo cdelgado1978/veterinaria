@@ -21,25 +21,27 @@ namespace Veterinaria
         {
             InitializeComponent();
 
-
             productosControlador = new ProductoControlador();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            ActualizaDBGrid();
+
+        }
+
+        public void ActualizaDBGrid()
+        {
 
             dgListaProductos.DataSource = productosControlador.ObtenerTodos();
 
-           
         }
-
-       
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
+
             AbrirPopup<frmNuevoProducto>();
-            
 
         }
 
@@ -61,23 +63,31 @@ namespace Veterinaria
                 panelContenido.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
+
+                var _type = formulario.GetType();
+
+                if (_type.Name == "frmNuevoProducto")
+                {
+
+                    var frmNuevo = formulario as frmNuevoProducto;
+
+                    frmNuevo.ProductoCreado += (bool Creado) =>
+                    {
+                        if (Creado)
+                        {
+                            ActualizaDBGrid();
+                        }
+                    };
+
+                }
+
             }
             else
             {
                 formulario.BringToFront();
             }
 
-
-
-
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    NuevoProducto(new Producto()
-        //    {
-        //        Id = txtID.Text
-        //    });
-        //}
     }
 }

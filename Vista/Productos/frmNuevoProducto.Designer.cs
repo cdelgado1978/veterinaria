@@ -84,7 +84,6 @@ namespace Veterinaria.Productos
             costoLabel.Size = new System.Drawing.Size(50, 20);
             costoLabel.TabIndex = 26;
             costoLabel.Text = "Costo:";
-            costoLabel.Click += new System.EventHandler(this.costoLabel_Click);
             // 
             // descripcionLabel
             // 
@@ -115,7 +114,6 @@ namespace Veterinaria.Productos
             precioLabel.Size = new System.Drawing.Size(53, 20);
             precioLabel.TabIndex = 30;
             precioLabel.Text = "Precio:";
-            precioLabel.Click += new System.EventHandler(this.precioLabel_Click);
             // 
             // proveedorIdLabel
             // 
@@ -193,7 +191,7 @@ namespace Veterinaria.Productos
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.ShadowDecoration.Parent = this.txtPrecio;
             this.txtPrecio.Size = new System.Drawing.Size(128, 41);
-            this.txtPrecio.TabIndex = 39;
+            this.txtPrecio.TabIndex = 6;
             // 
             // txtCosto
             // 
@@ -216,7 +214,7 @@ namespace Veterinaria.Productos
             this.txtCosto.SelectedText = "";
             this.txtCosto.ShadowDecoration.Parent = this.txtCosto;
             this.txtCosto.Size = new System.Drawing.Size(134, 41);
-            this.txtCosto.TabIndex = 38;
+            this.txtCosto.TabIndex = 5;
             // 
             // txtCantidad
             // 
@@ -239,7 +237,7 @@ namespace Veterinaria.Productos
             this.txtCantidad.SelectedText = "";
             this.txtCantidad.ShadowDecoration.Parent = this.txtCantidad;
             this.txtCantidad.Size = new System.Drawing.Size(134, 41);
-            this.txtCantidad.TabIndex = 37;
+            this.txtCantidad.TabIndex = 7;
             // 
             // txtDescripcion
             // 
@@ -263,7 +261,7 @@ namespace Veterinaria.Productos
             this.txtDescripcion.SelectedText = "";
             this.txtDescripcion.ShadowDecoration.Parent = this.txtDescripcion;
             this.txtDescripcion.Size = new System.Drawing.Size(370, 68);
-            this.txtDescripcion.TabIndex = 36;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // txtNombre
             // 
@@ -286,7 +284,7 @@ namespace Veterinaria.Productos
             this.txtNombre.SelectedText = "";
             this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
             this.txtNombre.Size = new System.Drawing.Size(370, 41);
-            this.txtNombre.TabIndex = 35;
+            this.txtNombre.TabIndex = 1;
             // 
             // cbProveedor
             // 
@@ -305,7 +303,7 @@ namespace Veterinaria.Productos
             this.cbProveedor.Name = "cbProveedor";
             this.cbProveedor.ShadowDecoration.Parent = this.cbProveedor;
             this.cbProveedor.Size = new System.Drawing.Size(370, 36);
-            this.cbProveedor.TabIndex = 34;
+            this.cbProveedor.TabIndex = 4;
             this.cbProveedor.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox2_SelectedIndexChanged);
             // 
             // cbTipoProducto
@@ -325,7 +323,7 @@ namespace Veterinaria.Productos
             this.cbTipoProducto.Name = "cbTipoProducto";
             this.cbTipoProducto.ShadowDecoration.Parent = this.cbTipoProducto;
             this.cbTipoProducto.Size = new System.Drawing.Size(370, 36);
-            this.cbTipoProducto.TabIndex = 33;
+            this.cbTipoProducto.TabIndex = 3;
             // 
             // chkBoxInactivo
             // 
@@ -358,7 +356,7 @@ namespace Veterinaria.Productos
             this.btnCancelar.Location = new System.Drawing.Point(82, 10);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 41);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -370,7 +368,7 @@ namespace Veterinaria.Productos
             this.btnGuardar.Location = new System.Drawing.Point(473, 10);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(104, 41);
-            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

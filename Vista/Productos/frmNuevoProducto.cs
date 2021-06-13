@@ -9,52 +9,37 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
+using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Productos
 {
     public partial class frmNuevoProducto : Form
     {
         private readonly ProductoControlador productosControlador;
+        private readonly ProveedoresControlador proveedorControlador;
+        private readonly TipoProductoControlador tipoProductoControlador;
+
+
+        public event Action<bool> ProductoCreado;
 
         public frmNuevoProducto()
         {
 
             productosControlador = new ProductoControlador();
-            //proveedorControlador = new ProveedorControlador();
+            proveedorControlador = new ProveedoresControlador();
+            tipoProductoControlador = new TipoProductoControlador();
 
+            
 
             InitializeComponent();
-        }
 
-        private void proveedorIdLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            CargaProveedores();
+            CargaTipoProducto();
 
         }
 
-        private void inactivoCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void precioLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void costoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -68,14 +53,8 @@ namespace Veterinaria.Productos
 
         private void NuevoProducto(Producto newProd)
         {
-            var newproducto = new Producto();
-
-
-            newproducto.Nombre = newProd.Nombre;
-            newproducto.Descripcion = newProd.Descripcion;
-
-
-            productosControlador.Agregar(newproducto);
+            
+            productosControlador.Agregar(newProd);
 
         }
 
@@ -84,11 +63,55 @@ namespace Veterinaria.Productos
 
             var _nombre = txtNombre.Text;
             var _descripcion = txtDescripcion.Text;
+            var _tipoProductoId = int.Parse(cbTipoProducto.SelectedValue.ToString());
+            var _proveedorId = int.Parse(cbProveedor.SelectedValue.ToString());
+
             var _costo = decimal.Parse(txtCosto.Text);
             var _precio = decimal.Parse(txtPrecio.Text);
             var _cantidad = int.Parse(txtCantidad.Text);
+            var _inactivo = chkBoxInactivo.Checked;
 
 
+            var _nuevoProducto = new Producto()
+            {
+                Nombre = _nombre,
+                Descripcion = _descripcion,
+                Costo = _costo,
+                Precio = _precio,
+                Cantidad = _cantidad,
+                ProveedorId = _proveedorId,
+                TipoProductoId = _tipoProductoId,
+                Inactivo = _inactivo
+
+            };
+
+            NuevoProducto(_nuevoProducto);
+
+            ProductoCreado(true);
+
+            this.Close();
+
+                     
+
+
+        }
+
+        public void CargaProveedores()
+        {
+            var result = proveedorControlador.ObtenerTodos().ToList();
+
+            cbProveedor.DataSource = result;
+            cbProveedor.DisplayMember = "Nombre";
+            cbProveedor.ValueMember = "ID";
+        }
+
+        public void CargaTipoProducto()
+        {
+            var result = tipoProductoControlador.ObtenerTodos().ToList();
+
+            cbTipoProducto.DataSource = result;
+            cbTipoProducto.DisplayMember = "Nombre";
+            cbTipoProducto.ValueMember = "ID";
 
         }
     }
