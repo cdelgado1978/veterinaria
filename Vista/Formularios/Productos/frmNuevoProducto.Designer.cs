@@ -1,7 +1,7 @@
 ﻿
 namespace Veterinaria.Productos
 {
-    partial class frmNuevoProveedor
+    partial class frmNuevoProducto
     {
         /// <summary>
         /// Required designer variable.

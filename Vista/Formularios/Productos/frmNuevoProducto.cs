@@ -6,7 +6,7 @@ using Veterinaria.Modelo;
 
 namespace Veterinaria.Productos
 {
-    public partial class frmNuevoProveedor : Form
+    public partial class frmNuevoProducto : Form
     {
         private readonly ProductoControlador productosControlador;
         private readonly ProveedoresControlador proveedorControlador;
@@ -15,7 +15,7 @@ namespace Veterinaria.Productos
 
         public event Action<bool> Creado;
 
-        public frmNuevoProveedor()
+        public frmNuevoProducto()
         {
 
             productosControlador = new ProductoControlador();
@@ -81,6 +81,8 @@ namespace Veterinaria.Productos
             NuevoProducto(_nuevoProducto);
 
             Creado(true);
+
+            MessageBox.Show($"Producto {_nombre} Creado. ");
 
             this.Close();
 
