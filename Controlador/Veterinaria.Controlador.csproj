@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimalControlador.cs" />
-    <Compile Include="CargoDto.cs" />
     <Compile Include="Cargoscontrolador.cs" />
     <Compile Include="CategoriaFacturaControlador.cs" />
     <Compile Include="CiudadControlador.cs" />
