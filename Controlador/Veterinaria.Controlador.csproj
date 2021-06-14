@@ -58,6 +58,7 @@
     <Compile Include="CiudadControlador.cs" />
     <Compile Include="ClienteControlador.cs" />
     <Compile Include="CotizacionesControlador.cs" />
+    <Compile Include="CotizacionesDTO.cs" />
     <Compile Include="IControlador.cs" />
     <Compile Include="ProductoControlador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
