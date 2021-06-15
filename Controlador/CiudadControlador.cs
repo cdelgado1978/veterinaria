@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veterinaria.Modelo;
 using Veterinaria.Modelo.DTO;
 
@@ -60,8 +57,7 @@ namespace Veterinaria.Controlador
 
         public void Editar(Ciudad entidad)
         {
-            //if (entidad == null) throw new Exception("Entidad Invalidad");
-
+          
             var ciudad = db.Cargos.Find(entidad);
             if (ciudad != null)
             {
@@ -72,7 +68,6 @@ namespace Veterinaria.Controlador
 
         public void Borrar(Ciudad entidad)
         {
-            //if (entidad == null) throw new Exception("Entidad Invalidad");
 
             var ciudad = db.Ciudads.Find(entidad);
             if (ciudad != null)
