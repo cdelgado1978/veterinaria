@@ -77,11 +77,18 @@
     <Compile Include="DTO\CiudadDto.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
     <Compile Include="DTO\CotizacionesDTO.cs" />
+    <Compile Include="DTO\EmpleadoDTO.cs" />
+    <Compile Include="DTO\FacturaDetalleDTO.cs" />
+    <Compile Include="DTO\FacturaDTO.cs" />
+    <Compile Include="DTO\HistorialRecetasDTO.cs" />
     <Compile Include="DTO\ProductoDTO.cs" />
     <Compile Include="DTO\ProveedorDto.cs" />
     <Compile Include="DTO\RazasDto.cs" />
+    <Compile Include="DTO\RecetaDTO.cs" />
     <Compile Include="DTO\TipoAnimalDto.cs" />
+    <Compile Include="DTO\TipoFacturaDTO.cs" />
     <Compile Include="DTO\TipoProductoDto.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="Empleado.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
