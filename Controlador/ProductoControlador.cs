@@ -54,9 +54,9 @@ namespace Veterinaria.Controlador
         {
             if (entidad != null)
             {
+
                 db.Productos.Add(entidad);
                 db.SaveChanges();
-
 
             }
 
@@ -78,7 +78,6 @@ namespace Veterinaria.Controlador
         
         public void Borrar(Producto entidad)
         {
-            //if (entidad == null) throw new Exception("Entidad Invalidad");
 
             var producto = db.Productos.Find(entidad);
             if (producto != null)
