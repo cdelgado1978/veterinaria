@@ -1,5 +1,5 @@
 ﻿
-namespace Veterinaria
+namespace Veterinaria.Vista.Formularios.Productos
 {
     partial class FrmListaProductos
     {

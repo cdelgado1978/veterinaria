@@ -1,5 +1,5 @@
 ﻿
-namespace Veterinaria.Proveedores
+namespace Veterinaria.Vista.Formularios.Proveedores
 {
     partial class frmNuevoProveedor
     {

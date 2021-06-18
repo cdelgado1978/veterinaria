@@ -4,8 +4,8 @@ using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
 
-namespace Veterinaria.Productos
-{
+namespace Veterinaria.Vista.Formularios.Productos
+{ 
     public partial class frmNuevoProducto : Form
     {
         private readonly ProductoControlador productosControlador;

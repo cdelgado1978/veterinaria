@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{05FEA417-B22A-4DF7-A7AF-4AA3402C085C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Veterinaria</RootNamespace>
-    <AssemblyName>Veterinaria</AssemblyName>
+    <RootNamespace>Veterinaria.Vista</RootNamespace>
+    <AssemblyName>Veterinaria.Vista</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Veterinaria.Program</StartupObject>
+    <StartupObject>Veterinaria.Vista.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
