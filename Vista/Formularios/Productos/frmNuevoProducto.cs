@@ -119,5 +119,10 @@ namespace Veterinaria.Vista.Formularios.Productos
         {
 
         }
+
+        private void cbTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

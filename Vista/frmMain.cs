@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Veterinaria.Formularios.Animales;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
+using Veterinaria.Vista.Tipo_Animal;
 
 namespace Veterinaria.Vista
 {
@@ -65,6 +67,7 @@ namespace Veterinaria.Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
+            AbrirFormularios<TipoAnimal>();
             OcultaSubMenu();
         }
 

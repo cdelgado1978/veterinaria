@@ -171,7 +171,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
             this.guna2GroupBox1.Size = new System.Drawing.Size(488, 396);
@@ -309,7 +309,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.cbProveedor.ItemHeight = 30;
             this.cbProveedor.ItemsAppearance.Parent = this.cbProveedor;
             this.cbProveedor.Location = new System.Drawing.Point(146, 215);
-            this.cbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.cbProveedor.Name = "cbProveedor";
             this.cbProveedor.ShadowDecoration.Parent = this.cbProveedor;
             this.cbProveedor.Size = new System.Drawing.Size(278, 36);
@@ -330,11 +330,12 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.cbTipoProducto.ItemHeight = 30;
             this.cbTipoProducto.ItemsAppearance.Parent = this.cbTipoProducto;
             this.cbTipoProducto.Location = new System.Drawing.Point(146, 181);
-            this.cbTipoProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTipoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoProducto.Name = "cbTipoProducto";
             this.cbTipoProducto.ShadowDecoration.Parent = this.cbTipoProducto;
             this.cbTipoProducto.Size = new System.Drawing.Size(278, 36);
             this.cbTipoProducto.TabIndex = 3;
+            this.cbTipoProducto.SelectedIndexChanged += new System.EventHandler(this.cbTipoProducto_SelectedIndexChanged);
             // 
             // chkBoxInactivo
             // 
@@ -342,7 +343,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.chkBoxInactivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkBoxInactivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productoBindingSource, "Inactivo", true));
             this.chkBoxInactivo.Location = new System.Drawing.Point(345, 52);
-            this.chkBoxInactivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBoxInactivo.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxInactivo.Name = "chkBoxInactivo";
             this.chkBoxInactivo.Size = new System.Drawing.Size(78, 20);
             this.chkBoxInactivo.TabIndex = 28;
@@ -357,7 +358,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 345);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 51);
             this.panel1.TabIndex = 26;
@@ -368,7 +369,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(62, 8);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 33);
             this.btnCancelar.TabIndex = 9;
@@ -381,7 +382,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Location = new System.Drawing.Point(355, 8);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(78, 33);
             this.btnGuardar.TabIndex = 8;
@@ -402,7 +403,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNuevoProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmNuevo";

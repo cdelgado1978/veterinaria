@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
+using Veterinaria.Vista;
 
 
 namespace Veterinaria.Formularios.Animales
@@ -34,7 +35,9 @@ namespace Veterinaria.Formularios.Animales
             
         }
 
-         private void btnCancelar_Click(object sender, EventArgs e)
+      
+
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -49,8 +52,7 @@ namespace Veterinaria.Formularios.Animales
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             var _nombre = txtNombre.Text;
-            var _tipoAnimalID = int.Parse(cbTipoAnimal.SelectedValue.ToString());
-            var _razaID = int.Parse(cbRaza.SelectedValue.ToString());
+            
 
             var _edad = int.Parse(txtEdad.Text);
             var _direccion = txtDireccion.Text;
@@ -61,8 +63,7 @@ namespace Veterinaria.Formularios.Animales
             var _nuevoAnimal= new Animale()
             {
                 Nombre = _nombre,
-                TipoID = _tipoAnimalID,
-                RazaID = _razaID,
+                
                 Edad = _edad,
                 Direccion = _direccion,
                 ClienteId = _clienteID,
