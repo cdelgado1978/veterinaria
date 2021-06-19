@@ -57,7 +57,7 @@ namespace Veterinaria.Vista.Tipo_Animal
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(715, 62);
             this.panelTitulo.TabIndex = 4;
-            
+            this.panelTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitulo_Paint);
             // 
             // PanelControlBox
             // 
@@ -132,14 +132,14 @@ namespace Veterinaria.Vista.Tipo_Animal
             this.dgListaTiposAnimal.Size = new System.Drawing.Size(715, 415);
             this.dgListaTiposAnimal.TabIndex = 0;
             // 
-            // TipoAnimal
+            // FrmTipoAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 477);
             this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panelTitulo);
-            this.Name = "TipoAnimal";
+            this.Name = "FrmTipoAnimal";
             this.Text = "TipoAnimal";
             this.Load += new System.EventHandler(this.TipoAnimal_Load);
             this.panelTitulo.ResumeLayout(false);

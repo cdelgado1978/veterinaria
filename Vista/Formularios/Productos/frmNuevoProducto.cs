@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
 
+
 namespace Veterinaria.Vista.Formularios.Productos
 { 
     public partial class FrmNuevoProducto : Form
@@ -47,7 +48,7 @@ namespace Veterinaria.Vista.Formularios.Productos
         private void NuevoProducto(Productos newprod)
         {
 
-            ProductoControlador.Agregar(newprod);
+            productosControlador.Agregar(newprod);
 
         }
 
@@ -65,7 +66,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             var _inactivo = chkBoxInactivo.Checked;
 
 
-            var _nuevoProducto = new Producto()
+            var _nuevoProducto = new Productos()
             {
                 Nombre = _nombre,
                 Descripcion = _descripcion,

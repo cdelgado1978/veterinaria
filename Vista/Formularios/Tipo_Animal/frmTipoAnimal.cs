@@ -83,5 +83,10 @@ namespace Veterinaria.Vista.Tipo_Animal
         {
             ActualizaDBGrid();
         }
+
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

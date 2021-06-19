@@ -51,6 +51,11 @@ namespace Veterinaria.Controlador
             return _productos;
         }
 
+        public void Agregar(Veterinaria.Vista.Formularios.Productos.FrmListaProductos newprod)
+        {
+            throw new NotImplementedException();
+        }
+
         public static object Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
         {
             throw new NotImplementedException();
