@@ -44,10 +44,10 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.Close();
         }
 
-        private void NuevoProducto(Producto newProd)
+        private void NuevoProducto(Productos newprod)
         {
-            
-            productosControlador.Agregar(newProd);
+
+            ProductoControlador.Agregar(newprod);
 
         }
 
@@ -78,7 +78,7 @@ namespace Veterinaria.Vista.Formularios.Productos
 
             };
 
-            NuevoProducto(_nuevoProducto);
+            NuevoProducto = (_nuevoProducto);
 
             Creado(true);
 

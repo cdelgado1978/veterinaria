@@ -98,6 +98,12 @@
     <Compile Include="Formularios\Proveedores\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Raza\FrmRaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Raza\FrmRaza.Designer.cs">
+      <DependentUpon>FrmRaza.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Raza\FrmRaza.resx">
+      <DependentUpon>FrmRaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

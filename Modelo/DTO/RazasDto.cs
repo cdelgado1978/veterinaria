@@ -2,7 +2,7 @@
 {
     public class RazasDto
     {
-        public int id { get;  set; }
+        public int id;
 
         public string Nombre { get;  set; }
         public int TipoAnimalId { get;  set; }

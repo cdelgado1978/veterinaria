@@ -148,7 +148,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             // 
             // productoBindingSource
             // 
-            this.productoBindingSource.DataSource = typeof(Veterinaria.Modelo.Producto);
+            this.productoBindingSource.DataSource = typeof(Veterinaria.Modelo.Raza);
             // 
             // guna2GroupBox1
             // 

@@ -1,41 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
+using Veterinaria.Modelo;
 
-namespace Veterinaria.Vista.Formularios.Productos
+namespace Veterinaria.Vista.Formularios.Raza
 {
-    public partial class FrmListaProductos : Form
+    public partial class FrmRaza : Form
     {
-        private ProductoControlador productosControlador;
+        private RazaControlador razaControlador;
 
-        public FrmListaProductos()
+        public Action<object> Creado { get; private set; }
+
+        public FrmRaza()
         {
             InitializeComponent();
 
-            productosControlador = new ProductoControlador();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            ActualizaDBGrid();
-
+            razaControlador = new RazaControlador();
         }
 
         public void ActualizaDBGrid()
         {
-
-            dgListaProductos.DataSource = productosControlador.ObtenerTodos();
-
+            dgRazas.DataSource = razaControlador.ObtenerTodos();
         }
 
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        private void FrmRaza_Load(object sender, EventArgs e)
         {
-
-            AbrirPopup<frmNuevoProducto>();
-           
-
+            ActualizaDBGrid();
         }
 
         public void AbrirPopup<T>() where T : Form, new()
@@ -59,14 +56,14 @@ namespace Veterinaria.Vista.Formularios.Productos
 
                 var _type = formulario.GetType();
 
-                if (_type.Name == "frmNuevoProducto")
+                if (_type.Name == "frmRaza")
                 {
 
-                    var frmNuevo = formulario as frmNuevoProducto;
+                    var frmRaza = formulario as FrmRaza;
 
-                    frmNuevo.Creado += (Creado) =>
+                    frmRaza.Creado += (Creado) =>
                     {
-                        if (Creado)
+                        if ((bool)Creado)
                         {
                             ActualizaDBGrid();
                         }
@@ -84,20 +81,11 @@ namespace Veterinaria.Vista.Formularios.Productos
 
         private void panelTitulo_Paint(object sender, PaintEventArgs e)
         {
+            
 
         }
 
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void btnNuevaRaza_Click(object sender, EventArgs e)
         {
 
         }

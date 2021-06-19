@@ -17,7 +17,7 @@ namespace Veterinaria.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Proveedor()
         {
-            this.Productoes = new HashSet<Producto>();
+            this.Productoes = new HashSet<Raza>();
         }
     
         public int ID { get; set; }
@@ -28,6 +28,6 @@ namespace Veterinaria.Modelo
         public bool Inactivo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto> Productoes { get; set; }
+        public virtual ICollection<Raza> Productoes { get; set; }
     }
 }

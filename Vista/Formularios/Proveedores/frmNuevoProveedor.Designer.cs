@@ -103,7 +103,7 @@ namespace Veterinaria.Vista.Formularios.Proveedores
             // 
             // productoBindingSource
             // 
-            this.productoBindingSource.DataSource = typeof(Veterinaria.Modelo.Producto);
+            this.productoBindingSource.DataSource = typeof(Veterinaria.Modelo.Raza);
             // 
             // panel1
             // 

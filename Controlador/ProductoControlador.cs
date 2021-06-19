@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using Veterinaria.Modelo;
@@ -48,6 +49,51 @@ namespace Veterinaria.Controlador
             });
 
             return _productos;
+        }
+
+        public static object Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Agregar(Veterinaria.Vista.Formularios.Productos.Producto newProd)
+        {
+            throw new NotImplementedException();
         }
 
         public Producto Agregar(Producto entidad)

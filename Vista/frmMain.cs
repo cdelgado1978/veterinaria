@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Veterinaria.Formularios.Animales;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
+using Veterinaria.Vista.Formularios.Raza;
 using Veterinaria.Vista.Tipo_Animal;
 
 namespace Veterinaria.Vista
@@ -73,6 +74,7 @@ namespace Veterinaria.Vista
 
         private void btnRaza_Click(object sender, EventArgs e)
         {
+            AbrirFormularios<FrmRaza>();
             OcultaSubMenu();
         }
 

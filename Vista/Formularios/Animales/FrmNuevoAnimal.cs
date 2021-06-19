@@ -52,7 +52,9 @@ namespace Veterinaria.Formularios.Animales
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             var _nombre = txtNombre.Text;
-            
+            var _tipoAnimalID = int.Parse(cbTipoAnimal.SelectedValue.ToString());
+            var _razaID = int.Parse(cbRaza.SelectedValue.ToString());
+
 
             var _edad = int.Parse(txtEdad.Text);
             var _direccion = txtDireccion.Text;
