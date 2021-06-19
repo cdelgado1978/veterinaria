@@ -1,7 +1,7 @@
 ﻿
 namespace Veterinaria.Vista.Formularios.Productos
 {
-    partial class frmNuevoProducto
+    partial class FrmNuevoProducto
     {
         /// <summary>
         /// Required designer variable.

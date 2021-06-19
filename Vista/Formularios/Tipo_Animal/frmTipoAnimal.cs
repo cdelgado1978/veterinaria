@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
-using Veterinaria.Modelo;
 
 namespace Veterinaria.Vista.Tipo_Animal
 {
-    public partial class TipoAnimal : Form
+    public partial class FrmTipoAnimal : Form
     {
 
         private TipoAnimalControlador tipoAnimalControlador;
 
         public Action<object> Creado { get; private set; }
 
-        public TipoAnimal()
+        public FrmTipoAnimal()
         {
             InitializeComponent();
 
@@ -66,7 +59,7 @@ namespace Veterinaria.Vista.Tipo_Animal
                 if (_type.Name == "Tipo_Animal")
                 {
 
-                    var frmLista = formulario as TipoAnimal;
+                    var frmLista = formulario as FrmTipoAnimal;
 
                     frmLista.Creado += (Creado) =>
                     {

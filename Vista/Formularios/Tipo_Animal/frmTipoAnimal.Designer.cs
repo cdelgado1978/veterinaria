@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Veterinaria.Vista.Tipo_Animal
 {
-    partial class TipoAnimal
+    partial class FrmTipoAnimal
     {
         /// <summary>
         /// Required designer variable.
@@ -162,6 +162,6 @@ namespace Veterinaria.Vista.Tipo_Animal
         private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.Panel panelContenido;
         private System.Windows.Forms.DataGridView dgListaTiposAnimal;
-        private PaintEventHandler panelTitulo_Paint;
+        
     }
 }
