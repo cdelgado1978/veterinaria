@@ -33,7 +33,7 @@ namespace Veterinaria.Vista.Formularios.Productos
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
 
-            AbrirPopup<frmNuevoProducto>();
+            AbrirPopup<FrmNuevoProducto>();
 
         }
 
@@ -61,7 +61,7 @@ namespace Veterinaria.Vista.Formularios.Productos
                 if (_type.Name == "frmNuevoProducto")
                 {
 
-                    var frmNuevo = formulario as frmNuevoProducto;
+                    var frmNuevo = formulario as FrmNuevoProducto;
 
                     frmNuevo.Creado += (Creado) =>
                     {
