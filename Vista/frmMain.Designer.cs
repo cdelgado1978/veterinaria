@@ -1,7 +1,7 @@
 ﻿
-namespace Veterinaria
+namespace Veterinaria.Vista
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Veterinaria
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.panel_SeguridadSubmenu = new System.Windows.Forms.Panel();
@@ -272,7 +272,7 @@ namespace Veterinaria
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Veterinaria.Properties.Resources.logo;
+            this.pictureBox1.Image = global::Veterinaria.Vista.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(238, 82);

@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Veterinaria.Formularios.Animales;
-using Veterinaria.Formularios.Proveedores;
+using Veterinaria.Vista.Formularios.Productos;
+using Veterinaria.Vista.Formularios.Proveedores;
 
-namespace Veterinaria
+namespace Veterinaria.Vista
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
             CustomActions();
@@ -118,9 +112,6 @@ namespace Veterinaria
             {
                 formulario.BringToFront();
             }
-
-
-
 
         }
 

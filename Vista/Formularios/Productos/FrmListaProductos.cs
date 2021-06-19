@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
-using Veterinaria.Modelo;
-using Veterinaria.Productos;
 
-namespace Veterinaria
+namespace Veterinaria.Vista.Formularios.Productos
 {
     public partial class FrmListaProductos : Form
     {
@@ -71,7 +63,7 @@ namespace Veterinaria
 
                     var frmNuevo = formulario as frmNuevoProducto;
 
-                    frmNuevo.Creado += (bool Creado) =>
+                    frmNuevo.Creado += (Creado) =>
                     {
                         if (Creado)
                         {

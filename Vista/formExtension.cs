@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
 
-namespace Veterinaria
+namespace Veterinaria.Vista
 {
-    public static class formExtension
+    public static class FormExtension
     {
+
 
         public static void AbrirFormularios<P, T>(this Form form) where P : Panel, new() 
                                                                   where T : Form, new()

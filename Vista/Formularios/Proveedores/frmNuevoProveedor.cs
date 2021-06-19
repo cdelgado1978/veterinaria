@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
-using Veterinaria.Modelo.DTO;
 
-namespace Veterinaria.Proveedores
+namespace Veterinaria.Vista.Formularios.Proveedores
 {
     public partial class frmNuevoProveedor : Form
     {
@@ -29,8 +21,6 @@ namespace Veterinaria.Proveedores
             
             InitializeComponent();
 
-          
-            //CargaTipoProducto();
 
         }
 
@@ -80,16 +70,6 @@ namespace Veterinaria.Proveedores
         }
 
 
-
-        //public void CargaTipoProducto()
-        //{
-        //    var result = tipoProductoControlador.ObtenerTodos().ToList();
-
-        //    cbTipoProducto.DataSource = result;
-        //    cbTipoProducto.DisplayMember = "Nombre";
-        //    cbTipoProducto.ValueMember = "ID";
-
-        //}
 
         private void cantidadLabel_Click(object sender, EventArgs e)
         {

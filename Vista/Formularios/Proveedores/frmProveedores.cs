@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
-using Veterinaria.Proveedores;
 
-namespace Veterinaria.Formularios.Proveedores
+namespace Veterinaria.Vista.Formularios.Proveedores
 {
     public partial class frmProveedores : Form
     {
