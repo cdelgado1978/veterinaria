@@ -69,9 +69,10 @@ namespace Veterinaria.Productos
             // 
             cantidadLabel.AutoSize = true;
             cantidadLabel.BackColor = System.Drawing.Color.White;
-            cantidadLabel.Location = new System.Drawing.Point(117, 381);
+            cantidadLabel.Location = new System.Drawing.Point(88, 310);
+            cantidadLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             cantidadLabel.Name = "cantidadLabel";
-            cantidadLabel.Size = new System.Drawing.Size(72, 20);
+            cantidadLabel.Size = new System.Drawing.Size(58, 15);
             cantidadLabel.TabIndex = 25;
             cantidadLabel.Text = "Cantidad:";
             // 
@@ -79,9 +80,10 @@ namespace Veterinaria.Productos
             // 
             costoLabel.AutoSize = true;
             costoLabel.BackColor = System.Drawing.Color.White;
-            costoLabel.Location = new System.Drawing.Point(137, 330);
+            costoLabel.Location = new System.Drawing.Point(103, 268);
+            costoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             costoLabel.Name = "costoLabel";
-            costoLabel.Size = new System.Drawing.Size(50, 20);
+            costoLabel.Size = new System.Drawing.Size(41, 15);
             costoLabel.TabIndex = 26;
             costoLabel.Text = "Costo:";
             // 
@@ -89,9 +91,10 @@ namespace Veterinaria.Productos
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.BackColor = System.Drawing.Color.White;
-            descripcionLabel.Location = new System.Drawing.Point(99, 147);
+            descripcionLabel.Location = new System.Drawing.Point(74, 119);
+            descripcionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(90, 20);
+            descripcionLabel.Size = new System.Drawing.Size(72, 15);
             descripcionLabel.TabIndex = 27;
             descripcionLabel.Text = "Descripcion:";
             // 
@@ -99,9 +102,10 @@ namespace Veterinaria.Productos
             // 
             nombreLabel.AutoSize = true;
             nombreLabel.BackColor = System.Drawing.Color.White;
-            nombreLabel.Location = new System.Drawing.Point(122, 117);
+            nombreLabel.Location = new System.Drawing.Point(92, 95);
+            nombreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(67, 20);
+            nombreLabel.Size = new System.Drawing.Size(54, 15);
             nombreLabel.TabIndex = 29;
             nombreLabel.Text = "Nombre:";
             // 
@@ -109,9 +113,10 @@ namespace Veterinaria.Productos
             // 
             precioLabel.AutoSize = true;
             precioLabel.BackColor = System.Drawing.Color.White;
-            precioLabel.Location = new System.Drawing.Point(376, 330);
+            precioLabel.Location = new System.Drawing.Point(282, 268);
+            precioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(53, 20);
+            precioLabel.Size = new System.Drawing.Size(43, 15);
             precioLabel.TabIndex = 30;
             precioLabel.Text = "Precio:";
             // 
@@ -119,9 +124,10 @@ namespace Veterinaria.Productos
             // 
             proveedorIdLabel.AutoSize = true;
             proveedorIdLabel.BackColor = System.Drawing.Color.White;
-            proveedorIdLabel.Location = new System.Drawing.Point(106, 292);
+            proveedorIdLabel.Location = new System.Drawing.Point(80, 237);
+            proveedorIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             proveedorIdLabel.Name = "proveedorIdLabel";
-            proveedorIdLabel.Size = new System.Drawing.Size(80, 20);
+            proveedorIdLabel.Size = new System.Drawing.Size(64, 15);
             proveedorIdLabel.TabIndex = 31;
             proveedorIdLabel.Text = "Proveedor:";
             // 
@@ -129,9 +135,10 @@ namespace Veterinaria.Productos
             // 
             tipoProductoIdLabel.AutoSize = true;
             tipoProductoIdLabel.BackColor = System.Drawing.Color.White;
-            tipoProductoIdLabel.Location = new System.Drawing.Point(83, 239);
+            tipoProductoIdLabel.Location = new System.Drawing.Point(62, 194);
+            tipoProductoIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tipoProductoIdLabel.Name = "tipoProductoIdLabel";
-            tipoProductoIdLabel.Size = new System.Drawing.Size(106, 20);
+            tipoProductoIdLabel.Size = new System.Drawing.Size(85, 15);
             tipoProductoIdLabel.TabIndex = 32;
             tipoProductoIdLabel.Text = "Tipo Producto:";
             // 
@@ -164,11 +171,13 @@ namespace Veterinaria.Productos
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(651, 487);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(488, 396);
             this.guna2GroupBox1.TabIndex = 25;
             this.guna2GroupBox1.Text = "Nuevo Producto";
+            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
             // txtPrecio
             // 
@@ -183,14 +192,14 @@ namespace Veterinaria.Productos
             this.txtPrecio.FocusedState.Parent = this.txtPrecio;
             this.txtPrecio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrecio.HoverState.Parent = this.txtPrecio;
-            this.txtPrecio.Location = new System.Drawing.Point(436, 309);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrecio.Location = new System.Drawing.Point(327, 251);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.PasswordChar = '\0';
             this.txtPrecio.PlaceholderText = "";
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.ShadowDecoration.Parent = this.txtPrecio;
-            this.txtPrecio.Size = new System.Drawing.Size(128, 41);
+            this.txtPrecio.Size = new System.Drawing.Size(96, 33);
             this.txtPrecio.TabIndex = 6;
             // 
             // txtCosto
@@ -206,14 +215,14 @@ namespace Veterinaria.Productos
             this.txtCosto.FocusedState.Parent = this.txtCosto;
             this.txtCosto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCosto.HoverState.Parent = this.txtCosto;
-            this.txtCosto.Location = new System.Drawing.Point(194, 309);
-            this.txtCosto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCosto.Location = new System.Drawing.Point(146, 251);
+            this.txtCosto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.PasswordChar = '\0';
             this.txtCosto.PlaceholderText = "";
             this.txtCosto.SelectedText = "";
             this.txtCosto.ShadowDecoration.Parent = this.txtCosto;
-            this.txtCosto.Size = new System.Drawing.Size(134, 41);
+            this.txtCosto.Size = new System.Drawing.Size(100, 33);
             this.txtCosto.TabIndex = 5;
             // 
             // txtCantidad
@@ -229,14 +238,14 @@ namespace Veterinaria.Productos
             this.txtCantidad.FocusedState.Parent = this.txtCantidad;
             this.txtCantidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCantidad.HoverState.Parent = this.txtCantidad;
-            this.txtCantidad.Location = new System.Drawing.Point(194, 360);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCantidad.Location = new System.Drawing.Point(146, 292);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PasswordChar = '\0';
             this.txtCantidad.PlaceholderText = "";
             this.txtCantidad.SelectedText = "";
             this.txtCantidad.ShadowDecoration.Parent = this.txtCantidad;
-            this.txtCantidad.Size = new System.Drawing.Size(134, 41);
+            this.txtCantidad.Size = new System.Drawing.Size(100, 33);
             this.txtCantidad.TabIndex = 7;
             // 
             // txtDescripcion
@@ -252,15 +261,15 @@ namespace Veterinaria.Productos
             this.txtDescripcion.FocusedState.Parent = this.txtDescripcion;
             this.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcion.HoverState.Parent = this.txtDescripcion;
-            this.txtDescripcion.Location = new System.Drawing.Point(194, 147);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDescripcion.Location = new System.Drawing.Point(146, 119);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.PasswordChar = '\0';
             this.txtDescripcion.PlaceholderText = "";
             this.txtDescripcion.SelectedText = "";
             this.txtDescripcion.ShadowDecoration.Parent = this.txtDescripcion;
-            this.txtDescripcion.Size = new System.Drawing.Size(370, 68);
+            this.txtDescripcion.Size = new System.Drawing.Size(278, 55);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtNombre
@@ -276,14 +285,14 @@ namespace Veterinaria.Productos
             this.txtNombre.FocusedState.Parent = this.txtNombre;
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.HoverState.Parent = this.txtNombre;
-            this.txtNombre.Location = new System.Drawing.Point(194, 96);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Location = new System.Drawing.Point(146, 78);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderText = "";
             this.txtNombre.SelectedText = "";
             this.txtNombre.ShadowDecoration.Parent = this.txtNombre;
-            this.txtNombre.Size = new System.Drawing.Size(370, 41);
+            this.txtNombre.Size = new System.Drawing.Size(278, 33);
             this.txtNombre.TabIndex = 1;
             // 
             // cbProveedor
@@ -299,10 +308,11 @@ namespace Veterinaria.Productos
             this.cbProveedor.HoverState.Parent = this.cbProveedor;
             this.cbProveedor.ItemHeight = 30;
             this.cbProveedor.ItemsAppearance.Parent = this.cbProveedor;
-            this.cbProveedor.Location = new System.Drawing.Point(194, 265);
+            this.cbProveedor.Location = new System.Drawing.Point(146, 215);
+            this.cbProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbProveedor.Name = "cbProveedor";
             this.cbProveedor.ShadowDecoration.Parent = this.cbProveedor;
-            this.cbProveedor.Size = new System.Drawing.Size(370, 36);
+            this.cbProveedor.Size = new System.Drawing.Size(278, 36);
             this.cbProveedor.TabIndex = 4;
             this.cbProveedor.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox2_SelectedIndexChanged);
             // 
@@ -319,10 +329,11 @@ namespace Veterinaria.Productos
             this.cbTipoProducto.HoverState.Parent = this.cbTipoProducto;
             this.cbTipoProducto.ItemHeight = 30;
             this.cbTipoProducto.ItemsAppearance.Parent = this.cbTipoProducto;
-            this.cbTipoProducto.Location = new System.Drawing.Point(194, 223);
+            this.cbTipoProducto.Location = new System.Drawing.Point(146, 181);
+            this.cbTipoProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbTipoProducto.Name = "cbTipoProducto";
             this.cbTipoProducto.ShadowDecoration.Parent = this.cbTipoProducto;
-            this.cbTipoProducto.Size = new System.Drawing.Size(370, 36);
+            this.cbTipoProducto.Size = new System.Drawing.Size(278, 36);
             this.cbTipoProducto.TabIndex = 3;
             // 
             // chkBoxInactivo
@@ -330,9 +341,10 @@ namespace Veterinaria.Productos
             this.chkBoxInactivo.BackColor = System.Drawing.Color.White;
             this.chkBoxInactivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkBoxInactivo.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productoBindingSource, "Inactivo", true));
-            this.chkBoxInactivo.Location = new System.Drawing.Point(460, 64);
+            this.chkBoxInactivo.Location = new System.Drawing.Point(345, 52);
+            this.chkBoxInactivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBoxInactivo.Name = "chkBoxInactivo";
-            this.chkBoxInactivo.Size = new System.Drawing.Size(104, 24);
+            this.chkBoxInactivo.Size = new System.Drawing.Size(78, 20);
             this.chkBoxInactivo.TabIndex = 28;
             this.chkBoxInactivo.Text = "Inactivo";
             this.chkBoxInactivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -344,18 +356,21 @@ namespace Veterinaria.Productos
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 424);
+            this.panel1.Location = new System.Drawing.Point(0, 345);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(651, 63);
+            this.panel1.Size = new System.Drawing.Size(488, 51);
             this.panel1.TabIndex = 26;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(82, 10);
+            this.btnCancelar.Location = new System.Drawing.Point(62, 8);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(78, 33);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -365,9 +380,10 @@ namespace Veterinaria.Productos
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(473, 10);
+            this.btnGuardar.Location = new System.Drawing.Point(355, 8);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(104, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(78, 33);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -379,13 +395,14 @@ namespace Veterinaria.Productos
             // 
             // frmNuevoProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(651, 487);
+            this.ClientSize = new System.Drawing.Size(488, 396);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmNuevoProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmNuevo";

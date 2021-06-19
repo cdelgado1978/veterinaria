@@ -1,48 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
+using Veterinaria.Formularios.Animales;
 using Veterinaria.Modelo;
-using Veterinaria.Productos;
 
-namespace Veterinaria
+
+
+
+
+
+
+
+namespace Veterinaria.Formularios.Animales
 {
-    public partial class FrmListaProductos : Form
+    public partial class FrmListaAnimales : Form
     {
-        private ProductoControlador productosControlador;
+        
 
-        public FrmListaProductos()
+        private AnimalControlador animalControlador;
+
+        public FrmListaAnimales()
         {
             InitializeComponent();
 
-            productosControlador = new ProductoControlador();
+            animalControlador = new AnimalControlador();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        
+
+        private void panelTitulo_Paint(object sender, PaintEventArgs e)
         {
 
-            ActualizaDBGrid();
+        }
 
+        private void FrmListaAnimales_Load(object sender, EventArgs e)
+        {
+            ActualizaDBGrid();
         }
 
         public void ActualizaDBGrid()
         {
 
-            dgListaProductos.DataSource = productosControlador.ObtenerTodos();
+            dgListaProductos.DataSource = animalControlador.ObtenerTodos();
 
         }
 
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        private void btnNuevoAnimal_Click(object sender, EventArgs e)
         {
-
-            AbrirPopup<frmNuevoProducto>();
-
+            AbrirPopup<FrmNuevoAnimal>();
         }
 
         public void AbrirPopup<T>() where T : Form, new()
@@ -66,10 +72,10 @@ namespace Veterinaria
 
                 var _type = formulario.GetType();
 
-                if (_type.Name == "frmNuevoProducto")
+                if (_type.Name == "frmNuevoAnimal")
                 {
 
-                    var frmNuevo = formulario as frmNuevoProducto;
+                    var frmNuevo = formulario as FrmNuevoAnimal;
 
                     frmNuevo.Creado += (bool Creado) =>
                     {
@@ -86,16 +92,6 @@ namespace Veterinaria
             {
                 formulario.BringToFront();
             }
-
-        }
-
-        private void panelTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
 
         }
 
