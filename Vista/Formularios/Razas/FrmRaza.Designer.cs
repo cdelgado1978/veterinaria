@@ -1,5 +1,5 @@
 ﻿
-namespace Veterinaria.Vista.Formularios.Raza
+namespace Veterinaria.Vista.Formularios.Razas
 {
     partial class FrmRaza
     {

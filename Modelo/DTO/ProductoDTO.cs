@@ -15,7 +15,7 @@
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
         public bool Inactivo { get; set; }
-
-        
+        public int TipoProductoId { get; set; }
+        public int ProveedorId { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using Veterinaria.Modelo;
 using Veterinaria.Modelo.DTO;
 
+
 namespace Veterinaria.Controlador
 {
     public class RazaControlador : IControlador<Raza>
@@ -34,8 +35,7 @@ namespace Veterinaria.Controlador
                 {
                     id = r.Id,
                     Nombre = r.Nombre,
-                    //TipoanimalId = a.TipoanimalId,
-                    TipoAnimalId = r.Tipo_Animal.Id,
+                    TipoAnimalNombre = r.Tipo_Animal.Nombre,
                     Inactivo = r.Inactivo,
 
                 });
@@ -50,7 +50,6 @@ namespace Veterinaria.Controlador
             {
                 db.Razas.Add(entidad);
                 db.SaveChanges();
-
 
             }
 

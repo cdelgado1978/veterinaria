@@ -98,10 +98,16 @@
     <Compile Include="Formularios\Proveedores\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Raza\FrmRaza.cs">
+    <Compile Include="Formularios\Razas\FrmNuevaRaza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Raza\FrmRaza.Designer.cs">
+    <Compile Include="Formularios\Razas\FrmNuevaRaza.Designer.cs">
+      <DependentUpon>FrmNuevaRaza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Razas\FrmRaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Razas\FrmRaza.Designer.cs">
       <DependentUpon>FrmRaza.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -139,7 +145,10 @@
     <EmbeddedResource Include="Formularios\Proveedores\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Raza\FrmRaza.resx">
+    <EmbeddedResource Include="Formularios\Razas\FrmNuevaRaza.resx">
+      <DependentUpon>FrmNuevaRaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Razas\FrmRaza.resx">
       <DependentUpon>FrmRaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">

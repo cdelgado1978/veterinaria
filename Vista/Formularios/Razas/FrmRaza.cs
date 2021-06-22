@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
 
-namespace Veterinaria.Vista.Formularios.Raza
+namespace Veterinaria.Vista.Formularios.Razas
 {
     public partial class FrmRaza : Form
     {
@@ -56,10 +56,10 @@ namespace Veterinaria.Vista.Formularios.Raza
 
                 var _type = formulario.GetType();
 
-                if (_type.Name == "frmRaza")
+                if (_type.Name == "FrmNuevaRaza")
                 {
 
-                    var frmRaza = formulario as FrmRaza;
+                    var frmRaza = formulario as FrmNuevaRaza;
 
                     frmRaza.Creado += (Creado) =>
                     {

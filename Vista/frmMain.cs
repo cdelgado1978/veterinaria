@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Veterinaria.Formularios.Animales;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
-using Veterinaria.Vista.Formularios.Raza;
+using Veterinaria.Vista.Formularios.Razas;
 using Veterinaria.Vista.Tipo_Animal;
 
 namespace Veterinaria.Vista

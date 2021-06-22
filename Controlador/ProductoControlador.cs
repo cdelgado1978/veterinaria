@@ -35,10 +35,10 @@ namespace Veterinaria.Controlador
                 {
                     Id = p.Id,
                     Nombre = p.Nombre,
-                    //TipoProductoId = p.TipoProductoId,
+                    TipoProductoId = p.TipoProductoId,
                     TipoProductoNombre = p.Tipo_Producto.Nombre,
                     Descripcion = p.Descripcion,
-                    //ProveedorId = p.ProveedorId,
+                    ProveedorId = p.ProveedorId,
                     ProveedorNombre = p.Proveedor.Nombre,
                     Costo = p.Costo,
                     Precio = p.Precio,
