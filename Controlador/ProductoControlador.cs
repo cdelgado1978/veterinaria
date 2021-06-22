@@ -70,7 +70,7 @@ namespace Veterinaria.Controlador
         {
             //if (entidad == null) throw new Exception("Entidad Invalidad");
 
-            var producto = db.Productos.Find(entidad);
+            var producto = db.Productos.Single(p => p.Id == entidad.Id);
             if (producto != null)
             {
                 db.Productos.AddOrUpdate(entidad);
@@ -81,7 +81,7 @@ namespace Veterinaria.Controlador
         public void Borrar(Producto entidad)
         {
 
-            var producto = db.Productos.Find(entidad);
+            var producto = db.Productos.Single(p => p.Id == entidad.Id);
             if (producto != null)
             {
                 producto.Inactivo = true;
