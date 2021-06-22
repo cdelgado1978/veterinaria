@@ -21,7 +21,6 @@ namespace Veterinaria.Modelo
         }
     
         public int Id { get; set; }
-        public int ID { get; set; }
         public string Nombre { get; set; }
         public int TipoAnimalId { get; set; }
         public bool Inactivo { get; set; }

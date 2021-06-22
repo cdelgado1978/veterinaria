@@ -32,7 +32,7 @@ namespace Veterinaria.Controlador
             {
                 _tipoanimal.Add(item: new TipoAnimalDto()
                 {
-                    id = t.ID,
+                    id = t.Id,
                     Nombre = t.Nombre,
 
                     Inactivo = t.Inactivo,

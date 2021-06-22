@@ -29,6 +29,6 @@ namespace Veterinaria.Modelo
     
         public virtual Cliente Cliente { get; set; }
         public virtual Empleado Empleado { get; set; }
-        public virtual Raza Producto { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

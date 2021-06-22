@@ -6,7 +6,7 @@ using Veterinaria.Modelo;
 
 
 namespace Veterinaria.Vista.Formularios.Productos
-{ 
+{
     public partial class FrmNuevoProducto : Form
     {
         private readonly ProductoControlador productosControlador;
@@ -45,7 +45,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.Close();
         }
 
-        private void NuevoProducto(Productos newprod)
+        private void NuevoProducto(Producto newprod)
         {
 
             productosControlador.Agregar(newprod);
@@ -66,7 +66,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             var _inactivo = chkBoxInactivo.Checked;
 
 
-            var _nuevoProducto = new Productos()
+            var _nuevoProducto = new Producto()
             {
                 Nombre = _nombre,
                 Descripcion = _descripcion,
@@ -79,7 +79,7 @@ namespace Veterinaria.Vista.Formularios.Productos
 
             };
 
-            NuevoProducto = (_nuevoProducto);
+            NuevoProducto(_nuevoProducto);
 
             Creado(true);
 
@@ -111,19 +111,6 @@ namespace Veterinaria.Vista.Formularios.Productos
 
         }
 
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cbTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

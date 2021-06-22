@@ -716,11 +716,11 @@
           <Property Name="ClienteID" Type="Int32" Nullable="false" />
           <Property Name="ProductoID" Type="Int32" Nullable="false" />
           <Property Name="TipoProductoID" Type="Int32" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
-          <Property Name="Descuento" Type="Decimal" />
-          <Property Name="SubTotal" Type="Decimal" />
-          <Property Name="Total" Type="Decimal" />
+          <Property Name="Descuento" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SubTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Cliente" Relationship="VeterinariaModel.FK_COTIZACION_CLIENTE" FromRole="Cotizacione" ToRole="Cliente" />
           <NavigationProperty Name="Empleado" Relationship="VeterinariaModel.FK_COTIZACION_EMPLEADO" FromRole="Cotizacione" ToRole="Empleado" />
           <NavigationProperty Name="Producto" Relationship="VeterinariaModel.FK_COTIZACION_PRODUCTO" FromRole="Cotizacione" ToRole="Producto" />
@@ -758,9 +758,9 @@
           <Property Name="TipoFacturaID" Type="Int32" Nullable="false" />
           <Property Name="EmpleadoID" Type="Int32" Nullable="false" />
           <Property Name="ClienteID" Type="Int32" Nullable="false" />
-          <Property Name="DescuentoTotal" Type="Decimal" Nullable="false" />
-          <Property Name="SubTotal" Type="Decimal" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="DescuentoTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <NavigationProperty Name="Categoria_Factura" Relationship="VeterinariaModel.FK_FACTURA_CATEGORIA_FACTURA" FromRole="Factura" ToRole="Categoria_Factura" />
           <NavigationProperty Name="Cliente" Relationship="VeterinariaModel.FK_FACTURA_CLIENTE" FromRole="Factura" ToRole="Cliente" />
           <NavigationProperty Name="Empleado" Relationship="VeterinariaModel.FK_FACTURA_EMPLEADO" FromRole="Factura" ToRole="Empleado" />
@@ -791,8 +791,8 @@
           <Property Name="TipoProductoId" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ProveedorId" Type="Int32" Nullable="false" />
-          <Property Name="Costo" Type="Decimal" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Costo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cotizaciones" Relationship="VeterinariaModel.FK_COTIZACION_PRODUCTO" FromRole="Producto" ToRole="Cotizacione" />
           <NavigationProperty Name="Proveedor" Relationship="VeterinariaModel.FK_PRODUCTO_PROVEEDOR" FromRole="Producto" ToRole="Proveedor" />
@@ -1103,11 +1103,11 @@
           <Property Name="EmpleadoID" Type="Int32" Nullable="false" />
           <Property Name="ProductoID" Type="Int32" Nullable="false" />
           <Property Name="TipoProductoId" Type="Int32" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
-          <Property Name="Descuento" Type="Decimal" Nullable="false" />
-          <Property Name="SubTotal" Type="Decimal" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <NavigationProperty Name="Factura" Relationship="VeterinariaModel.Facturas_Facturas_Detalle" FromRole="Facturas_Detalle" ToRole="Factura" />
           <Property Name="Inactivo" Type="Boolean" Nullable="false" />
         </EntityType>

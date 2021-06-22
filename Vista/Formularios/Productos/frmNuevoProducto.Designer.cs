@@ -177,7 +177,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.guna2GroupBox1.Size = new System.Drawing.Size(488, 396);
             this.guna2GroupBox1.TabIndex = 25;
             this.guna2GroupBox1.Text = "Nuevo Producto";
-            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
+            
             // 
             // txtPrecio
             // 
@@ -335,7 +335,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.cbTipoProducto.ShadowDecoration.Parent = this.cbTipoProducto;
             this.cbTipoProducto.Size = new System.Drawing.Size(278, 36);
             this.cbTipoProducto.TabIndex = 3;
-            this.cbTipoProducto.SelectedIndexChanged += new System.EventHandler(this.cbTipoProducto_SelectedIndexChanged);
+            
             // 
             // chkBoxInactivo
             // 
@@ -362,7 +362,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 51);
             this.panel1.TabIndex = 26;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
             // 
             // btnCancelar
             // 

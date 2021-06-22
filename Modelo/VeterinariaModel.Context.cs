@@ -34,7 +34,7 @@ namespace Veterinaria.Modelo
         public virtual DbSet<Empleado> Empleados { get; set; }
         public virtual DbSet<Factura> Facturas { get; set; }
         public virtual DbSet<Historial_Recetas> Historial_Recetas { get; set; }
-        public virtual DbSet<Raza> Productos { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Proveedor> Proveedors { get; set; }
         public virtual DbSet<Raza> Razas { get; set; }
         public virtual DbSet<Receta> Recetas { get; set; }

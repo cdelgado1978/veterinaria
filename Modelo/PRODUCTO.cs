@@ -12,10 +12,10 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Raza
+    public partial class Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Raza()
+        public Producto()
         {
             this.Cotizaciones = new HashSet<Cotizacione>();
         }
