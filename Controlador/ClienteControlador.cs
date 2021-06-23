@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veterinaria.Modelo;
 using Veterinaria.Modelo.DTO;
 
@@ -41,7 +38,35 @@ namespace Veterinaria.Controlador
                     Direccion= c.Direccion,
                     Telefono= c.Telefono,
                     Inactivo = c.Inactivo,
-                    MunicipioId = c.MunicipioId
+                    MunicipioId = c.MunicipioId,
+                    MunicipioNombre = c.Municipio.Nombre,
+                    ProvinciaNombre = c.Municipio.Provincia.Nombre
+
+                });
+            });
+
+            return _cliente;
+        }
+        public List<ClienteDTO> ObtenerTodos(string texto)
+        {
+            var _result = db.Clientes.Where(c => c.Nombre.Contains(texto)).ToList();
+
+            List<ClienteDTO> _cliente = new List<ClienteDTO>();
+
+            _result.ForEach(c =>
+            {
+                _cliente.Add(new ClienteDTO()
+                {
+                    Id = c.ID,
+                    Nombre = c.Nombre,
+                    Apellido = c.Apellidos,
+                    Cedula = c.Cedula,
+                    Direccion = c.Direccion,
+                    Telefono = c.Telefono,
+                    Inactivo = c.Inactivo,
+                    MunicipioId = c.MunicipioId,
+                    MunicipioNombre = c.Municipio.Nombre,
+                    ProvinciaNombre = c.Municipio.Provincia.Nombre
 
                 });
             });
@@ -67,7 +92,7 @@ namespace Veterinaria.Controlador
         {
             //if (entidad == null) throw new Exception("Entidad Invalidad");
 
-            var cliente = db.Clientes.Find(entidad);
+            var cliente = db.Clientes.Single(c => c.ID == entidad.ID);
             if (cliente != null)
             {
                 db.Clientes.AddOrUpdate(entidad);
@@ -79,7 +104,7 @@ namespace Veterinaria.Controlador
         {
             //if (entidad == null) throw new Exception("Entidad Invalidad");
 
-            var cliente = db.Clientes.Find(entidad);
+            var cliente = db.Clientes.Single(c => c.ID == entidad.ID);
             if (cliente != null)
             {
                 cliente.Inactivo = true;

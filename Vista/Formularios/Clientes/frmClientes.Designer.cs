@@ -31,16 +31,18 @@ namespace Veterinaria.Vista.Formularios.Clientes
         {
             System.Windows.Forms.Label lblProvincia;
             System.Windows.Forms.Label lblMunicipio;
-            System.Windows.Forms.Label precioLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label costoLabel;
-            System.Windows.Forms.Label cantidadLabel;
+            System.Windows.Forms.Label lblTelefono;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.PanelRoot = new System.Windows.Forms.Panel();
             this.panelContenido = new System.Windows.Forms.Panel();
             this.PanelForm = new System.Windows.Forms.Panel();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtCosto = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.chkBoxInactivo = new System.Windows.Forms.CheckBox();
             this.cbMunicipio = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -51,18 +53,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.btnGuardar = new System.Windows.Forms.Button();
             this.PanelDetalle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dbGridDetalle = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoProductoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProveedorNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProveedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgGridDetalle = new System.Windows.Forms.DataGridView();
             this.PanelTituloDetalle = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -72,24 +63,112 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.PanelControlBox = new System.Windows.Forms.Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProvinciaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MunicipioNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MunicipioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lblProvincia = new System.Windows.Forms.Label();
             lblMunicipio = new System.Windows.Forms.Label();
-            precioLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             costoLabel = new System.Windows.Forms.Label();
-            cantidadLabel = new System.Windows.Forms.Label();
+            lblTelefono = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             this.PanelRoot.SuspendLayout();
             this.panelContenido.SuspendLayout();
             this.PanelForm.SuspendLayout();
             this.Panel_botones.SuspendLayout();
             this.PanelDetalle.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGridDetalle)).BeginInit();
             this.PanelTituloDetalle.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.PanelControlBox.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblProvincia
+            // 
+            lblProvincia.AutoSize = true;
+            lblProvincia.BackColor = System.Drawing.Color.Transparent;
+            lblProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblProvincia.Location = new System.Drawing.Point(57, 215);
+            lblProvincia.Name = "lblProvincia";
+            lblProvincia.Size = new System.Drawing.Size(80, 17);
+            lblProvincia.TabIndex = 47;
+            lblProvincia.Text = "Provincia:";
+            // 
+            // lblMunicipio
+            // 
+            lblMunicipio.AutoSize = true;
+            lblMunicipio.BackColor = System.Drawing.Color.Transparent;
+            lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblMunicipio.Location = new System.Drawing.Point(57, 255);
+            lblMunicipio.Name = "lblMunicipio";
+            lblMunicipio.Size = new System.Drawing.Size(81, 17);
+            lblMunicipio.TabIndex = 46;
+            lblMunicipio.Text = "Municipio:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.BackColor = System.Drawing.Color.Transparent;
+            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.Location = new System.Drawing.Point(69, 35);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(69, 17);
+            nombreLabel.TabIndex = 44;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // costoLabel
+            // 
+            costoLabel.AutoSize = true;
+            costoLabel.BackColor = System.Drawing.Color.Transparent;
+            costoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            costoLabel.Location = new System.Drawing.Point(57, 111);
+            costoLabel.Name = "costoLabel";
+            costoLabel.Size = new System.Drawing.Size(81, 17);
+            costoLabel.TabIndex = 41;
+            costoLabel.Text = "Direccion:";
+            // 
+            // lblTelefono
+            // 
+            lblTelefono.AutoSize = true;
+            lblTelefono.BackColor = System.Drawing.Color.Transparent;
+            lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblTelefono.Location = new System.Drawing.Point(61, 172);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new System.Drawing.Size(77, 17);
+            lblTelefono.TabIndex = 40;
+            lblTelefono.Text = "Telefono:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(395, 35);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(79, 17);
+            label2.TabIndex = 49;
+            label2.Text = "Apellidos:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = System.Drawing.Color.Transparent;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(75, 72);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(63, 17);
+            label3.TabIndex = 51;
+            label3.Text = "Cedula:";
             // 
             // PanelRoot
             // 
@@ -116,113 +195,82 @@ namespace Veterinaria.Vista.Formularios.Clientes
             // 
             // PanelForm
             // 
-            this.PanelForm.Controls.Add(this.txtCantidad);
-            this.PanelForm.Controls.Add(this.txtPrecio);
+            this.PanelForm.Controls.Add(label3);
+            this.PanelForm.Controls.Add(this.txtCedula);
+            this.PanelForm.Controls.Add(label2);
+            this.PanelForm.Controls.Add(this.txtApellidos);
+            this.PanelForm.Controls.Add(this.txtTelefono);
             this.PanelForm.Controls.Add(lblProvincia);
-            this.PanelForm.Controls.Add(this.txtCosto);
+            this.PanelForm.Controls.Add(this.txtDireccion);
             this.PanelForm.Controls.Add(lblMunicipio);
-            this.PanelForm.Controls.Add(precioLabel);
             this.PanelForm.Controls.Add(nombreLabel);
             this.PanelForm.Controls.Add(this.txtNombre);
             this.PanelForm.Controls.Add(this.chkBoxInactivo);
             this.PanelForm.Controls.Add(this.cbMunicipio);
             this.PanelForm.Controls.Add(this.cbProvincia);
             this.PanelForm.Controls.Add(costoLabel);
-            this.PanelForm.Controls.Add(cantidadLabel);
+            this.PanelForm.Controls.Add(lblTelefono);
             this.PanelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelForm.Enabled = false;
             this.PanelForm.Location = new System.Drawing.Point(0, 0);
             this.PanelForm.Name = "PanelForm";
             this.PanelForm.Size = new System.Drawing.Size(864, 382);
             this.PanelForm.TabIndex = 48;
-            this.PanelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelForm_Paint);
             // 
-            // txtCantidad
+            // txtCedula
             // 
-            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCantidad.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(138, 260);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(133, 27);
-            this.txtCantidad.TabIndex = 39;
+            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCedula.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCedula.Location = new System.Drawing.Point(140, 62);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(227, 27);
+            this.txtCedula.TabIndex = 50;
             // 
-            // txtPrecio
+            // txtApellidos
             // 
-            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrecio.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(379, 226);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(128, 27);
-            this.txtPrecio.TabIndex = 38;
+            this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellidos.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.Location = new System.Drawing.Point(476, 25);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(227, 27);
+            this.txtApellidos.TabIndex = 48;
             // 
-            // lblProvincia
+            // txtTelefono
             // 
-            lblProvincia.AutoSize = true;
-            lblProvincia.BackColor = System.Drawing.Color.Transparent;
-            lblProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblProvincia.Location = new System.Drawing.Point(23, 160);
-            lblProvincia.Name = "lblProvincia";
-            lblProvincia.Size = new System.Drawing.Size(80, 17);
-            lblProvincia.TabIndex = 47;
-            lblProvincia.Text = "Provincia:";
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefono.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(140, 162);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(227, 27);
+            this.txtTelefono.TabIndex = 39;
             // 
-            // txtCosto
+            // txtDireccion
             // 
-            this.txtCosto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCosto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCosto.Location = new System.Drawing.Point(138, 226);
-            this.txtCosto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(133, 27);
-            this.txtCosto.TabIndex = 37;
-            // 
-            // lblMunicipio
-            // 
-            lblMunicipio.AutoSize = true;
-            lblMunicipio.BackColor = System.Drawing.Color.Transparent;
-            lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblMunicipio.Location = new System.Drawing.Point(50, 202);
-            lblMunicipio.Name = "lblMunicipio";
-            lblMunicipio.Size = new System.Drawing.Size(81, 17);
-            lblMunicipio.TabIndex = 46;
-            lblMunicipio.Text = "Municipio:";
-            // 
-            // precioLabel
-            // 
-            precioLabel.AutoSize = true;
-            precioLabel.BackColor = System.Drawing.Color.Transparent;
-            precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precioLabel.Location = new System.Drawing.Point(320, 236);
-            precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(59, 17);
-            precioLabel.TabIndex = 45;
-            precioLabel.Text = "Precio:";
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.BackColor = System.Drawing.Color.Transparent;
-            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(69, 41);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(69, 17);
-            nombreLabel.TabIndex = 44;
-            nombreLabel.Text = "Nombre:";
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Location = new System.Drawing.Point(140, 99);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(563, 53);
+            this.txtDireccion.TabIndex = 37;
             // 
             // txtNombre
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(138, 31);
+            this.txtNombre.Location = new System.Drawing.Point(140, 25);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(371, 27);
+            this.txtNombre.Size = new System.Drawing.Size(227, 27);
             this.txtNombre.TabIndex = 33;
             // 
             // chkBoxInactivo
@@ -230,10 +278,10 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.chkBoxInactivo.BackColor = System.Drawing.Color.Transparent;
             this.chkBoxInactivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkBoxInactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBoxInactivo.Location = new System.Drawing.Point(403, 260);
+            this.chkBoxInactivo.Location = new System.Drawing.Point(405, 276);
             this.chkBoxInactivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkBoxInactivo.Name = "chkBoxInactivo";
-            this.chkBoxInactivo.Size = new System.Drawing.Size(104, 25);
+            this.chkBoxInactivo.Size = new System.Drawing.Size(104, 23);
             this.chkBoxInactivo.TabIndex = 43;
             this.chkBoxInactivo.Text = "Inactivo";
             this.chkBoxInactivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -252,7 +300,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.cbMunicipio.HoverState.Parent = this.cbMunicipio;
             this.cbMunicipio.ItemHeight = 30;
             this.cbMunicipio.ItemsAppearance.Parent = this.cbMunicipio;
-            this.cbMunicipio.Location = new System.Drawing.Point(138, 183);
+            this.cbMunicipio.Location = new System.Drawing.Point(140, 236);
             this.cbMunicipio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMunicipio.Name = "cbMunicipio";
             this.cbMunicipio.ShadowDecoration.Parent = this.cbMunicipio;
@@ -272,34 +320,13 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.cbProvincia.HoverState.Parent = this.cbProvincia;
             this.cbProvincia.ItemHeight = 30;
             this.cbProvincia.ItemsAppearance.Parent = this.cbProvincia;
-            this.cbProvincia.Location = new System.Drawing.Point(138, 140);
+            this.cbProvincia.Location = new System.Drawing.Point(140, 196);
             this.cbProvincia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbProvincia.Name = "cbProvincia";
             this.cbProvincia.ShadowDecoration.Parent = this.cbProvincia;
             this.cbProvincia.Size = new System.Drawing.Size(369, 36);
             this.cbProvincia.TabIndex = 35;
-            // 
-            // costoLabel
-            // 
-            costoLabel.AutoSize = true;
-            costoLabel.BackColor = System.Drawing.Color.Transparent;
-            costoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoLabel.Location = new System.Drawing.Point(84, 236);
-            costoLabel.Name = "costoLabel";
-            costoLabel.Size = new System.Drawing.Size(54, 17);
-            costoLabel.TabIndex = 41;
-            costoLabel.Text = "Costo:";
-            // 
-            // cantidadLabel
-            // 
-            cantidadLabel.AutoSize = true;
-            cantidadLabel.BackColor = System.Drawing.Color.Transparent;
-            cantidadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cantidadLabel.Location = new System.Drawing.Point(61, 271);
-            cantidadLabel.Name = "cantidadLabel";
-            cantidadLabel.Size = new System.Drawing.Size(77, 17);
-            cantidadLabel.TabIndex = 40;
-            cantidadLabel.Text = "Cantidad:";
+            this.cbProvincia.SelectedIndexChanged += new System.EventHandler(this.cbProvincia_SelectedIndexChanged);
             // 
             // Panel_botones
             // 
@@ -323,6 +350,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -335,6 +363,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -347,6 +376,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // PanelDetalle
             // 
@@ -360,143 +390,40 @@ namespace Veterinaria.Vista.Formularios.Clientes
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dbGridDetalle);
+            this.panel2.Controls.Add(this.dgGridDetalle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1040, 205);
             this.panel2.TabIndex = 2;
             // 
-            // dbGridDetalle
+            // dgGridDetalle
             // 
-            this.dbGridDetalle.AllowUserToAddRows = false;
-            this.dbGridDetalle.AllowUserToDeleteRows = false;
-            this.dbGridDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.dbGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGridDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgGridDetalle.AllowUserToAddRows = false;
+            this.dgGridDetalle.AllowUserToDeleteRows = false;
+            this.dgGridDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
+            this.dgGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgGridDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Inactivo,
             this.Nombre,
-            this.TipoProductoNombre,
-            this.Descripcion,
-            this.ProveedorNombre,
-            this.Costo,
-            this.Precio,
-            this.Cantidad,
-            this.TipoProductoId,
-            this.ProveedorId});
-            this.dbGridDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dbGridDetalle.Location = new System.Drawing.Point(0, 0);
-            this.dbGridDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dbGridDetalle.Name = "dbGridDetalle";
-            this.dbGridDetalle.ReadOnly = true;
-            this.dbGridDetalle.RowHeadersWidth = 51;
-            this.dbGridDetalle.RowTemplate.Height = 24;
-            this.dbGridDetalle.Size = new System.Drawing.Size(1040, 205);
-            this.dbGridDetalle.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Inactivo
-            // 
-            this.Inactivo.DataPropertyName = "Inactivo";
-            this.Inactivo.HeaderText = "Inactivo";
-            this.Inactivo.MinimumWidth = 6;
-            this.Inactivo.Name = "Inactivo";
-            this.Inactivo.ReadOnly = true;
-            this.Inactivo.Visible = false;
-            this.Inactivo.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
-            // 
-            // TipoProductoNombre
-            // 
-            this.TipoProductoNombre.DataPropertyName = "TipoProductoNombre";
-            this.TipoProductoNombre.HeaderText = "Tipo Producto";
-            this.TipoProductoNombre.MinimumWidth = 6;
-            this.TipoProductoNombre.Name = "TipoProductoNombre";
-            this.TipoProductoNombre.ReadOnly = true;
-            this.TipoProductoNombre.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 125;
-            // 
-            // ProveedorNombre
-            // 
-            this.ProveedorNombre.DataPropertyName = "ProveedorNombre";
-            this.ProveedorNombre.HeaderText = "Proveedor";
-            this.ProveedorNombre.MinimumWidth = 6;
-            this.ProveedorNombre.Name = "ProveedorNombre";
-            this.ProveedorNombre.ReadOnly = true;
-            this.ProveedorNombre.Width = 125;
-            // 
-            // Costo
-            // 
-            this.Costo.DataPropertyName = "Costo";
-            this.Costo.HeaderText = "Costo";
-            this.Costo.MinimumWidth = 6;
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            this.Costo.Width = 125;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 125;
-            // 
-            // TipoProductoId
-            // 
-            this.TipoProductoId.DataPropertyName = "TipoProductoId";
-            this.TipoProductoId.HeaderText = "TipoProductoId";
-            this.TipoProductoId.MinimumWidth = 6;
-            this.TipoProductoId.Name = "TipoProductoId";
-            this.TipoProductoId.ReadOnly = true;
-            this.TipoProductoId.Visible = false;
-            this.TipoProductoId.Width = 125;
-            // 
-            // ProveedorId
-            // 
-            this.ProveedorId.DataPropertyName = "ProveedorId";
-            this.ProveedorId.HeaderText = "ProveedorId";
-            this.ProveedorId.MinimumWidth = 6;
-            this.ProveedorId.Name = "ProveedorId";
-            this.ProveedorId.ReadOnly = true;
-            this.ProveedorId.Visible = false;
-            this.ProveedorId.Width = 125;
+            this.Apellidos,
+            this.Cedula,
+            this.Direccion,
+            this.Telefono,
+            this.ProvinciaNombre,
+            this.MunicipioNombre,
+            this.Inactivo,
+            this.MunicipioId});
+            this.dgGridDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgGridDetalle.Location = new System.Drawing.Point(0, 0);
+            this.dgGridDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgGridDetalle.Name = "dgGridDetalle";
+            this.dgGridDetalle.ReadOnly = true;
+            this.dgGridDetalle.RowHeadersWidth = 51;
+            this.dgGridDetalle.RowTemplate.Height = 24;
+            this.dgGridDetalle.Size = new System.Drawing.Size(1040, 205);
+            this.dgGridDetalle.TabIndex = 1;
+            this.dgGridDetalle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGridDetalle_CellDoubleClick);
             // 
             // PanelTituloDetalle
             // 
@@ -537,6 +464,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(219, 30);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // lblTituloDetalle
             // 
@@ -595,6 +523,99 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 125;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.DataPropertyName = "Apellido";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.MinimumWidth = 6;
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 125;
+            // 
+            // Cedula
+            // 
+            this.Cedula.DataPropertyName = "Cedula";
+            this.Cedula.HeaderText = "Cedula";
+            this.Cedula.MinimumWidth = 6;
+            this.Cedula.Name = "Cedula";
+            this.Cedula.ReadOnly = true;
+            this.Cedula.Width = 125;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.MinimumWidth = 6;
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            this.Direccion.Width = 125;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            this.Telefono.Width = 125;
+            // 
+            // ProvinciaNombre
+            // 
+            this.ProvinciaNombre.DataPropertyName = "ProvinciaNombre";
+            this.ProvinciaNombre.HeaderText = "Provincia";
+            this.ProvinciaNombre.MinimumWidth = 6;
+            this.ProvinciaNombre.Name = "ProvinciaNombre";
+            this.ProvinciaNombre.ReadOnly = true;
+            this.ProvinciaNombre.Width = 125;
+            // 
+            // MunicipioNombre
+            // 
+            this.MunicipioNombre.DataPropertyName = "MunicipioNombre";
+            this.MunicipioNombre.HeaderText = "Municipio";
+            this.MunicipioNombre.MinimumWidth = 6;
+            this.MunicipioNombre.Name = "MunicipioNombre";
+            this.MunicipioNombre.ReadOnly = true;
+            this.MunicipioNombre.Width = 125;
+            // 
+            // Inactivo
+            // 
+            this.Inactivo.DataPropertyName = "Inactivo";
+            this.Inactivo.HeaderText = "Inactivo";
+            this.Inactivo.MinimumWidth = 6;
+            this.Inactivo.Name = "Inactivo";
+            this.Inactivo.ReadOnly = true;
+            this.Inactivo.Visible = false;
+            this.Inactivo.Width = 125;
+            // 
+            // MunicipioId
+            // 
+            this.MunicipioId.DataPropertyName = "MunicipioId";
+            this.MunicipioId.HeaderText = "MunicipioId";
+            this.MunicipioId.MinimumWidth = 6;
+            this.MunicipioId.Name = "MunicipioId";
+            this.MunicipioId.ReadOnly = true;
+            this.MunicipioId.Visible = false;
+            this.MunicipioId.Width = 125;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -610,7 +631,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             this.Panel_botones.ResumeLayout(false);
             this.PanelDetalle.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGridDetalle)).EndInit();
             this.PanelTituloDetalle.ResumeLayout(false);
             this.PanelTituloDetalle.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -627,9 +648,8 @@ namespace Veterinaria.Vista.Formularios.Clientes
         private System.Windows.Forms.Panel PanelRoot;
         private System.Windows.Forms.Panel panelContenido;
         private System.Windows.Forms.Panel PanelForm;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtCosto;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.CheckBox chkBoxInactivo;
         private Guna.UI2.WinForms.Guna2ComboBox cbMunicipio;
@@ -640,18 +660,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Panel PanelDetalle;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dbGridDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Inactivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoProductoNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoProductoId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorId;
+        private System.Windows.Forms.DataGridView dgGridDetalle;
         private System.Windows.Forms.Panel PanelTituloDetalle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblBuscar;
@@ -661,5 +670,17 @@ namespace Veterinaria.Vista.Formularios.Clientes
         private System.Windows.Forms.Panel PanelControlBox;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProvinciaNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MunicipioNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inactivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MunicipioId;
     }
 }

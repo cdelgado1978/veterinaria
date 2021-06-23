@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using Veterinaria.Formularios.Animales;
+using Veterinaria.Vista.Formularios.Clientes;
 using Veterinaria.Vista.Formularios.Demograficos;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
@@ -60,6 +61,7 @@ namespace Veterinaria.Vista
         private void btnClientes_Click(object sender, EventArgs e)
         {
             OcultaSubMenu();
+            AbrirFormularios<frmClientes>();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)

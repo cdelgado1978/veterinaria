@@ -32,11 +32,6 @@ namespace Veterinaria.Vista.Formularios.Demograficos
             dgMunicipios.DataSource = municipioControlador.ObtenerTodos();
         }
 
-        private void FrmRaza_Load(object sender, EventArgs e)
-        {
-            ActualizaDBGrid();
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
@@ -75,7 +70,7 @@ namespace Veterinaria.Vista.Formularios.Demograficos
 
                 };
 
-                NuevaRaza(_nuevaMunicipio);
+                NuevoMunicipio(_nuevaMunicipio);
             }
             else
             {
@@ -88,7 +83,7 @@ namespace Veterinaria.Vista.Formularios.Demograficos
 
                 };
 
-                EditarRaza(_municipio);
+                EditarMunicipio(_municipio);
             }
 
             btnEditar.Enabled = false;
@@ -101,7 +96,7 @@ namespace Veterinaria.Vista.Formularios.Demograficos
             PanelForm.Enabled = false;
         }
 
-        private void NuevaRaza(Municipio municipio)
+        private void NuevoMunicipio(Municipio municipio)
         {
 
             municipioControlador.Agregar(municipio);
@@ -109,7 +104,7 @@ namespace Veterinaria.Vista.Formularios.Demograficos
 
         }
 
-        private void EditarRaza(Municipio municipio)
+        private void EditarMunicipio (Municipio municipio)
         {
             municipioControlador.Editar(municipio);
         }

@@ -11,6 +11,7 @@
         public bool Inactivo { get;  set; }
 
         public int MunicipioId { get; set; }
-
+        public string MunicipioNombre { get; set; }
+        public string ProvinciaNombre { get; set; }
     }
 }
