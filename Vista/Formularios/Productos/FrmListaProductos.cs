@@ -47,12 +47,7 @@ namespace Veterinaria.Vista.Formularios.Productos
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            LimpiarFormulario();
-            Agregando = true;
-
-            btnEditar.Enabled = false;
-            btnGuardar.Enabled = true;
-            PanelForm.Enabled = true;
+            
         }
 
         private void LimpiarFormulario()
@@ -200,6 +195,16 @@ namespace Veterinaria.Vista.Formularios.Productos
 
             dbGridDetalle.DataSource = _result;
 
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+            Agregando = true;
+
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = true;
+            PanelForm.Enabled = true;
         }
     }
 }
