@@ -1,103 +1,228 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
-using Veterinaria.Formularios.Animales;
 using Veterinaria.Modelo;
-
-
-
-
-
-
-
+using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Formularios.Animales
 {
     public partial class FrmListaAnimales : Form
     {
-        
+
 
         private AnimalControlador animalControlador;
+        private readonly TipoAnimalControlador tipoAnimalControlador;
+        private readonly RazaControlador razaControlador;
+        private readonly ClienteControlador clienteControlador;
+        private bool Agregando;
+        private int _animalId;
 
         public FrmListaAnimales()
         {
             InitializeComponent();
 
             animalControlador = new AnimalControlador();
-        }
+            tipoAnimalControlador = new TipoAnimalControlador();
+            razaControlador = new RazaControlador();
+            clienteControlador = new ClienteControlador();
 
-        
-
-        private void panelTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FrmListaAnimales_Load(object sender, EventArgs e)
-        {
             ActualizaDBGrid();
+            CargaTipoAnimal();
+            CargaRazaAnimal();
+            CargaClientes();
+
         }
 
         public void ActualizaDBGrid()
         {
 
-            dgListaProductos.DataSource = animalControlador.ObtenerTodos();
+            dgGridDetalle.DataSource = animalControlador.ObtenerTodos();
 
         }
 
-        private void btnNuevoAnimal_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            AbrirPopup<FrmNuevoAnimal>();
+            LimpiarFormulario();
+            Agregando = true;
+
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = true;
+
+            PanelForm.Enabled = true;
         }
 
-        public void AbrirPopup<T>() where T : Form, new()
+        private void LimpiarFormulario()
         {
-            Form formulario;
+            txtNombre.Text = "";
+            txtEdad.Text = "";
+            txtDireccion.Text = "";
+            cbTipoAnimal.Text = "";
+            cbRaza.Text = "";
+            cbClientes.Text = "";
+            chkBoxInactivo.Checked = false;
 
-            formulario = panelContenido.Controls.OfType<T>().FirstOrDefault();
+        }
 
-            if (formulario == null)
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            var _nombre = txtNombre.Text;
+            var _edad = int.Parse(txtEdad.Text);
+            var _direccion = txtDireccion.Text;
+
+            var _inactivo = chkBoxInactivo.Checked;
+            var _tipoAnimalId = int.Parse(cbTipoAnimal.SelectedValue.ToString());
+            var _tipoRazaId = int.Parse(cbRaza.SelectedValue.ToString());
+            var _clienteId = int.Parse(cbClientes.SelectedValue.ToString());
+
+
+            if (Agregando)
             {
-                formulario = new T();
-                formulario.TopLevel = false;
 
-
-                formulario.StartPosition = FormStartPosition.CenterParent;
-
-                panelContenido.Controls.Add(formulario);
-                panelContenido.Tag = formulario;
-                formulario.Show();
-                formulario.BringToFront();
-
-                var _type = formulario.GetType();
-
-                if (_type.Name == "frmNuevoAnimal")
+                var _nuevoAnimal = new Animale()
                 {
+                    Nombre = _nombre,
+                    Edad = _edad,
+                    Direccion = _direccion,
+                    RazaID = _tipoRazaId,
+                    TipoID = _tipoAnimalId,
+                    ClienteId = _clienteId,
+                    Inactivo = _inactivo
 
-                    var frmNuevo = formulario as FrmNuevoAnimal;
+                };
 
-                    frmNuevo.Creado += (bool Creado) =>
-                    {
-                        if (Creado)
-                        {
-                            ActualizaDBGrid();
-                        }
-                    };
+                NuevoAnimal(_nuevoAnimal);
+            }
+            else
+            {
+                var _animal = new Animale()
+                {
+                    ID = _clienteId,
+                    Nombre = _nombre,
+                    Edad = _edad,
+                    Direccion = _direccion,
+                    RazaID = _tipoRazaId,
+                    TipoID = _tipoAnimalId,
+                    ClienteId = _clienteId,
+                    Inactivo = _inactivo
+                };
 
-                }
+                EditarAnimal(_animal);
+            }
+
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = false;
+
+            LimpiarFormulario();
+
+            ActualizaDBGrid();
+
+            PanelForm.Enabled = false;
+        }
+
+        private void NuevoAnimal(Animale cte)
+        {
+
+            animalControlador.Agregar(cte);
+
+
+        }
+
+        private void EditarAnimal(Animale cte)
+        {
+            animalControlador.Editar(cte);
+        }
+
+        private void dgGridDetalle_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var _selectedRow = e.RowIndex;
+
+            _animalId = int.Parse(dgGridDetalle.Rows[_selectedRow].Cells["Id"].Value.ToString());
+
+            txtNombre.Text = dgGridDetalle.Rows[_selectedRow].Cells["Nombre"].Value.ToString();
+            txtEdad.Text = dgGridDetalle.Rows[_selectedRow].Cells["Edad"].Value.ToString();
+            txtDireccion.Text = dgGridDetalle.Rows[_selectedRow].Cells["Direccion"].Value.ToString();
+
+            cbClientes.Text = dgGridDetalle.Rows[_selectedRow].Cells["ClienteNombre"].Value.ToString();
+            cbTipoAnimal.Text = dgGridDetalle.Rows[_selectedRow].Cells["TipoAnimalNombre"].Value.ToString();
+            cbRaza.Text = dgGridDetalle.Rows[_selectedRow].Cells["RazaNombre"].Value.ToString();
+            chkBoxInactivo.Checked = bool.Parse(dgGridDetalle.Rows[_selectedRow].Cells["Inactivo"].Value.ToString());
+
+            btnEditar.Enabled = true;
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            PanelForm.Enabled = true;
+            Agregando = false;
+
+            btnGuardar.Enabled = true;
+            PanelForm.Enabled = true;
+
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            var _valor = txtBuscar.Text;
+
+            var _result = animalControlador.ObtenerTodos(_valor);
+
+            dgGridDetalle.DataSource = _result;
+
+        }
+
+        private void cbTipoAnimal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int _tipoAnimalId = 0;
+
+            var _result = int.TryParse(cbTipoAnimal.SelectedValue.ToString(), out _tipoAnimalId);
+
+            if (_result)
+                CargaRazaAnimal(_tipoAnimalId);
+
+        }
+
+        public void CargaRazaAnimal(int tipoAnimalId = 0)
+        {
+
+
+            IList<RazasDto> result;
+
+            if (tipoAnimalId > 0)
+            {
+                result = razaControlador.ObtenerTodos().Where(p => p.TipoAnimalId == tipoAnimalId).OrderBy(o => o.Nombre).ToList();
 
             }
             else
             {
-                formulario.BringToFront();
+                result = razaControlador.ObtenerTodos().OrderBy(o => o.Nombre).ToList();
             }
+
+            cbRaza.DataSource = result;
+            cbRaza.DisplayMember = "Nombre";
+            cbRaza.ValueMember = "Id";
 
         }
 
-        private void dgListaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void CargaTipoAnimal()
         {
+            var result = tipoAnimalControlador.ObtenerTodos();
 
+            cbTipoAnimal.DataSource = result;
+            cbTipoAnimal.DisplayMember = "Nombre";
+            cbTipoAnimal.ValueMember = "Id";
+        }
+
+        public void CargaClientes()
+        {
+            var result = clienteControlador.ObtenerTodos();
+
+            cbClientes.DataSource = result;
+            cbClientes.DisplayMember = "NombreCompleto";
+            cbClientes.ValueMember = "Id";
         }
     }
 }

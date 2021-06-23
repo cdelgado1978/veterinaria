@@ -74,12 +74,6 @@
     <Compile Include="Formularios\Animales\FrmListaAnimales.Designer.cs">
       <DependentUpon>FrmListaAnimales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Animales\FrmNuevoAnimal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Animales\FrmNuevoAnimal.Designer.cs">
-      <DependentUpon>FrmNuevoAnimal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Clientes\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +132,6 @@
     </Compile>
     <EmbeddedResource Include="Formularios\Animales\FrmListaAnimales.resx">
       <DependentUpon>FrmListaAnimales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Animales\FrmNuevoAnimal.resx">
-      <DependentUpon>FrmNuevoAnimal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>

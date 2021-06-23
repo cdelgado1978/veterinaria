@@ -13,5 +13,6 @@
         public int MunicipioId { get; set; }
         public string MunicipioNombre { get; set; }
         public string ProvinciaNombre { get; set; }
+        public string NombreCompleto { get; set; }
     }
 }

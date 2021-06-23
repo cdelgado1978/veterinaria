@@ -94,7 +94,8 @@ namespace Veterinaria.Vista
 
         private void btnAnimalesMenu_Click(object sender, EventArgs e)
         {
-            OcultaSubMenu();
+            AbrirFormularios<FrmListaAnimales>();
+            //OcultaSubMenu();
         }
 
 
