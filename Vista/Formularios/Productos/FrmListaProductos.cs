@@ -52,6 +52,7 @@ namespace Veterinaria.Vista.Formularios.Productos
 
             btnEditar.Enabled = false;
             btnGuardar.Enabled = true;
+            PanelForm.Enabled = true;
         }
 
         private void LimpiarFormulario()
@@ -124,6 +125,8 @@ namespace Veterinaria.Vista.Formularios.Productos
             LimpiarFormulario();
 
             ActualizaDBGrid();
+
+            PanelForm.Enabled = false;
         }
 
         private void NuevoProducto(Producto newprod)
@@ -186,7 +189,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             Agregando = false;
 
             btnGuardar.Enabled = true;
-
+            PanelForm.Enabled = true;
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)

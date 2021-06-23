@@ -35,7 +35,30 @@ namespace Veterinaria.Controlador
                     Nombre = c.Nombre,
                     Direccion = c.Dirección,
                     Telefono = c.Telefono,
-                    TipoProveedorID = c.TipoProveedorID,
+                    //TipoProveedorID = c.TipoProveedorID,
+                    Inactivo = c.Inactivo
+
+                });
+            });
+
+            return _proveedores;
+        }
+
+        public List<ProveedorDto> Obtener(string texto)
+        {
+            var _result = db.Proveedors.Where(p => p.Nombre.Contains(texto)).ToList();
+
+            List<ProveedorDto> _proveedores = new List<ProveedorDto>();
+
+            _result.ForEach(c =>
+            {
+                _proveedores.Add(new ProveedorDto()
+                {
+                    ID = c.ID,
+                    Nombre = c.Nombre,
+                    Direccion = c.Dirección,
+                    Telefono = c.Telefono,
+                    //TipoProveedorID = c.TipoProveedorID,
                     Inactivo = c.Inactivo
 
                 });
@@ -59,7 +82,7 @@ namespace Veterinaria.Controlador
 
         public void Borrar(Proveedor entidad)
         {
-            var proveedor = db.Proveedors.Find(entidad);
+            var proveedor = db.Proveedors.Single(p => p.ID == entidad.ID);
             if (proveedor != null)
             {
                 proveedor.Inactivo = true;
@@ -71,7 +94,7 @@ namespace Veterinaria.Controlador
 
         public void Editar(Proveedor entidad)
         {
-            var proveedor = db.Proveedors.Find(entidad);
+            var proveedor = db.Proveedors.Single(p => p.ID == entidad.ID);
             if (proveedor != null)
             {
                 db.Proveedors.AddOrUpdate(entidad);
