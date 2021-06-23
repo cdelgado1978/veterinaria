@@ -80,17 +80,11 @@
     <Compile Include="Formularios\Animales\FrmNuevoAnimal.Designer.cs">
       <DependentUpon>FrmNuevoAnimal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Productos\FrmListaProductos.cs">
+    <Compile Include="Formularios\Productos\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Productos\FrmListaProductos.Designer.cs">
-      <DependentUpon>FrmListaProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Proveedores\frmNuevoProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Proveedores\frmNuevoProveedor.Designer.cs">
-      <DependentUpon>frmNuevoProveedor.cs</DependentUpon>
+    <Compile Include="Formularios\Productos\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Proveedores\frmProveedores.cs">
       <SubType>Form</SubType>
@@ -130,11 +124,8 @@
     <EmbeddedResource Include="Formularios\Animales\FrmNuevoAnimal.resx">
       <DependentUpon>FrmNuevoAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Productos\FrmListaProductos.resx">
-      <DependentUpon>FrmListaProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Proveedores\frmNuevoProveedor.resx">
-      <DependentUpon>frmNuevoProveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Productos\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>

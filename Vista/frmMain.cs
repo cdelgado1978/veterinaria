@@ -52,7 +52,7 @@ namespace Veterinaria.Vista
         {
             OcultaSubMenu();
 
-            AbrirFormularios<FrmListaProductos>();
+            AbrirFormularios<frmProductos>();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
