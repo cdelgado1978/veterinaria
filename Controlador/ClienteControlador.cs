@@ -34,6 +34,7 @@ namespace Veterinaria.Controlador
                     Id = c.ID,
                     Nombre = c.Nombre,
                     Apellido= c.Apellidos,
+                    NombreCompleto = $"{c.Nombre} {c.Apellidos}",
                     Cedula= c.Cedula,
                     Direccion= c.Direccion,
                     Telefono= c.Telefono,

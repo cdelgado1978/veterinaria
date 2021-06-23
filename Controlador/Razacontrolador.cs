@@ -35,6 +35,7 @@ namespace Veterinaria.Controlador
                 {
                     Id = r.Id,
                     Nombre = r.Nombre,
+                    TipoAnimalId = r.TipoAnimalId,
                     TipoAnimalNombre = r.Tipo_Animal.Nombre,
                     Inactivo = r.Inactivo,
 
@@ -56,6 +57,7 @@ namespace Veterinaria.Controlador
                 {
                     Id = r.Id,
                     Nombre = r.Nombre,
+                    TipoAnimalId = r.TipoAnimalId,
                     TipoAnimalNombre = r.Tipo_Animal.Nombre,
                     Inactivo = r.Inactivo,
 

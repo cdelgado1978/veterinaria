@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using Veterinaria.Modelo;
@@ -33,13 +34,12 @@ namespace Veterinaria.Controlador
                 _animal.Add(new AnimalDto()
                 {
                     Id = a.ID,
-                    NombreAnimal = a.Nombre,
-                    //TipoanimalId = a.TipoanimalId,
+                    Nombre = a.Nombre,
                     TipoAnimalNombre = a.Tipo_Animal.Nombre,
-                    //razaId = a.razaId,
                     RazaId = a.Raza.Id,
                     Edad = a.Edad,
-                    NombrePropietario = a.Cliente.Nombre,
+                    ClienteNombre = $"{a.Cliente.Nombre} {a.Cliente.Apellidos}",
+                    RazaNombre = a.Raza.Nombre,
                     Direccion = a.Direccion,
                     Inactivo = a.Inactivo,
 
@@ -90,5 +90,30 @@ namespace Veterinaria.Controlador
 
         }
 
+        public object ObtenerTodos(string texto)
+        {
+            var _result = db.Animales.Where(a => a.Nombre.Contains(texto) || a.Cliente.Nombre.Contains(texto)).ToList();
+
+            List<AnimalDto> _animal = new List<AnimalDto>();
+
+            _result.ForEach(a =>
+            {
+                _animal.Add(new AnimalDto()
+                {
+                    Id = a.ID,
+                    Nombre = a.Nombre,
+                    TipoAnimalNombre = a.Tipo_Animal.Nombre,
+                    RazaId = a.Raza.Id,
+                    Edad = a.Edad,
+                    ClienteNombre = $"{a.Cliente.Nombre} {a.Cliente.Apellidos}",
+                    RazaNombre = a.Raza.Nombre,
+                    Direccion = a.Direccion,
+                    Inactivo = a.Inactivo,
+
+                });
+            });
+
+            return _animal;
+        }
     }
 }
