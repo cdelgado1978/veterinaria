@@ -33,7 +33,28 @@ namespace Veterinaria.Controlador
             {
                 _raza.Add(item: new RazasDto()
                 {
-                    id = r.Id,
+                    Id = r.Id,
+                    Nombre = r.Nombre,
+                    TipoAnimalNombre = r.Tipo_Animal.Nombre,
+                    Inactivo = r.Inactivo,
+
+                });
+            });
+
+            return _raza;
+        }
+
+        public List<RazasDto> ObtenerTodos(string texto)
+        {
+            var _result = db.Razas.Where(r => r.Nombre.Contains(texto)).ToList();
+
+            List<RazasDto> _raza = new List<RazasDto>();
+
+            _result.ForEach(r =>
+            {
+                _raza.Add(item: new RazasDto()
+                {
+                    Id = r.Id,
                     Nombre = r.Nombre,
                     TipoAnimalNombre = r.Tipo_Animal.Nombre,
                     Inactivo = r.Inactivo,

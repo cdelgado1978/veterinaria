@@ -1,45 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
 
-namespace Veterinaria.Vista.Formularios.Razas
+namespace Veterinaria.Vista.TipoAnimal
 {
-    public partial class FrmRaza : Form
+    public partial class FrmTipoAnimal : Form
     {
-        private RazaControlador razaControlador;
-        private readonly TipoAnimalControlador tipoAnimalControlador;
+
+        private TipoAnimalControlador tipoAnimalControlador;
         private bool Agregando;
-        private int _razaId;
+        private int _tipoAnimalId;
 
-        public Action<object> Creado { get; private set; }
-
-        public FrmRaza()
+        public FrmTipoAnimal()
         {
             InitializeComponent();
 
-            razaControlador = new RazaControlador();
             tipoAnimalControlador = new TipoAnimalControlador();
-
-            CargaTipoAnimal();
         }
+
+       
 
         public void ActualizaDBGrid()
         {
-            dgRazas.DataSource = razaControlador.ObtenerTodos();
+
+            dgListaTiposAnimal.DataSource = tipoAnimalControlador.ObtenerTodos();
+
         }
 
-        private void FrmRaza_Load(object sender, EventArgs e)
-        {
-            ActualizaDBGrid();
-        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -55,7 +44,6 @@ namespace Veterinaria.Vista.Formularios.Razas
         private void LimpiarFormulario()
         {
             txtNombre.Text = "";
-            cbTipoAnimal.Text = "";
             chkBoxInactivo.Checked = false;
 
         }
@@ -71,26 +59,26 @@ namespace Veterinaria.Vista.Formularios.Razas
             if (Agregando)
             {
 
-                var _nuevaRaza = new Raza()
+                var _nuevoProducto = new Tipo_Animal()
                 {
                     Nombre = _nombre,
                     Inactivo = _inactivo
 
                 };
 
-                NuevaRaza(_nuevaRaza);
+                NuevoTipoAnimal(_nuevoProducto);
             }
             else
             {
-                var _Producto = new Raza()
+                var _Producto = new Tipo_Animal()
                 {
-                    Id = _razaId,
+                    Id = _tipoAnimalId,
                     Nombre = _nombre,
                     Inactivo = _inactivo
 
                 };
 
-                EditarRaza(_Producto);
+                EditarTipoAnimal(_Producto);
             }
 
             btnEditar.Enabled = false;
@@ -103,17 +91,17 @@ namespace Veterinaria.Vista.Formularios.Razas
             PanelForm.Enabled = false;
         }
 
-        private void NuevaRaza(Raza newprod)
+        private void NuevoTipoAnimal(Tipo_Animal newprod)
         {
 
-            razaControlador.Agregar(newprod);
+            tipoAnimalControlador.Agregar(newprod);
 
 
         }
 
-        private void EditarRaza(Raza producto)
+        private void EditarTipoAnimal(Tipo_Animal producto)
         {
-            razaControlador.Editar(producto);
+            tipoAnimalControlador.Editar(producto);
         }
 
         private void dgListaTiposAnimal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -121,11 +109,10 @@ namespace Veterinaria.Vista.Formularios.Razas
             var _selectedRow = e.RowIndex;
 
 
-            _razaId = int.Parse(dgRazas.Rows[_selectedRow].Cells[0].Value.ToString());
+            _tipoAnimalId = int.Parse(dgListaTiposAnimal.Rows[_selectedRow].Cells[0].Value.ToString());
 
-            txtNombre.Text = dgRazas.Rows[_selectedRow].Cells[1].Value.ToString();
-            cbTipoAnimal.Text = dgRazas.Rows[_selectedRow].Cells[3].Value.ToString();
-            chkBoxInactivo.Checked = bool.Parse(dgRazas.Rows[_selectedRow].Cells[4].Value.ToString());
+            txtNombre.Text = dgListaTiposAnimal.Rows[_selectedRow].Cells[1].Value.ToString();
+            chkBoxInactivo.Checked = bool.Parse(dgListaTiposAnimal.Rows[_selectedRow].Cells[2].Value.ToString());
 
             btnEditar.Enabled = true;
 
@@ -145,20 +132,18 @@ namespace Veterinaria.Vista.Formularios.Razas
         {
             var _valor = txtBuscar.Text;
 
-            var _result = razaControlador.ObtenerTodos(_valor);
+            var _result = tipoAnimalControlador.ObtenerTodos(_valor);
 
-            dgRazas.DataSource = _result;
+            dgListaTiposAnimal.DataSource = _result;
 
         }
 
-        public void CargaTipoAnimal()
+        
+        private void TipoAnimal_Load(object sender, EventArgs e)
         {
-            var result = tipoAnimalControlador.ObtenerTodos().ToList();
-
-            cbTipoAnimal.DataSource = result;
-            cbTipoAnimal.DisplayMember = "Nombre";
-            cbTipoAnimal.ValueMember = "Id";
-
+            ActualizaDBGrid();
         }
+
+      
     }
 }

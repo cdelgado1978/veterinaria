@@ -112,10 +112,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Formularios\Tipo_Animal\frmTipoAnimal.cs">
+    <Compile Include="Formularios\TipoAnimal\frmTipoAnimal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Tipo_Animal\frmTipoAnimal.Designer.cs">
+    <Compile Include="Formularios\TipoAnimal\frmTipoAnimal.Designer.cs">
       <DependentUpon>frmTipoAnimal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Formularios\Animales\FrmListaAnimales.resx">
@@ -149,7 +149,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Formularios\Tipo_Animal\frmTipoAnimal.resx">
+    <EmbeddedResource Include="Formularios\TipoAnimal\frmTipoAnimal.resx">
       <DependentUpon>frmTipoAnimal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -35,7 +35,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.panelContenido = new System.Windows.Forms.Panel();
             this.PanelForm = new System.Windows.Forms.Panel();
             this.cbTipoAnimal = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtRaza = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.chkBoxInactivo = new System.Windows.Forms.CheckBox();
             this.Panel_botones = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -44,11 +44,6 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.PanelDetalle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgRazas = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelTituloDetalle = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -58,6 +53,11 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.PanelControlBox = new System.Windows.Forms.Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblTituloProveedor = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoAnimalNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoAnimalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tipoProductoIdLabel = new System.Windows.Forms.Label();
             costoLabel = new System.Windows.Forms.Label();
             this.PanelRoot.SuspendLayout();
@@ -123,7 +123,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.PanelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
             this.PanelForm.Controls.Add(this.cbTipoAnimal);
             this.PanelForm.Controls.Add(tipoProductoIdLabel);
-            this.PanelForm.Controls.Add(this.txtRaza);
+            this.PanelForm.Controls.Add(this.txtNombre);
             this.PanelForm.Controls.Add(costoLabel);
             this.PanelForm.Controls.Add(this.chkBoxInactivo);
             this.PanelForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -153,16 +153,16 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.cbTipoAnimal.Size = new System.Drawing.Size(313, 36);
             this.cbTipoAnimal.TabIndex = 43;
             // 
-            // txtRaza
+            // txtNombre
             // 
-            this.txtRaza.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRaza.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaza.Location = new System.Drawing.Point(248, 50);
-            this.txtRaza.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtRaza.Name = "txtRaza";
-            this.txtRaza.Size = new System.Drawing.Size(313, 27);
-            this.txtRaza.TabIndex = 41;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(248, 50);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(313, 27);
+            this.txtNombre.TabIndex = 41;
             // 
             // chkBoxInactivo
             // 
@@ -201,6 +201,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -213,6 +214,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -225,6 +227,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // PanelDetalle
             // 
@@ -254,9 +257,9 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.dgRazas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombre,
-            this.Direccion,
-            this.Telefono,
-            this.Inactivo});
+            this.TipoAnimalNombre,
+            this.Inactivo,
+            this.TipoAnimalId});
             this.dgRazas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgRazas.Location = new System.Drawing.Point(0, 0);
             this.dgRazas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -266,53 +269,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.dgRazas.RowTemplate.Height = 24;
             this.dgRazas.Size = new System.Drawing.Size(953, 203);
             this.dgRazas.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.MinimumWidth = 6;
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            this.Direccion.Width = 300;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.MinimumWidth = 6;
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            this.Telefono.Width = 180;
-            // 
-            // Inactivo
-            // 
-            this.Inactivo.DataPropertyName = "Inactivo";
-            this.Inactivo.HeaderText = "Inactivo";
-            this.Inactivo.MinimumWidth = 6;
-            this.Inactivo.Name = "Inactivo";
-            this.Inactivo.ReadOnly = true;
-            this.Inactivo.Visible = false;
-            this.Inactivo.Width = 125;
+            this.dgRazas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaTiposAnimal_CellDoubleClick);
             // 
             // PanelTituloDetalle
             // 
@@ -353,6 +310,7 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(219, 30);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // lblTituloDetalle
             // 
@@ -411,6 +369,54 @@ namespace Veterinaria.Vista.Formularios.Razas
             this.lblTituloProveedor.TabIndex = 2;
             this.lblTituloProveedor.Text = "Raza";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // TipoAnimalNombre
+            // 
+            this.TipoAnimalNombre.DataPropertyName = "TipoAnimalNombre";
+            this.TipoAnimalNombre.HeaderText = "Tipo Animal";
+            this.TipoAnimalNombre.MinimumWidth = 6;
+            this.TipoAnimalNombre.Name = "TipoAnimalNombre";
+            this.TipoAnimalNombre.ReadOnly = true;
+            this.TipoAnimalNombre.Width = 125;
+            // 
+            // Inactivo
+            // 
+            this.Inactivo.DataPropertyName = "Inactivo";
+            this.Inactivo.HeaderText = "Inactivo";
+            this.Inactivo.MinimumWidth = 6;
+            this.Inactivo.Name = "Inactivo";
+            this.Inactivo.ReadOnly = true;
+            this.Inactivo.Visible = false;
+            this.Inactivo.Width = 125;
+            // 
+            // TipoAnimalId
+            // 
+            this.TipoAnimalId.DataPropertyName = "TipoAnimalId";
+            this.TipoAnimalId.HeaderText = "TipoAnimalId";
+            this.TipoAnimalId.MinimumWidth = 6;
+            this.TipoAnimalId.Name = "TipoAnimalId";
+            this.TipoAnimalId.ReadOnly = true;
+            this.TipoAnimalId.Visible = false;
+            this.TipoAnimalId.Width = 125;
+            // 
             // FrmRaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,11 +458,6 @@ namespace Veterinaria.Vista.Formularios.Razas
         private System.Windows.Forms.Panel PanelDetalle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgRazas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Inactivo;
         private System.Windows.Forms.Panel PanelTituloDetalle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblBuscar;
@@ -467,7 +468,12 @@ namespace Veterinaria.Vista.Formularios.Razas
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label lblTituloProveedor;
         private Guna.UI2.WinForms.Guna2ComboBox cbTipoAnimal;
-        private System.Windows.Forms.TextBox txtRaza;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.CheckBox chkBoxInactivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoAnimalNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inactivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoAnimalId;
     }
 }

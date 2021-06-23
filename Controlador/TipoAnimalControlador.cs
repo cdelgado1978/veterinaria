@@ -32,9 +32,29 @@ namespace Veterinaria.Controlador
             {
                 _tipoanimal.Add(item: new TipoAnimalDto()
                 {
-                    id = t.Id,
+                    Id = t.Id,
                     Nombre = t.Nombre,
 
+                    Inactivo = t.Inactivo,
+
+                });
+            });
+
+            return _tipoanimal;
+        }
+
+        public List<TipoAnimalDto> ObtenerTodos(string texto)
+        {
+            var _result = db.Tipo_Animal.Where(ta => ta.Nombre.Contains(texto)).ToList();
+
+            List<TipoAnimalDto> _tipoanimal = new List<TipoAnimalDto>();
+
+            _result.ForEach(t =>
+            {
+                _tipoanimal.Add(item: new TipoAnimalDto()
+                {
+                    Id = t.Id,
+                    Nombre = t.Nombre,
                     Inactivo = t.Inactivo,
 
                 });
@@ -59,9 +79,8 @@ namespace Veterinaria.Controlador
 
         public void Editar(Tipo_Animal entidad)
         {
-            //if (entidad == null) throw new Exception("Entidad Invalidad");
 
-            var tipo = db.Tipo_Animal.Find(entidad);
+            var tipo = db.Tipo_Animal.Single(ta => ta.Id == entidad.Id);
             if (tipo != null)
             {
                 db.Tipo_Animal.AddOrUpdate(entidad);
@@ -71,9 +90,8 @@ namespace Veterinaria.Controlador
 
         public void Borrar(Tipo_Animal entidad)
         {
-            //if (entidad == null) throw new Exception("Entidad Invalidad");
-
-            var tipo = db.Tipo_Animal.Find(entidad);
+            
+            var tipo = db.Tipo_Animal.Single(ta => ta.Id == entidad.Id);
             if (tipo != null)
             {
                 tipo.Inactivo = true;

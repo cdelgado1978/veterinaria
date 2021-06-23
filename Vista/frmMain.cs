@@ -5,7 +5,7 @@ using Veterinaria.Formularios.Animales;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
 using Veterinaria.Vista.Formularios.Razas;
-using Veterinaria.Vista.Tipo_Animal;
+using Veterinaria.Vista.TipoAnimal;
 
 namespace Veterinaria.Vista
 {
