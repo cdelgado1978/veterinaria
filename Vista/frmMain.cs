@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Windows.Forms;
 using Veterinaria.Formularios.Animales;
+using Veterinaria.Vista.Formularios.Demograficos;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
 using Veterinaria.Vista.Formularios.Razas;
+using Veterinaria.Vista.Formularios.TipoProductos;
 using Veterinaria.Vista.TipoAnimal;
 
 namespace Veterinaria.Vista
@@ -98,7 +100,7 @@ namespace Veterinaria.Vista
         {
             Form formulario;
 
-            formulario = panelForms.Controls.OfType<T>().FirstOrDefault();
+            formulario = PanelContent.Controls.OfType<T>().FirstOrDefault();
 
             if (formulario == null)
             {
@@ -108,8 +110,8 @@ namespace Veterinaria.Vista
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.Dock = DockStyle.Fill;
 
-                panelForms.Controls.Add(formulario);
-                panelForms.Tag = formulario;
+                PanelContent.Controls.Add(formulario);
+                PanelContent.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
             }
@@ -123,6 +125,24 @@ namespace Veterinaria.Vista
         private void btnanimales_Click(object sender, EventArgs e)
         {
             AbrirFormularios<FrmListaAnimales>();
+            OcultaSubMenu();
+        }
+
+        private void btnTipoProducto_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios<frmTipoProducto>();
+            OcultaSubMenu();
+        }
+
+        private void btnProvincias_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios<frmProvincia>();
+            OcultaSubMenu();
+        }
+
+        private void btnMunicipios_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios<frmMunicipio>();
             OcultaSubMenu();
         }
     }

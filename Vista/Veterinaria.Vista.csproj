@@ -80,6 +80,24 @@
     <Compile Include="Formularios\Animales\FrmNuevoAnimal.Designer.cs">
       <DependentUpon>FrmNuevoAnimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Clientes\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Demograficos\frmMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Demograficos\frmMunicipio.Designer.cs">
+      <DependentUpon>frmMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Demograficos\frmProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Demograficos\frmProvincia.Designer.cs">
+      <DependentUpon>frmProvincia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Productos\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +115,12 @@
     </Compile>
     <Compile Include="Formularios\Razas\FrmRaza.Designer.cs">
       <DependentUpon>FrmRaza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TipoProductos\frmTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoProductos\frmTipoProducto.Designer.cs">
+      <DependentUpon>frmTipoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -118,6 +142,15 @@
     <EmbeddedResource Include="Formularios\Animales\FrmNuevoAnimal.resx">
       <DependentUpon>FrmNuevoAnimal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Demograficos\frmMunicipio.resx">
+      <DependentUpon>frmMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Demograficos\frmProvincia.resx">
+      <DependentUpon>frmProvincia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Productos\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Razas\FrmRaza.resx">
       <DependentUpon>FrmRaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoProductos\frmTipoProducto.resx">
+      <DependentUpon>frmTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

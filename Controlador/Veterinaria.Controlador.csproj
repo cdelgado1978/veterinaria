@@ -54,7 +54,8 @@
     <Compile Include="AnimalControlador.cs" />
     <Compile Include="Cargoscontrolador.cs" />
     <Compile Include="CategoriaFacturaControlador.cs" />
-    <Compile Include="CiudadControlador.cs" />
+    <Compile Include="MunicipioControlador.cs" />
+    <Compile Include="ProvinciaControlador.cs" />
     <Compile Include="ClienteControlador.cs" />
     <Compile Include="CotizacionesControlador.cs" />
     <Compile Include="EmpleadoControlador.cs" />

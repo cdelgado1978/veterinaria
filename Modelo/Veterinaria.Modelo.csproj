@@ -62,9 +62,6 @@
     <Compile Include="Categoria_Factura.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Ciudad.cs">
-      <DependentUpon>VeterinariaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Cliente.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
@@ -74,7 +71,8 @@
     <Compile Include="DTO\AnimalDto.cs" />
     <Compile Include="DTO\CargoDto.cs" />
     <Compile Include="DTO\CategoriaFacturaDTO.cs" />
-    <Compile Include="DTO\CiudadDto.cs" />
+    <Compile Include="DTO\MunicipioDto.cs" />
+    <Compile Include="DTO\ProvinciaDto.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
     <Compile Include="DTO\CotizacionesDTO.cs" />
     <Compile Include="DTO\EmpleadoDTO.cs" />
@@ -101,11 +99,17 @@
     <Compile Include="Historial_Recetas.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Municipio.cs">
+      <DependentUpon>VeterinariaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs">
+      <DependentUpon>VeterinariaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Provincia.cs">
       <DependentUpon>VeterinariaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Raza.cs">

@@ -37,20 +37,23 @@ namespace Veterinaria.Vista
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnSeguridadMenu = new System.Windows.Forms.Button();
             this.panel_MantenimientoSubMenu = new System.Windows.Forms.Panel();
-            this.btnRaza = new System.Windows.Forms.Button();
+            this.btnTipoProducto = new System.Windows.Forms.Button();
             this.btnTipoAnimal = new System.Windows.Forms.Button();
+            this.btnRaza = new System.Windows.Forms.Button();
+            this.btnProvincias = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
+            this.btnMunicipios = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnanimales = new System.Windows.Forms.Button();
             this.btnMantenimientoMenu = new System.Windows.Forms.Button();
             this.btnAnimalesMenu = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.controlBoxClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlBoxMin = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.panelForms = new System.Windows.Forms.Panel();
+            this.PanelContent = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnanimales = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.panel_menu.SuspendLayout();
             this.panel_SeguridadSubmenu.SuspendLayout();
@@ -87,9 +90,9 @@ namespace Veterinaria.Vista
             this.panel_SeguridadSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
             this.panel_SeguridadSubmenu.Controls.Add(this.btnUsuario);
             this.panel_SeguridadSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_SeguridadSubmenu.Location = new System.Drawing.Point(0, 384);
+            this.panel_SeguridadSubmenu.Location = new System.Drawing.Point(0, 462);
             this.panel_SeguridadSubmenu.Name = "panel_SeguridadSubmenu";
-            this.panel_SeguridadSubmenu.Size = new System.Drawing.Size(238, 48);
+            this.panel_SeguridadSubmenu.Size = new System.Drawing.Size(238, 47);
             this.panel_SeguridadSubmenu.TabIndex = 10;
             // 
             // btnUsuario
@@ -115,7 +118,7 @@ namespace Veterinaria.Vista
             this.btnSeguridadMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguridadMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguridadMenu.ForeColor = System.Drawing.Color.White;
-            this.btnSeguridadMenu.Location = new System.Drawing.Point(0, 338);
+            this.btnSeguridadMenu.Location = new System.Drawing.Point(0, 416);
             this.btnSeguridadMenu.Name = "btnSeguridadMenu";
             this.btnSeguridadMenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSeguridadMenu.Size = new System.Drawing.Size(238, 46);
@@ -128,34 +131,37 @@ namespace Veterinaria.Vista
             // panel_MantenimientoSubMenu
             // 
             this.panel_MantenimientoSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
-            this.panel_MantenimientoSubMenu.Controls.Add(this.btnanimales);
-            this.panel_MantenimientoSubMenu.Controls.Add(this.btnRaza);
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnTipoProducto);
             this.panel_MantenimientoSubMenu.Controls.Add(this.btnTipoAnimal);
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnRaza);
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnProvincias);
             this.panel_MantenimientoSubMenu.Controls.Add(this.btnProveedores);
-            this.panel_MantenimientoSubMenu.Controls.Add(this.btnClientes);
             this.panel_MantenimientoSubMenu.Controls.Add(this.btnProductos);
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnMunicipios);
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnClientes);
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnanimales);
             this.panel_MantenimientoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_MantenimientoSubMenu.Location = new System.Drawing.Point(0, 86);
             this.panel_MantenimientoSubMenu.Name = "panel_MantenimientoSubMenu";
-            this.panel_MantenimientoSubMenu.Size = new System.Drawing.Size(238, 252);
+            this.panel_MantenimientoSubMenu.Size = new System.Drawing.Size(238, 330);
             this.panel_MantenimientoSubMenu.TabIndex = 8;
             // 
-            // btnRaza
+            // btnTipoProducto
             // 
-            this.btnRaza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRaza.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRaza.FlatAppearance.BorderSize = 0;
-            this.btnRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRaza.Location = new System.Drawing.Point(0, 164);
-            this.btnRaza.Name = "btnRaza";
-            this.btnRaza.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRaza.Size = new System.Drawing.Size(238, 41);
-            this.btnRaza.TabIndex = 5;
-            this.btnRaza.Text = "Raza";
-            this.btnRaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRaza.UseVisualStyleBackColor = true;
-            this.btnRaza.Click += new System.EventHandler(this.btnRaza_Click);
+            this.btnTipoProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTipoProducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTipoProducto.FlatAppearance.BorderSize = 0;
+            this.btnTipoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoProducto.Location = new System.Drawing.Point(0, 328);
+            this.btnTipoProducto.Name = "btnTipoProducto";
+            this.btnTipoProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnTipoProducto.Size = new System.Drawing.Size(238, 41);
+            this.btnTipoProducto.TabIndex = 7;
+            this.btnTipoProducto.Text = "Tipo Productos";
+            this.btnTipoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTipoProducto.UseVisualStyleBackColor = true;
+            this.btnTipoProducto.Click += new System.EventHandler(this.btnTipoProducto_Click);
             // 
             // btnTipoAnimal
             // 
@@ -164,7 +170,7 @@ namespace Veterinaria.Vista
             this.btnTipoAnimal.FlatAppearance.BorderSize = 0;
             this.btnTipoAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTipoAnimal.Location = new System.Drawing.Point(0, 123);
+            this.btnTipoAnimal.Location = new System.Drawing.Point(0, 287);
             this.btnTipoAnimal.Name = "btnTipoAnimal";
             this.btnTipoAnimal.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnTipoAnimal.Size = new System.Drawing.Size(238, 41);
@@ -174,6 +180,40 @@ namespace Veterinaria.Vista
             this.btnTipoAnimal.UseVisualStyleBackColor = true;
             this.btnTipoAnimal.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnRaza
+            // 
+            this.btnRaza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRaza.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRaza.FlatAppearance.BorderSize = 0;
+            this.btnRaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaza.Location = new System.Drawing.Point(0, 246);
+            this.btnRaza.Name = "btnRaza";
+            this.btnRaza.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRaza.Size = new System.Drawing.Size(238, 41);
+            this.btnRaza.TabIndex = 5;
+            this.btnRaza.Text = "Raza";
+            this.btnRaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRaza.UseVisualStyleBackColor = true;
+            this.btnRaza.Click += new System.EventHandler(this.btnRaza_Click);
+            // 
+            // btnProvincias
+            // 
+            this.btnProvincias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProvincias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProvincias.FlatAppearance.BorderSize = 0;
+            this.btnProvincias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProvincias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProvincias.Location = new System.Drawing.Point(0, 205);
+            this.btnProvincias.Name = "btnProvincias";
+            this.btnProvincias.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnProvincias.Size = new System.Drawing.Size(238, 41);
+            this.btnProvincias.TabIndex = 6;
+            this.btnProvincias.Text = "Provincias";
+            this.btnProvincias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProvincias.UseVisualStyleBackColor = true;
+            this.btnProvincias.Click += new System.EventHandler(this.btnProvincias_Click);
+            // 
             // btnProveedores
             // 
             this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -181,7 +221,7 @@ namespace Veterinaria.Vista
             this.btnProveedores.FlatAppearance.BorderSize = 0;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.Location = new System.Drawing.Point(0, 82);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 164);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnProveedores.Size = new System.Drawing.Size(238, 41);
@@ -190,6 +230,40 @@ namespace Veterinaria.Vista
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductos.FlatAppearance.BorderSize = 0;
+            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Location = new System.Drawing.Point(0, 123);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnProductos.Size = new System.Drawing.Size(238, 41);
+            this.btnProductos.TabIndex = 0;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            // 
+            // btnMunicipios
+            // 
+            this.btnMunicipios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMunicipios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMunicipios.FlatAppearance.BorderSize = 0;
+            this.btnMunicipios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMunicipios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMunicipios.Location = new System.Drawing.Point(0, 82);
+            this.btnMunicipios.Name = "btnMunicipios";
+            this.btnMunicipios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnMunicipios.Size = new System.Drawing.Size(238, 41);
+            this.btnMunicipios.TabIndex = 6;
+            this.btnMunicipios.Text = "Municipios";
+            this.btnMunicipios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMunicipios.UseVisualStyleBackColor = true;
+            this.btnMunicipios.Click += new System.EventHandler(this.btnMunicipios_Click);
             // 
             // btnClientes
             // 
@@ -208,22 +282,22 @@ namespace Veterinaria.Vista
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // btnProductos
+            // btnanimales
             // 
-            this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Location = new System.Drawing.Point(0, 0);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnProductos.Size = new System.Drawing.Size(238, 41);
-            this.btnProductos.TabIndex = 0;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.UseVisualStyleBackColor = true;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            this.btnanimales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnanimales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnanimales.FlatAppearance.BorderSize = 0;
+            this.btnanimales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnanimales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnanimales.Location = new System.Drawing.Point(0, 0);
+            this.btnanimales.Name = "btnanimales";
+            this.btnanimales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnanimales.Size = new System.Drawing.Size(238, 41);
+            this.btnanimales.TabIndex = 6;
+            this.btnanimales.Text = "Animales";
+            this.btnanimales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnanimales.UseVisualStyleBackColor = true;
+            this.btnanimales.Click += new System.EventHandler(this.btnanimales_Click);
             // 
             // btnMantenimientoMenu
             // 
@@ -305,49 +379,32 @@ namespace Veterinaria.Vista
             this.ControlBoxMin.Size = new System.Drawing.Size(27, 25);
             this.ControlBoxMin.TabIndex = 2;
             // 
-            // panelForms
+            // PanelContent
             // 
-            this.panelForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
-            this.panelForms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelForms.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelForms.Location = new System.Drawing.Point(237, 53);
-            this.panelForms.Name = "panelForms";
-            this.panelForms.Size = new System.Drawing.Size(1078, 667);
-            this.panelForms.TabIndex = 3;
+            this.PanelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
+            this.PanelContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PanelContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelContent.Location = new System.Drawing.Point(237, 53);
+            this.PanelContent.Name = "PanelContent";
+            this.PanelContent.Size = new System.Drawing.Size(1078, 667);
+            this.PanelContent.TabIndex = 3;
             // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.TargetControl = this;
             // 
-            // btnanimales
-            // 
-            this.btnanimales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnanimales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnanimales.FlatAppearance.BorderSize = 0;
-            this.btnanimales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnanimales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnanimales.Location = new System.Drawing.Point(0, 205);
-            this.btnanimales.Name = "btnanimales";
-            this.btnanimales.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnanimales.Size = new System.Drawing.Size(238, 41);
-            this.btnanimales.TabIndex = 6;
-            this.btnanimales.Text = "Animales";
-            this.btnanimales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnanimales.UseVisualStyleBackColor = true;
-            this.btnanimales.Click += new System.EventHandler(this.btnanimales_Click);
-            // 
-            // frmMain
+            // FrmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(50)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1315, 721);
-            this.Controls.Add(this.panelForms);
+            this.Controls.Add(this.PanelContent);
             this.Controls.Add(this.ControlBoxMin);
             this.Controls.Add(this.controlBoxClose);
             this.Controls.Add(this.PanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Puppies PetCare";
             this.PanelMenu.ResumeLayout(false);
@@ -365,7 +422,7 @@ namespace Veterinaria.Vista
         private System.Windows.Forms.Panel PanelMenu;
         private Guna.UI2.WinForms.Guna2ControlBox controlBoxClose;
         private Guna.UI2.WinForms.Guna2ControlBox ControlBoxMin;
-        private System.Windows.Forms.Panel panelForms;
+        private System.Windows.Forms.Panel PanelContent;
         private System.Windows.Forms.Panel panel_menu;
         private System.Windows.Forms.Panel panel_SeguridadSubmenu;
         private System.Windows.Forms.Button btnUsuario;
@@ -376,11 +433,14 @@ namespace Veterinaria.Vista
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Button btnProvincias;
+        private System.Windows.Forms.Button btnMunicipios;
         private System.Windows.Forms.Button btnMantenimientoMenu;
         private System.Windows.Forms.Button btnAnimalesMenu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Button btnanimales;
+        private System.Windows.Forms.Button btnTipoProducto;
     }
 }

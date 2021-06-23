@@ -40,7 +40,7 @@ namespace Veterinaria.Controlador
                     CargoId= e.CargoId,
                     Sueldo = e.Sueldo,
                     Direccion = e.Direccion,
-                    CiudadId = e.CiudadID,
+                    MunicipioId = e.MunicipioId,
                     Telefono = e.Telefono,
                     Cedula = e.Cedula,
                     Correo = e.Correo,

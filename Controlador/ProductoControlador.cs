@@ -51,7 +51,7 @@ namespace Veterinaria.Controlador
             return _productos;
         }
 
-        public List<ProductoDto> Obtener(string texto)
+        public List<ProductoDto> ObtenerTodos(string texto)
         {
             var _result = db.Productos.Where(p => p.Nombre.Contains(texto) || p.Descripcion.Contains(texto)).ToList();
             

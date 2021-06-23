@@ -12,31 +12,24 @@ namespace Veterinaria.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class Municipio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
+        public Municipio()
         {
-            this.Cotizaciones = new HashSet<Cotizacione>();
-            this.Facturas = new HashSet<Factura>();
-            this.Animales = new HashSet<Animale>();
+            this.Clientes = new HashSet<Cliente>();
+            this.Empleados = new HashSet<Empleado>();
         }
     
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public string Cedula { get; set; }
-        public string Direccion { get; set; }
-        public string Telefono { get; set; }
         public bool Inactivo { get; set; }
-        public int MunicipioId { get; set; }
+        public int ProvinciaId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cotizacione> Cotizaciones { get; set; }
+        public virtual ICollection<Cliente> Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Factura> Facturas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Animale> Animales { get; set; }
-        public virtual Municipio Municipio { get; set; }
+        public virtual ICollection<Empleado> Empleados { get; set; }
+        public virtual Provincia Provincia { get; set; }
     }
 }

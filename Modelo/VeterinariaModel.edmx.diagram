@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="VeterinariaModel.Animale" Width="1.5" PointX="15.25" PointY="4.625" />
         <EntityTypeShape EntityType="VeterinariaModel.Cargo" Width="1.5" PointX="0.75" PointY="4.125" />
         <EntityTypeShape EntityType="VeterinariaModel.Categoria_Factura" Width="1.5" PointX="6" PointY="13" />
-        <EntityTypeShape EntityType="VeterinariaModel.Ciudad" Width="1.5" PointX="0.75" PointY="7" />
         <EntityTypeShape EntityType="VeterinariaModel.Cliente" Width="1.5" PointX="3" PointY="11.5" />
         <EntityTypeShape EntityType="VeterinariaModel.Cotizacione" Width="1.5" PointX="5.25" PointY="8.375" />
         <EntityTypeShape EntityType="VeterinariaModel.Empleado" Width="1.5" PointX="3" PointY="5.875" />
@@ -21,14 +20,12 @@
         <EntityTypeShape EntityType="VeterinariaModel.Tipo_Animal" Width="1.5" PointX="13" PointY="4.5" />
         <EntityTypeShape EntityType="VeterinariaModel.Tipo_Factura" Width="1.5" PointX="6" PointY="15.625" />
         <EntityTypeShape EntityType="VeterinariaModel.Tipo_Producto" Width="1.5" PointX="0.75" PointY="18.875" />
-        <EntityTypeShape EntityType="VeterinariaModel.Usuario" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="VeterinariaModel.Usuario" Width="1.5" PointX="3" PointY="1.625" />
         <AssociationConnector Association="VeterinariaModel.FK_ANIMAL_RAZA" />
         <AssociationConnector Association="VeterinariaModel.FK_ANIMAL_TIPO_ANIMAL" />
         <AssociationConnector Association="VeterinariaModel.FK_RECETA_ANIMAL" />
         <AssociationConnector Association="VeterinariaModel.FK_EMPLEADO_CARGOS" />
         <AssociationConnector Association="VeterinariaModel.FK_FACTURA_CATEGORIA_FACTURA" />
-        <AssociationConnector Association="VeterinariaModel.FK_CLIENTE_CIUDAD" />
-        <AssociationConnector Association="VeterinariaModel.FK_EMPLEADO_CIUDAD" />
         <AssociationConnector Association="VeterinariaModel.FK_COTIZACION_CLIENTE" />
         <AssociationConnector Association="VeterinariaModel.FK_FACTURA_CLIENTE" />
         <AssociationConnector Association="VeterinariaModel.FK_COTIZACION_EMPLEADO" />
@@ -43,6 +40,11 @@
         <EntityTypeShape EntityType="VeterinariaModel.Facturas_Detalle" Width="1.5" PointX="10.5" PointY="8.75" />
         <AssociationConnector Association="VeterinariaModel.Facturas_Facturas_Detalle" />
         <AssociationConnector Association="VeterinariaModel.Clientes_Animales" />
+        <EntityTypeShape EntityType="VeterinariaModel.Municipio" Width="1.5" PointX="8.25" PointY="3.75" />
+        <EntityTypeShape EntityType="VeterinariaModel.Provincia" Width="1.5" PointX="5.75" PointY="4" />
+        <AssociationConnector Association="VeterinariaModel.Municipio_Clientes" />
+        <AssociationConnector Association="VeterinariaModel.Municipio_Empleados" />
+        <AssociationConnector Association="VeterinariaModel.Provincia_Municipio" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

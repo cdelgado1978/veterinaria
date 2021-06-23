@@ -34,14 +34,6 @@
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Inactivo" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="Ciudad">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Inactivo" Type="bit" Nullable="false" />
-        </EntityType>
         <EntityType Name="Clientes">
           <Key>
             <PropertyRef Name="ID" />
@@ -51,9 +43,9 @@
           <Property Name="Apellidos" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Cedula" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CiudadID" Type="int" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="12" />
           <Property Name="Inactivo" Type="bit" Nullable="false" />
+          <Property Name="MunicipioId" Type="int" />
         </EntityType>
         <EntityType Name="Cotizaciones">
           <Key>
@@ -83,11 +75,11 @@
           <Property Name="CargoId" Type="int" Nullable="false" />
           <Property Name="Sueldo" Type="int" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CiudadID" Type="int" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="12" />
           <Property Name="Cedula" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Correo" Type="varchar" MaxLength="60" />
           <Property Name="Inactivo" Type="bit" Nullable="false" />
+          <Property Name="MunicipioId" Type="int" />
         </EntityType>
         <EntityType Name="Facturas">
           <Key>
@@ -134,6 +126,15 @@
           <Property Name="Tratamiento" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Inactivo" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Inactivo" Type="bit" Nullable="false" />
+          <Property Name="ProvinciaId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="Id" />
@@ -155,8 +156,15 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Dirección" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TipoProveedorID" Type="int" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="12" />
+          <Property Name="Inactivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="Inactivo" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Raza">
@@ -264,18 +272,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CLIENTE_CIUDAD">
-          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
-          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ciudad">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Clientes">
-              <PropertyRef Name="CiudadID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_COTIZACION_CLIENTE">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Cotizaciones" Type="Self.Cotizaciones" Multiplicity="*" />
@@ -321,18 +317,6 @@
             </Principal>
             <Dependent Role="Empleados">
               <PropertyRef Name="CargoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EMPLEADO_CIUDAD">
-          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
-          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ciudad">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Empleados">
-              <PropertyRef Name="CiudadID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -444,19 +428,56 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Municipio_Clientes">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="MunicipioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Municipio_Empleados">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="MunicipioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Provincia_Municipio">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="VeterinariaModelStoreContainer">
           <EntitySet Name="Animales" EntityType="Self.Animales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categoria_Factura" EntityType="Self.Categoria_Factura" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cotizaciones" EntityType="Self.Cotizaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas_Detalle" EntityType="Self.Facturas_Detalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Historial_Recetas" EntityType="Self.Historial_Recetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Raza" EntityType="Self.Raza" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Receta" EntityType="Self.Receta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Animal" EntityType="Self.Tipo_Animal" Schema="dbo" store:Type="Tables" />
@@ -479,10 +500,6 @@
             <End Role="Tipo_Animal" EntitySet="Tipo_Animal" />
             <End Role="Animales" EntitySet="Animales" />
           </AssociationSet>
-          <AssociationSet Name="FK_CLIENTE_CIUDAD" Association="Self.FK_CLIENTE_CIUDAD">
-            <End Role="Ciudad" EntitySet="Ciudad" />
-            <End Role="Clientes" EntitySet="Clientes" />
-          </AssociationSet>
           <AssociationSet Name="FK_COTIZACION_CLIENTE" Association="Self.FK_COTIZACION_CLIENTE">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Cotizaciones" EntitySet="Cotizaciones" />
@@ -497,10 +514,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_EMPLEADO_CARGOS" Association="Self.FK_EMPLEADO_CARGOS">
             <End Role="Cargos" EntitySet="Cargos" />
-            <End Role="Empleados" EntitySet="Empleados" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EMPLEADO_CIUDAD" Association="Self.FK_EMPLEADO_CIUDAD">
-            <End Role="Ciudad" EntitySet="Ciudad" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
           <AssociationSet Name="FK_FACTURA_CATEGORIA_FACTURA" Association="Self.FK_FACTURA_CATEGORIA_FACTURA">
@@ -539,6 +552,18 @@
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
+          <AssociationSet Name="Municipio_Clientes" Association="Self.Municipio_Clientes">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="Municipio_Empleados" Association="Self.Municipio_Empleados">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="Provincia_Municipio" Association="Self.Provincia_Municipio">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Municipio" EntitySet="Municipio" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -548,7 +573,6 @@
           <EntitySet Name="Animales" EntityType="VeterinariaModel.Animale" />
           <EntitySet Name="Cargos" EntityType="VeterinariaModel.Cargo" />
           <EntitySet Name="Categoria_Factura" EntityType="VeterinariaModel.Categoria_Factura" />
-          <EntitySet Name="Ciudads" EntityType="VeterinariaModel.Ciudad" />
           <EntitySet Name="Clientes" EntityType="VeterinariaModel.Cliente" />
           <EntitySet Name="Cotizaciones" EntityType="VeterinariaModel.Cotizacione" />
           <EntitySet Name="Empleados" EntityType="VeterinariaModel.Empleado" />
@@ -581,14 +605,6 @@
           <AssociationSet Name="FK_FACTURA_CATEGORIA_FACTURA" Association="VeterinariaModel.FK_FACTURA_CATEGORIA_FACTURA">
             <End Role="Categoria_Factura" EntitySet="Categoria_Factura" />
             <End Role="Factura" EntitySet="Facturas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CLIENTE_CIUDAD" Association="VeterinariaModel.FK_CLIENTE_CIUDAD">
-            <End Role="Ciudad" EntitySet="Ciudads" />
-            <End Role="Cliente" EntitySet="Clientes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EMPLEADO_CIUDAD" Association="VeterinariaModel.FK_EMPLEADO_CIUDAD">
-            <End Role="Ciudad" EntitySet="Ciudads" />
-            <End Role="Empleado" EntitySet="Empleados" />
           </AssociationSet>
           <AssociationSet Name="FK_COTIZACION_CLIENTE" Association="VeterinariaModel.FK_COTIZACION_CLIENTE">
             <End Role="Cliente" EntitySet="Clientes" />
@@ -643,6 +659,20 @@
             <End Role="Cliente" EntitySet="Clientes" />
             <End Role="Animale" EntitySet="Animales" />
           </AssociationSet>
+          <EntitySet Name="Municipios" EntityType="VeterinariaModel.Municipio" />
+          <EntitySet Name="Provincias" EntityType="VeterinariaModel.Provincia" />
+          <AssociationSet Name="Municipio_Clientes" Association="VeterinariaModel.Municipio_Clientes">
+            <End Role="Municipio" EntitySet="Municipios" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="Municipio_Empleados" Association="VeterinariaModel.Municipio_Empleados">
+            <End Role="Municipio" EntitySet="Municipios" />
+            <End Role="Empleado" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="Provincia_Municipio" Association="VeterinariaModel.Provincia_Municipio">
+            <End Role="Provincia" EntitySet="Provincias" />
+            <End Role="Municipio" EntitySet="Municipios" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Animale">
           <Key>
@@ -679,16 +709,6 @@
           <NavigationProperty Name="Facturas" Relationship="VeterinariaModel.FK_FACTURA_CATEGORIA_FACTURA" FromRole="Categoria_Factura" ToRole="Factura" />
           <Property Name="Inactivo" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="Ciudad">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Clientes" Relationship="VeterinariaModel.FK_CLIENTE_CIUDAD" FromRole="Ciudad" ToRole="Cliente" />
-          <NavigationProperty Name="Empleados" Relationship="VeterinariaModel.FK_EMPLEADO_CIUDAD" FromRole="Ciudad" ToRole="Empleado" />
-          <Property Name="Inactivo" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="ID" />
@@ -698,13 +718,13 @@
           <Property Name="Apellidos" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Cedula" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CiudadID" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Ciudad" Relationship="VeterinariaModel.FK_CLIENTE_CIUDAD" FromRole="Cliente" ToRole="Ciudad" />
           <NavigationProperty Name="Cotizaciones" Relationship="VeterinariaModel.FK_COTIZACION_CLIENTE" FromRole="Cliente" ToRole="Cotizacione" />
           <NavigationProperty Name="Facturas" Relationship="VeterinariaModel.FK_FACTURA_CLIENTE" FromRole="Cliente" ToRole="Factura" />
           <Property Name="Inactivo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Animales" Relationship="VeterinariaModel.Clientes_Animales" FromRole="Cliente" ToRole="Animale" />
+          <Property Name="MunicipioId" Type="Int32" />
+          <NavigationProperty Name="Municipio" Relationship="VeterinariaModel.Municipio_Clientes" FromRole="Cliente" ToRole="Municipio" />
         </EntityType>
         <EntityType Name="Cotizacione">
           <Key>
@@ -737,16 +757,16 @@
           <Property Name="CargoId" Type="Int32" Nullable="false" />
           <Property Name="Sueldo" Type="Int32" Nullable="false" />
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CiudadID" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="Cedula" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Correo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Cargo" Relationship="VeterinariaModel.FK_EMPLEADO_CARGOS" FromRole="Empleado" ToRole="Cargo" />
-          <NavigationProperty Name="Ciudad" Relationship="VeterinariaModel.FK_EMPLEADO_CIUDAD" FromRole="Empleado" ToRole="Ciudad" />
           <NavigationProperty Name="Cotizaciones" Relationship="VeterinariaModel.FK_COTIZACION_EMPLEADO" FromRole="Empleado" ToRole="Cotizacione" />
           <NavigationProperty Name="Facturas" Relationship="VeterinariaModel.FK_FACTURA_EMPLEADO" FromRole="Empleado" ToRole="Factura" />
           <NavigationProperty Name="Usuarios" Relationship="VeterinariaModel.FK_USUARIO_EMPLEADO" FromRole="Empleado" ToRole="Usuario" />
           <Property Name="Inactivo" Type="Boolean" Nullable="false" />
+          <Property Name="MunicipioId" Type="Int32" />
+          <NavigationProperty Name="Municipio" Relationship="VeterinariaModel.Municipio_Empleados" FromRole="Empleado" ToRole="Municipio" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -806,7 +826,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Dirección" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TipoProveedorID" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Productoes" Relationship="VeterinariaModel.FK_PRODUCTO_PROVEEDOR" FromRole="Proveedor" ToRole="Producto" />
           <Property Name="Inactivo" Type="Boolean" Nullable="false" />
@@ -934,30 +953,6 @@
             </Principal>
             <Dependent Role="Factura">
               <PropertyRef Name="CategoriaID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CLIENTE_CIUDAD">
-          <End Type="VeterinariaModel.Ciudad" Role="Ciudad" Multiplicity="1" />
-          <End Type="VeterinariaModel.Cliente" Role="Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ciudad">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="CiudadID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EMPLEADO_CIUDAD">
-          <End Type="VeterinariaModel.Ciudad" Role="Ciudad" Multiplicity="1" />
-          <End Type="VeterinariaModel.Empleado" Role="Empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ciudad">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Empleado">
-              <PropertyRef Name="CiudadID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1135,6 +1130,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Inactivo" Type="Boolean" Nullable="false" />
+          <Property Name="ProvinciaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="VeterinariaModel.Municipio_Clientes" FromRole="Municipio" ToRole="Cliente" />
+          <NavigationProperty Name="Empleados" Relationship="VeterinariaModel.Municipio_Empleados" FromRole="Municipio" ToRole="Empleado" />
+          <NavigationProperty Name="Provincia" Relationship="VeterinariaModel.Provincia_Municipio" FromRole="Municipio" ToRole="Provincia" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Inactivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Municipios" Relationship="VeterinariaModel.Provincia_Municipio" FromRole="Provincia" ToRole="Municipio" />
+        </EntityType>
+        <Association Name="Municipio_Clientes">
+          <End Type="VeterinariaModel.Municipio" Role="Municipio" Multiplicity="0..1" />
+          <End Type="VeterinariaModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="MunicipioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Municipio_Empleados">
+          <End Type="VeterinariaModel.Municipio" Role="Municipio" Multiplicity="0..1" />
+          <End Type="VeterinariaModel.Empleado" Role="Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="MunicipioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Provincia_Municipio">
+          <End Type="VeterinariaModel.Provincia" Role="Provincia" Multiplicity="1" />
+          <End Type="VeterinariaModel.Municipio" Role="Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1173,21 +1225,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ciudads">
-            <EntityTypeMapping TypeName="VeterinariaModel.Ciudad">
-              <MappingFragment StoreEntitySet="Ciudad">
-                <ScalarProperty Name="Inactivo" ColumnName="Inactivo" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="VeterinariaModel.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
                 <ScalarProperty Name="Inactivo" ColumnName="Inactivo" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="CiudadID" ColumnName="CiudadID" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
@@ -1217,11 +1260,11 @@
           <EntitySetMapping Name="Empleados">
             <EntityTypeMapping TypeName="VeterinariaModel.Empleado">
               <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="MunicipioId" ColumnName="MunicipioId" />
                 <ScalarProperty Name="Inactivo" ColumnName="Inactivo" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="CiudadID" ColumnName="CiudadID" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
                 <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
                 <ScalarProperty Name="CargoId" ColumnName="CargoId" />
@@ -1282,7 +1325,6 @@
               <MappingFragment StoreEntitySet="Proveedor">
                 <ScalarProperty Name="Inactivo" ColumnName="Inactivo" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="TipoProveedorID" ColumnName="TipoProveedorID" />
                 <ScalarProperty Name="Dirección" ColumnName="Dirección" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -1367,6 +1409,25 @@
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="FacturasID" ColumnName="FacturasID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="VeterinariaModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+                <ScalarProperty Name="Inactivo" ColumnName="Inactivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="VeterinariaModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="Inactivo" ColumnName="Inactivo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

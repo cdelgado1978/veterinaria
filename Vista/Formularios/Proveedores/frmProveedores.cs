@@ -144,7 +144,7 @@ namespace Veterinaria.Vista.Formularios.Proveedores
         {
             var _valor = txtBuscar.Text;
 
-            var _result = proveedorController.Obtener(_valor);
+            var _result = proveedorController.ObtenerTodos(_valor);
 
             dgProveedores.DataSource = _result;
 

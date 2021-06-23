@@ -28,7 +28,6 @@ namespace Veterinaria.Modelo
         public virtual DbSet<Animale> Animales { get; set; }
         public virtual DbSet<Cargo> Cargos { get; set; }
         public virtual DbSet<Categoria_Factura> Categoria_Factura { get; set; }
-        public virtual DbSet<Ciudad> Ciudads { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Cotizacione> Cotizaciones { get; set; }
         public virtual DbSet<Empleado> Empleados { get; set; }
@@ -43,5 +42,7 @@ namespace Veterinaria.Modelo
         public virtual DbSet<Tipo_Producto> Tipo_Producto { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Facturas_Detalle> Facturas_Detalle { get; set; }
+        public virtual DbSet<Municipio> Municipios { get; set; }
+        public virtual DbSet<Provincia> Provincias { get; set; }
     }
 }

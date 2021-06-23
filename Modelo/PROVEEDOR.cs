@@ -23,7 +23,6 @@ namespace Veterinaria.Modelo
         public int ID { get; set; }
         public string Nombre { get; set; }
         public string Dirección { get; set; }
-        public int TipoProveedorID { get; set; }
         public string Telefono { get; set; }
         public bool Inactivo { get; set; }
     

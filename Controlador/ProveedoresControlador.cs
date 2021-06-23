@@ -35,7 +35,6 @@ namespace Veterinaria.Controlador
                     Nombre = c.Nombre,
                     Direccion = c.Dirección,
                     Telefono = c.Telefono,
-                    //TipoProveedorID = c.TipoProveedorID,
                     Inactivo = c.Inactivo
 
                 });
@@ -44,7 +43,7 @@ namespace Veterinaria.Controlador
             return _proveedores;
         }
 
-        public List<ProveedorDto> Obtener(string texto)
+        public List<ProveedorDto> ObtenerTodos(string texto)
         {
             var _result = db.Proveedors.Where(p => p.Nombre.Contains(texto)).ToList();
 
@@ -58,7 +57,6 @@ namespace Veterinaria.Controlador
                     Nombre = c.Nombre,
                     Direccion = c.Dirección,
                     Telefono = c.Telefono,
-                    //TipoProveedorID = c.TipoProveedorID,
                     Inactivo = c.Inactivo
 
                 });
@@ -103,7 +101,5 @@ namespace Veterinaria.Controlador
         }
     }
 
-
-    //public class TipoProveedorControlador: IControlador<Tipo>
 }
 

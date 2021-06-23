@@ -30,8 +30,9 @@ namespace Veterinaria.Controlador
 
         public void Editar(Tipo_Producto entidad)
         {
-            
-            if (entidad != null)
+
+            var result = db.Tipo_Producto.Single(tp => tp.Id == entidad.Id);
+            if (result != null)
             {
                 db.Tipo_Producto.AddOrUpdate(entidad);
                 db.SaveChanges();
@@ -43,7 +44,7 @@ namespace Veterinaria.Controlador
         public void Borrar(Tipo_Producto entidad)
         {
 
-            var result = db.Tipo_Producto.Find(entidad);
+            var result = db.Tipo_Producto.Single(tp => tp.Id == entidad.Id);
             if (result != null)
             {
                 result.Inactivo = true;
@@ -64,7 +65,28 @@ namespace Veterinaria.Controlador
                 _tipoProductos.Add(new TipoProductoDto()
                 {
                     Id = tp.Id,
-                    Nombre = tp.Nombre
+                    Nombre = tp.Nombre,
+                    Inactivo = tp.Inactivo
+                    
+                });
+            });
+
+            return _tipoProductos;
+        }
+
+        public object ObtenerTodos(string texto)
+        {
+            var _result = db.Tipo_Producto.Where(p => p.Nombre.Contains(texto) ).ToList();
+
+            List<TipoProductoDto> _tipoProductos = new List<TipoProductoDto>();
+
+            _result.ForEach(tp =>
+            {
+                _tipoProductos.Add(new TipoProductoDto()
+                {
+                    Id = tp.Id,
+                    Nombre = tp.Nombre,
+                    Inactivo = tp.Inactivo
                 });
             });
 

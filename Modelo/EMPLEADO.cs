@@ -29,19 +29,19 @@ namespace Veterinaria.Modelo
         public int CargoId { get; set; }
         public int Sueldo { get; set; }
         public string Direccion { get; set; }
-        public int CiudadID { get; set; }
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string Correo { get; set; }
         public bool Inactivo { get; set; }
+        public int MunicipioId { get; set; }
     
         public virtual Cargo Cargo { get; set; }
-        public virtual Ciudad Ciudad { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cotizacione> Cotizaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Facturas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual Municipio Municipio { get; set; }
     }
 }

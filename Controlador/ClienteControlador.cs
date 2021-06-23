@@ -39,9 +39,9 @@ namespace Veterinaria.Controlador
                     Apellido= c.Apellidos,
                     Cedula= c.Cedula,
                     Direccion= c.Direccion,
-                    CiudadId=c.CiudadID,
                     Telefono= c.Telefono,
                     Inactivo = c.Inactivo,
+                    MunicipioId = c.MunicipioId
 
                 });
             });

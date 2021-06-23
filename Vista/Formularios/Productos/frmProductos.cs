@@ -166,7 +166,7 @@ namespace Veterinaria.Vista.Formularios.Productos
 
         public void CargaProveedores()
         {
-            var result = proveedorControlador.ObtenerTodos().ToList();
+            var result = proveedorControlador.ObtenerTodos().OrderBy(n => n.Nombre).ToList();
 
             cbProveedor.DataSource = result;
             cbProveedor.DisplayMember = "Nombre";
@@ -175,7 +175,7 @@ namespace Veterinaria.Vista.Formularios.Productos
 
         public void CargaTipoProducto()
         {
-            var result = tipoProductoControlador.ObtenerTodos().ToList();
+            var result = tipoProductoControlador.ObtenerTodos().OrderBy(n => n.Nombre).ToList();
 
             cbTipoProducto.DataSource = result;
             cbTipoProducto.DisplayMember = "Nombre";
@@ -196,7 +196,7 @@ namespace Veterinaria.Vista.Formularios.Productos
         {
             var _valor = txtBuscar.Text;
 
-            var _result = productosControlador.Obtener(_valor);
+            var _result = productosControlador.ObtenerTodos(_valor);
 
             dbGridDetalle.DataSource = _result;
 
