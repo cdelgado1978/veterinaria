@@ -348,6 +348,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -373,6 +374,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // PanelDetalle
             // 
@@ -420,6 +422,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.dbGridDetalle.RowTemplate.Height = 24;
             this.dbGridDetalle.Size = new System.Drawing.Size(1016, 205);
             this.dbGridDetalle.TabIndex = 1;
+            this.dbGridDetalle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbGridDetalle_CellDoubleClick);
             // 
             // Id
             // 

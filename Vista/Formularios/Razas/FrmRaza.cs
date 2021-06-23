@@ -65,7 +65,7 @@ namespace Veterinaria.Vista.Formularios.Razas
 
             var _nombre = txtNombre.Text;
             var _inactivo = chkBoxInactivo.Checked;
-
+            var _tipoAnimalId = int.Parse(cbTipoAnimal.SelectedValue.ToString());
 
 
             if (Agregando)
@@ -74,6 +74,7 @@ namespace Veterinaria.Vista.Formularios.Razas
                 var _nuevaRaza = new Raza()
                 {
                     Nombre = _nombre,
+                    TipoAnimalId = _tipoAnimalId,
                     Inactivo = _inactivo
 
                 };
@@ -86,6 +87,7 @@ namespace Veterinaria.Vista.Formularios.Razas
                 {
                     Id = _razaId,
                     Nombre = _nombre,
+                    TipoAnimalId = _tipoAnimalId,
                     Inactivo = _inactivo
 
                 };
