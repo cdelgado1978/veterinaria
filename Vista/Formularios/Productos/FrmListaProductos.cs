@@ -188,5 +188,15 @@ namespace Veterinaria.Vista.Formularios.Productos
             btnGuardar.Enabled = true;
 
         }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            var _valor = txtBuscar.Text;
+
+            var _result = productosControlador.Obtener(_valor);
+
+            dbGridDetalle.DataSource = _result;
+
+        }
     }
 }

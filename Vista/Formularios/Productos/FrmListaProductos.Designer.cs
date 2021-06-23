@@ -55,8 +55,11 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.PanelDetalle = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dbGridDetalle = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoProductoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +69,10 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProveedorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTituloDetalle = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblBuscar = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             costoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -79,7 +86,10 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.PanelForm.SuspendLayout();
             this.Panel_botones.SuspendLayout();
             this.PanelDetalle.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridDetalle)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // cantidadLabel
@@ -196,10 +206,11 @@ namespace Veterinaria.Vista.Formularios.Productos
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 36);
+            this.label1.Size = new System.Drawing.Size(202, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Productos";
             // 
@@ -365,7 +376,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(36, 86);
+            this.btnEditar.Location = new System.Drawing.Point(36, 85);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(104, 41);
@@ -391,7 +402,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(36, 131);
+            this.btnGuardar.Location = new System.Drawing.Point(36, 130);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(104, 41);
@@ -402,12 +413,33 @@ namespace Veterinaria.Vista.Formularios.Productos
             // 
             // PanelDetalle
             // 
-            this.PanelDetalle.Controls.Add(this.dbGridDetalle);
+            this.PanelDetalle.Controls.Add(this.panel2);
+            this.PanelDetalle.Controls.Add(this.panel1);
             this.PanelDetalle.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelDetalle.Location = new System.Drawing.Point(0, 345);
             this.PanelDetalle.Name = "PanelDetalle";
             this.PanelDetalle.Size = new System.Drawing.Size(1024, 250);
             this.PanelDetalle.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.lblTituloDetalle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1024, 45);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dbGridDetalle);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1024, 205);
+            this.panel2.TabIndex = 2;
             // 
             // dbGridDetalle
             // 
@@ -417,6 +449,7 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.dbGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dbGridDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Inactivo,
             this.Nombre,
             this.TipoProductoNombre,
             this.Descripcion,
@@ -433,9 +466,8 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.dbGridDetalle.ReadOnly = true;
             this.dbGridDetalle.RowHeadersWidth = 51;
             this.dbGridDetalle.RowTemplate.Height = 24;
-            this.dbGridDetalle.Size = new System.Drawing.Size(1024, 250);
-            this.dbGridDetalle.TabIndex = 0;
-            this.dbGridDetalle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbGridDetalle_CellDoubleClick);
+            this.dbGridDetalle.Size = new System.Drawing.Size(1024, 205);
+            this.dbGridDetalle.TabIndex = 1;
             // 
             // Id
             // 
@@ -446,6 +478,16 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             this.Id.Width = 125;
+            // 
+            // Inactivo
+            // 
+            this.Inactivo.DataPropertyName = "Inactivo";
+            this.Inactivo.HeaderText = "Inactivo";
+            this.Inactivo.MinimumWidth = 6;
+            this.Inactivo.Name = "Inactivo";
+            this.Inactivo.ReadOnly = true;
+            this.Inactivo.Visible = false;
+            this.Inactivo.Width = 125;
             // 
             // Nombre
             // 
@@ -530,6 +572,47 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.ProveedorId.Visible = false;
             this.ProveedorId.Width = 125;
             // 
+            // lblTituloDetalle
+            // 
+            this.lblTituloDetalle.AutoSize = true;
+            this.lblTituloDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblTituloDetalle.ForeColor = System.Drawing.Color.White;
+            this.lblTituloDetalle.Location = new System.Drawing.Point(10, 7);
+            this.lblTituloDetalle.Name = "lblTituloDetalle";
+            this.lblTituloDetalle.Size = new System.Drawing.Size(99, 31);
+            this.lblTituloDetalle.TabIndex = 0;
+            this.lblTituloDetalle.Text = "Detalle";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(108, 8);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(219, 30);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblBuscar);
+            this.panel3.Controls.Add(this.txtBuscar);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(685, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(339, 45);
+            this.panel3.TabIndex = 2;
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblBuscar.ForeColor = System.Drawing.Color.White;
+            this.lblBuscar.Location = new System.Drawing.Point(3, 8);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(99, 31);
+            this.lblBuscar.TabIndex = 2;
+            this.lblBuscar.Text = "Buscar";
+            // 
             // FrmListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -551,7 +634,12 @@ namespace Veterinaria.Vista.Formularios.Productos
             this.PanelForm.PerformLayout();
             this.Panel_botones.ResumeLayout(false);
             this.PanelDetalle.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dbGridDetalle)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -561,7 +649,6 @@ namespace Veterinaria.Vista.Formularios.Productos
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelContenido;
         private System.Windows.Forms.Panel PanelControlBox;
-        private System.Windows.Forms.DataGridView dbGridDetalle;
         private System.Windows.Forms.Panel Panel_botones;
         private System.Windows.Forms.Panel PanelDetalle;
         private System.Windows.Forms.TextBox txtPrecio;
@@ -575,7 +662,12 @@ namespace Veterinaria.Vista.Formularios.Productos
         private System.Windows.Forms.CheckBox chkBoxInactivo;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Panel PanelForm;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dbGridDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inactivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoProductoNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
@@ -585,8 +677,11 @@ namespace Veterinaria.Vista.Formularios.Productos
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoProductoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProveedorId;
-        private System.Windows.Forms.Panel PanelForm;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label lblTituloDetalle;
     }
 }
 

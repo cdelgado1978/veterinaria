@@ -51,7 +51,36 @@ namespace Veterinaria.Controlador
             return _productos;
         }
 
- 
+        public List<ProductoDto> Obtener(string texto)
+        {
+            var _result = db.Productos.Where(p => p.Nombre.Contains(texto) || p.Descripcion.Contains(texto)).ToList();
+            
+
+            List<ProductoDto> _productos = new List<ProductoDto>();
+
+            _result.ForEach(p =>
+            {
+                _productos.Add(new ProductoDto()
+                {
+                    Id = p.Id,
+                    Nombre = p.Nombre,
+                    TipoProductoId = p.TipoProductoId,
+                    TipoProductoNombre = p.Tipo_Producto.Nombre,
+                    Descripcion = p.Descripcion,
+                    ProveedorId = p.ProveedorId,
+                    ProveedorNombre = p.Proveedor.Nombre,
+                    Costo = p.Costo,
+                    Precio = p.Precio,
+                    Cantidad = p.Cantidad,
+                    Inactivo = p.Inactivo
+
+                });
+            });
+
+            return _productos;
+        }
+
+
         public Producto Agregar(Producto entidad)
         {
             if (entidad != null)
