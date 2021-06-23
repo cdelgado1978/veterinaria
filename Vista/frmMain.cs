@@ -36,7 +36,7 @@ namespace Veterinaria.Vista
 
         private void MostrarSubMenu(Panel subMenu)
         {
-            if (subMenu.Visible == false)
+            if (!subMenu.Visible)
             {
                 OcultaSubMenu();
                 subMenu.Visible = true;
