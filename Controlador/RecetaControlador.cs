@@ -10,7 +10,7 @@ using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Controlador
 {
-    class RecetaControlador : IControlador<Receta>
+    public class RecetaControlador : IControlador<Receta>
     {
        
             private readonly VeterinariaEntities db;

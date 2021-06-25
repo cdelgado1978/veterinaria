@@ -202,6 +202,9 @@ namespace Veterinaria.Vista.Formularios.Productos
 
         }
 
-       
+        private void dbGridDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

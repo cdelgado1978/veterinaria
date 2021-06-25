@@ -52,15 +52,6 @@ namespace Veterinaria.Formularios.Animales
             this.PanelDetalle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgGridDetalle = new System.Windows.Forms.DataGridView();
-            this.PanelTituloDetalle = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblTituloDetalle = new System.Windows.Forms.Label();
-            this.panelTitulo = new System.Windows.Forms.Panel();
-            this.PanelControlBox = new System.Windows.Forms.Panel();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +61,15 @@ namespace Veterinaria.Formularios.Animales
             this.TipoAnimalNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PanelTituloDetalle = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblTituloDetalle = new System.Windows.Forms.Label();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.PanelControlBox = new System.Windows.Forms.Panel();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             costoLabel = new System.Windows.Forms.Label();
@@ -94,9 +94,10 @@ namespace Veterinaria.Formularios.Animales
             label2.AutoSize = true;
             label2.BackColor = System.Drawing.Color.Transparent;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(395, 35);
+            label2.Location = new System.Drawing.Point(296, 28);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(50, 17);
+            label2.Size = new System.Drawing.Size(40, 13);
             label2.TabIndex = 49;
             label2.Text = "Edad:";
             // 
@@ -105,9 +106,10 @@ namespace Veterinaria.Formularios.Animales
             nombreLabel.AutoSize = true;
             nombreLabel.BackColor = System.Drawing.Color.Transparent;
             nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(69, 35);
+            nombreLabel.Location = new System.Drawing.Point(52, 28);
+            nombreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(69, 17);
+            nombreLabel.Size = new System.Drawing.Size(54, 13);
             nombreLabel.TabIndex = 44;
             nombreLabel.Text = "Nombre:";
             // 
@@ -116,9 +118,10 @@ namespace Veterinaria.Formularios.Animales
             costoLabel.AutoSize = true;
             costoLabel.BackColor = System.Drawing.Color.Transparent;
             costoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoLabel.Location = new System.Drawing.Point(57, 74);
+            costoLabel.Location = new System.Drawing.Point(43, 60);
+            costoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             costoLabel.Name = "costoLabel";
-            costoLabel.Size = new System.Drawing.Size(81, 17);
+            costoLabel.Size = new System.Drawing.Size(65, 13);
             costoLabel.TabIndex = 41;
             costoLabel.Text = "Direccion:";
             // 
@@ -127,9 +130,10 @@ namespace Veterinaria.Formularios.Animales
             label3.AutoSize = true;
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(41, 181);
+            label3.Location = new System.Drawing.Point(31, 147);
+            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(93, 17);
+            label3.Size = new System.Drawing.Size(72, 13);
             label3.TabIndex = 51;
             label3.Text = "Propietario:";
             // 
@@ -138,10 +142,10 @@ namespace Veterinaria.Formularios.Animales
             RazaLabel.AutoSize = true;
             RazaLabel.BackColor = System.Drawing.Color.Transparent;
             RazaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            RazaLabel.Location = new System.Drawing.Point(395, 137);
+            RazaLabel.Location = new System.Drawing.Point(296, 111);
             RazaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             RazaLabel.Name = "RazaLabel";
-            RazaLabel.Size = new System.Drawing.Size(50, 17);
+            RazaLabel.Size = new System.Drawing.Size(40, 13);
             RazaLabel.TabIndex = 54;
             RazaLabel.Text = "Raza:";
             // 
@@ -150,10 +154,10 @@ namespace Veterinaria.Formularios.Animales
             tipoanimalLabel.AutoSize = true;
             tipoanimalLabel.BackColor = System.Drawing.Color.Transparent;
             tipoanimalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tipoanimalLabel.Location = new System.Drawing.Point(17, 137);
+            tipoanimalLabel.Location = new System.Drawing.Point(13, 111);
             tipoanimalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tipoanimalLabel.Name = "tipoanimalLabel";
-            tipoanimalLabel.Size = new System.Drawing.Size(121, 17);
+            tipoanimalLabel.Size = new System.Drawing.Size(95, 13);
             tipoanimalLabel.TabIndex = 55;
             tipoanimalLabel.Text = "Tipo de Animal:";
             // 
@@ -163,8 +167,9 @@ namespace Veterinaria.Formularios.Animales
             this.PanelRoot.Controls.Add(this.panelTitulo);
             this.PanelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelRoot.Location = new System.Drawing.Point(0, 0);
+            this.PanelRoot.Margin = new System.Windows.Forms.Padding(2);
             this.PanelRoot.Name = "PanelRoot";
-            this.PanelRoot.Size = new System.Drawing.Size(1013, 687);
+            this.PanelRoot.Size = new System.Drawing.Size(760, 558);
             this.PanelRoot.TabIndex = 2;
             // 
             // panelContenido
@@ -174,10 +179,10 @@ namespace Veterinaria.Formularios.Animales
             this.panelContenido.Controls.Add(this.Panel_botones);
             this.panelContenido.Controls.Add(this.PanelDetalle);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(0, 76);
-            this.panelContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContenido.Location = new System.Drawing.Point(0, 62);
+            this.panelContenido.Margin = new System.Windows.Forms.Padding(2);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1013, 611);
+            this.panelContenido.Size = new System.Drawing.Size(760, 496);
             this.panelContenido.TabIndex = 6;
             // 
             // PanelForm
@@ -198,8 +203,9 @@ namespace Veterinaria.Formularios.Animales
             this.PanelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelForm.Enabled = false;
             this.PanelForm.Location = new System.Drawing.Point(0, 0);
+            this.PanelForm.Margin = new System.Windows.Forms.Padding(2);
             this.PanelForm.Name = "PanelForm";
-            this.PanelForm.Size = new System.Drawing.Size(837, 361);
+            this.PanelForm.Size = new System.Drawing.Size(628, 293);
             this.PanelForm.TabIndex = 48;
             // 
             // cbRaza
@@ -215,11 +221,11 @@ namespace Veterinaria.Formularios.Animales
             this.cbRaza.HoverState.Parent = this.cbRaza;
             this.cbRaza.ItemHeight = 30;
             this.cbRaza.ItemsAppearance.Parent = this.cbRaza;
-            this.cbRaza.Location = new System.Drawing.Point(449, 119);
+            this.cbRaza.Location = new System.Drawing.Point(337, 97);
             this.cbRaza.Margin = new System.Windows.Forms.Padding(2);
             this.cbRaza.Name = "cbRaza";
             this.cbRaza.ShadowDecoration.Parent = this.cbRaza;
-            this.cbRaza.Size = new System.Drawing.Size(254, 36);
+            this.cbRaza.Size = new System.Drawing.Size(192, 36);
             this.cbRaza.TabIndex = 53;
             // 
             // cbTipoAnimal
@@ -235,11 +241,11 @@ namespace Veterinaria.Formularios.Animales
             this.cbTipoAnimal.HoverState.Parent = this.cbTipoAnimal;
             this.cbTipoAnimal.ItemHeight = 30;
             this.cbTipoAnimal.ItemsAppearance.Parent = this.cbTipoAnimal;
-            this.cbTipoAnimal.Location = new System.Drawing.Point(140, 122);
+            this.cbTipoAnimal.Location = new System.Drawing.Point(105, 99);
             this.cbTipoAnimal.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoAnimal.Name = "cbTipoAnimal";
             this.cbTipoAnimal.ShadowDecoration.Parent = this.cbTipoAnimal;
-            this.cbTipoAnimal.Size = new System.Drawing.Size(227, 36);
+            this.cbTipoAnimal.Size = new System.Drawing.Size(171, 36);
             this.cbTipoAnimal.TabIndex = 52;
             this.cbTipoAnimal.SelectedIndexChanged += new System.EventHandler(this.cbTipoAnimal_SelectedIndexChanged);
             // 
@@ -256,11 +262,11 @@ namespace Veterinaria.Formularios.Animales
             this.cbClientes.HoverState.Parent = this.cbClientes;
             this.cbClientes.ItemHeight = 30;
             this.cbClientes.ItemsAppearance.Parent = this.cbClientes;
-            this.cbClientes.Location = new System.Drawing.Point(140, 162);
-            this.cbClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbClientes.Location = new System.Drawing.Point(105, 132);
+            this.cbClientes.Margin = new System.Windows.Forms.Padding(2);
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.ShadowDecoration.Parent = this.cbClientes;
-            this.cbClientes.Size = new System.Drawing.Size(563, 36);
+            this.cbClientes.Size = new System.Drawing.Size(423, 36);
             this.cbClientes.TabIndex = 50;
             // 
             // txtEdad
@@ -268,10 +274,10 @@ namespace Veterinaria.Formularios.Animales
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEdad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdad.Location = new System.Drawing.Point(449, 25);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEdad.Location = new System.Drawing.Point(337, 20);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(97, 27);
+            this.txtEdad.Size = new System.Drawing.Size(73, 22);
             this.txtEdad.TabIndex = 48;
             // 
             // txtDireccion
@@ -279,11 +285,11 @@ namespace Veterinaria.Formularios.Animales
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(140, 62);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccion.Location = new System.Drawing.Point(105, 50);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(563, 53);
+            this.txtDireccion.Size = new System.Drawing.Size(422, 43);
             this.txtDireccion.TabIndex = 37;
             // 
             // txtNombre
@@ -291,10 +297,10 @@ namespace Veterinaria.Formularios.Animales
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(140, 25);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Location = new System.Drawing.Point(105, 20);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(227, 27);
+            this.txtNombre.Size = new System.Drawing.Size(170, 22);
             this.txtNombre.TabIndex = 33;
             // 
             // chkBoxInactivo
@@ -302,10 +308,10 @@ namespace Veterinaria.Formularios.Animales
             this.chkBoxInactivo.BackColor = System.Drawing.Color.Transparent;
             this.chkBoxInactivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkBoxInactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBoxInactivo.Location = new System.Drawing.Point(599, 29);
-            this.chkBoxInactivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkBoxInactivo.Location = new System.Drawing.Point(449, 24);
+            this.chkBoxInactivo.Margin = new System.Windows.Forms.Padding(2);
             this.chkBoxInactivo.Name = "chkBoxInactivo";
-            this.chkBoxInactivo.Size = new System.Drawing.Size(104, 23);
+            this.chkBoxInactivo.Size = new System.Drawing.Size(78, 19);
             this.chkBoxInactivo.TabIndex = 43;
             this.chkBoxInactivo.Text = "Inactivo";
             this.chkBoxInactivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -317,19 +323,20 @@ namespace Veterinaria.Formularios.Animales
             this.Panel_botones.Controls.Add(this.btnNuevo);
             this.Panel_botones.Controls.Add(this.btnGuardar);
             this.Panel_botones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Panel_botones.Location = new System.Drawing.Point(837, 0);
+            this.Panel_botones.Location = new System.Drawing.Point(628, 0);
+            this.Panel_botones.Margin = new System.Windows.Forms.Padding(2);
             this.Panel_botones.Name = "Panel_botones";
-            this.Panel_botones.Size = new System.Drawing.Size(176, 361);
+            this.Panel_botones.Size = new System.Drawing.Size(132, 293);
             this.Panel_botones.TabIndex = 2;
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(36, 85);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Location = new System.Drawing.Point(27, 69);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(104, 41);
+            this.btnEditar.Size = new System.Drawing.Size(78, 33);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -339,10 +346,10 @@ namespace Veterinaria.Formularios.Animales
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Location = new System.Drawing.Point(36, 40);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevo.Location = new System.Drawing.Point(27, 32);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(104, 41);
+            this.btnNuevo.Size = new System.Drawing.Size(78, 33);
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -352,10 +359,10 @@ namespace Veterinaria.Formularios.Animales
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(36, 130);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(27, 106);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(104, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(78, 33);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -366,18 +373,20 @@ namespace Veterinaria.Formularios.Animales
             this.PanelDetalle.Controls.Add(this.panel2);
             this.PanelDetalle.Controls.Add(this.PanelTituloDetalle);
             this.PanelDetalle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelDetalle.Location = new System.Drawing.Point(0, 361);
+            this.PanelDetalle.Location = new System.Drawing.Point(0, 293);
+            this.PanelDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.PanelDetalle.Name = "PanelDetalle";
-            this.PanelDetalle.Size = new System.Drawing.Size(1013, 250);
+            this.PanelDetalle.Size = new System.Drawing.Size(760, 203);
             this.PanelDetalle.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgGridDetalle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Location = new System.Drawing.Point(0, 37);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1013, 205);
+            this.panel2.Size = new System.Drawing.Size(760, 166);
             this.panel2.TabIndex = 2;
             // 
             // dgGridDetalle
@@ -398,112 +407,15 @@ namespace Veterinaria.Formularios.Animales
             this.RazaId});
             this.dgGridDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgGridDetalle.Location = new System.Drawing.Point(0, 0);
-            this.dgGridDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgGridDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.dgGridDetalle.Name = "dgGridDetalle";
             this.dgGridDetalle.ReadOnly = true;
             this.dgGridDetalle.RowHeadersWidth = 51;
             this.dgGridDetalle.RowTemplate.Height = 24;
-            this.dgGridDetalle.Size = new System.Drawing.Size(1013, 205);
+            this.dgGridDetalle.Size = new System.Drawing.Size(760, 166);
             this.dgGridDetalle.TabIndex = 1;
+            this.dgGridDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGridDetalle_CellContentClick);
             this.dgGridDetalle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGridDetalle_CellDoubleClick);
-            // 
-            // PanelTituloDetalle
-            // 
-            this.PanelTituloDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
-            this.PanelTituloDetalle.Controls.Add(this.panel3);
-            this.PanelTituloDetalle.Controls.Add(this.lblTituloDetalle);
-            this.PanelTituloDetalle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTituloDetalle.Location = new System.Drawing.Point(0, 0);
-            this.PanelTituloDetalle.Name = "PanelTituloDetalle";
-            this.PanelTituloDetalle.Size = new System.Drawing.Size(1013, 45);
-            this.PanelTituloDetalle.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblBuscar);
-            this.panel3.Controls.Add(this.txtBuscar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(674, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(339, 45);
-            this.panel3.TabIndex = 2;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblBuscar.ForeColor = System.Drawing.Color.White;
-            this.lblBuscar.Location = new System.Drawing.Point(3, 8);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(99, 31);
-            this.lblBuscar.TabIndex = 2;
-            this.lblBuscar.Text = "Buscar";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(108, 8);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(219, 30);
-            this.txtBuscar.TabIndex = 1;
-            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
-            // 
-            // lblTituloDetalle
-            // 
-            this.lblTituloDetalle.AutoSize = true;
-            this.lblTituloDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblTituloDetalle.ForeColor = System.Drawing.Color.White;
-            this.lblTituloDetalle.Location = new System.Drawing.Point(10, 7);
-            this.lblTituloDetalle.Name = "lblTituloDetalle";
-            this.lblTituloDetalle.Size = new System.Drawing.Size(99, 31);
-            this.lblTituloDetalle.TabIndex = 0;
-            this.lblTituloDetalle.Text = "Detalle";
-            // 
-            // panelTitulo
-            // 
-            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
-            this.panelTitulo.Controls.Add(this.PanelControlBox);
-            this.panelTitulo.Controls.Add(this.label1);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1013, 76);
-            this.panelTitulo.TabIndex = 5;
-            // 
-            // PanelControlBox
-            // 
-            this.PanelControlBox.Controls.Add(this.guna2ControlBox1);
-            this.PanelControlBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelControlBox.Location = new System.Drawing.Point(960, 0);
-            this.PanelControlBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelControlBox.Name = "PanelControlBox";
-            this.PanelControlBox.Size = new System.Drawing.Size(53, 76);
-            this.PanelControlBox.TabIndex = 4;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(5, 2);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 30);
-            this.guna2ControlBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Animales";
             // 
             // Id
             // 
@@ -588,15 +500,119 @@ namespace Veterinaria.Formularios.Animales
             this.RazaId.Visible = false;
             this.RazaId.Width = 125;
             // 
+            // PanelTituloDetalle
+            // 
+            this.PanelTituloDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
+            this.PanelTituloDetalle.Controls.Add(this.panel3);
+            this.PanelTituloDetalle.Controls.Add(this.lblTituloDetalle);
+            this.PanelTituloDetalle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTituloDetalle.Location = new System.Drawing.Point(0, 0);
+            this.PanelTituloDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelTituloDetalle.Name = "PanelTituloDetalle";
+            this.PanelTituloDetalle.Size = new System.Drawing.Size(760, 37);
+            this.PanelTituloDetalle.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblBuscar);
+            this.panel3.Controls.Add(this.txtBuscar);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(506, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(254, 37);
+            this.panel3.TabIndex = 2;
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblBuscar.ForeColor = System.Drawing.Color.White;
+            this.lblBuscar.Location = new System.Drawing.Point(2, 6);
+            this.lblBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(80, 26);
+            this.lblBuscar.TabIndex = 2;
+            this.lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(81, 6);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(165, 26);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
+            // 
+            // lblTituloDetalle
+            // 
+            this.lblTituloDetalle.AutoSize = true;
+            this.lblTituloDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblTituloDetalle.ForeColor = System.Drawing.Color.White;
+            this.lblTituloDetalle.Location = new System.Drawing.Point(8, 6);
+            this.lblTituloDetalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTituloDetalle.Name = "lblTituloDetalle";
+            this.lblTituloDetalle.Size = new System.Drawing.Size(80, 26);
+            this.lblTituloDetalle.TabIndex = 0;
+            this.lblTituloDetalle.Text = "Detalle";
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
+            this.panelTitulo.Controls.Add(this.PanelControlBox);
+            this.panelTitulo.Controls.Add(this.label1);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(760, 62);
+            this.panelTitulo.TabIndex = 5;
+            // 
+            // PanelControlBox
+            // 
+            this.PanelControlBox.Controls.Add(this.guna2ControlBox1);
+            this.PanelControlBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelControlBox.Location = new System.Drawing.Point(720, 0);
+            this.PanelControlBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelControlBox.Name = "PanelControlBox";
+            this.PanelControlBox.Size = new System.Drawing.Size(40, 62);
+            this.PanelControlBox.TabIndex = 4;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(4, 2);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
+            this.guna2ControlBox1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Animales";
+            // 
             // FrmListaAnimales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 687);
+            this.ClientSize = new System.Drawing.Size(760, 558);
             this.Controls.Add(this.PanelRoot);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListaAnimales";
             this.Text = "FrmListaAnimales";
+            this.Load += new System.EventHandler(this.FrmListaAnimales_Load);
             this.PanelRoot.ResumeLayout(false);
             this.panelContenido.ResumeLayout(false);
             this.PanelForm.ResumeLayout(false);

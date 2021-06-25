@@ -110,6 +110,12 @@
     <Compile Include="Formularios\Razas\FrmRaza.Designer.cs">
       <DependentUpon>FrmRaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Receta\FrmReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Receta\FrmReceta.Designer.cs">
+      <DependentUpon>FrmReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\TipoProductos\frmTipoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Razas\FrmRaza.resx">
       <DependentUpon>FrmRaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Receta\FrmReceta.resx">
+      <DependentUpon>FrmReceta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TipoProductos\frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.cs</DependentUpon>

@@ -224,5 +224,15 @@ namespace Veterinaria.Formularios.Animales
             cbClientes.DisplayMember = "NombreCompleto";
             cbClientes.ValueMember = "Id";
         }
+
+        private void dgGridDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmListaAnimales_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
