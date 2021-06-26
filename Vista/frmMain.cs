@@ -7,6 +7,7 @@ using Veterinaria.Vista.Formularios.Demograficos;
 using Veterinaria.Vista.Formularios.Productos;
 using Veterinaria.Vista.Formularios.Proveedores;
 using Veterinaria.Vista.Formularios.Razas;
+using Veterinaria.Vista.Formularios.Recetas;
 using Veterinaria.Vista.Formularios.TipoProductos;
 using Veterinaria.Vista.TipoAnimal;
 
@@ -146,6 +147,12 @@ namespace Veterinaria.Vista
         private void btnMunicipios_Click(object sender, EventArgs e)
         {
             AbrirFormularios<frmMunicipio>();
+            OcultaSubMenu();
+        }
+
+        private void btnReceta_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios<FrmReceta>();
             OcultaSubMenu();
         }
     }

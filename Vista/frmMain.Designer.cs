@@ -53,6 +53,7 @@ namespace Veterinaria.Vista
             this.ControlBoxMin = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PanelContent = new System.Windows.Forms.Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnReceta = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.panel_menu.SuspendLayout();
             this.panel_SeguridadSubmenu.SuspendLayout();
@@ -89,7 +90,7 @@ namespace Veterinaria.Vista
             this.panel_SeguridadSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
             this.panel_SeguridadSubmenu.Controls.Add(this.btnUsuario);
             this.panel_SeguridadSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_SeguridadSubmenu.Location = new System.Drawing.Point(0, 492);
+            this.panel_SeguridadSubmenu.Location = new System.Drawing.Point(0, 532);
             this.panel_SeguridadSubmenu.Name = "panel_SeguridadSubmenu";
             this.panel_SeguridadSubmenu.Size = new System.Drawing.Size(238, 47);
             this.panel_SeguridadSubmenu.TabIndex = 10;
@@ -117,7 +118,7 @@ namespace Veterinaria.Vista
             this.btnSeguridadMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguridadMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguridadMenu.ForeColor = System.Drawing.Color.White;
-            this.btnSeguridadMenu.Location = new System.Drawing.Point(0, 446);
+            this.btnSeguridadMenu.Location = new System.Drawing.Point(0, 486);
             this.btnSeguridadMenu.Name = "btnSeguridadMenu";
             this.btnSeguridadMenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSeguridadMenu.Size = new System.Drawing.Size(238, 46);
@@ -130,6 +131,7 @@ namespace Veterinaria.Vista
             // panel_MantenimientoSubMenu
             // 
             this.panel_MantenimientoSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(162)))), ((int)(((byte)(130)))));
+            this.panel_MantenimientoSubMenu.Controls.Add(this.btnReceta);
             this.panel_MantenimientoSubMenu.Controls.Add(this.btnTipoProducto);
             this.panel_MantenimientoSubMenu.Controls.Add(this.btnTipoAnimal);
             this.panel_MantenimientoSubMenu.Controls.Add(this.btnRaza);
@@ -141,7 +143,7 @@ namespace Veterinaria.Vista
             this.panel_MantenimientoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_MantenimientoSubMenu.Location = new System.Drawing.Point(0, 86);
             this.panel_MantenimientoSubMenu.Name = "panel_MantenimientoSubMenu";
-            this.panel_MantenimientoSubMenu.Size = new System.Drawing.Size(238, 360);
+            this.panel_MantenimientoSubMenu.Size = new System.Drawing.Size(238, 400);
             this.panel_MantenimientoSubMenu.TabIndex = 8;
             // 
             // btnTipoProducto
@@ -374,6 +376,23 @@ namespace Veterinaria.Vista
             // 
             this.guna2DragControl1.TargetControl = this;
             // 
+            // btnReceta
+            // 
+            this.btnReceta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReceta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReceta.FlatAppearance.BorderSize = 0;
+            this.btnReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceta.Location = new System.Drawing.Point(0, 328);
+            this.btnReceta.Name = "btnReceta";
+            this.btnReceta.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnReceta.Size = new System.Drawing.Size(238, 41);
+            this.btnReceta.TabIndex = 8;
+            this.btnReceta.Text = "Receta";
+            this.btnReceta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceta.UseVisualStyleBackColor = true;
+            this.btnReceta.Click += new System.EventHandler(this.btnReceta_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -422,5 +441,6 @@ namespace Veterinaria.Vista
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Button btnTipoProducto;
+        private System.Windows.Forms.Button btnReceta;
     }
 }

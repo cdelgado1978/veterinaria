@@ -15,6 +15,8 @@ namespace Veterinaria.Modelo
     
     public partial class VeterinariaEntities : DbContext
     {
+        public object open;
+
         public VeterinariaEntities()
             : base("name=VeterinariaEntities")
         {

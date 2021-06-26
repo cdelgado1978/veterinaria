@@ -33,5 +33,10 @@ namespace Veterinaria.Modelo
         public virtual Animale Animale { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Historial_Recetas> Historial_Recetas { get; set; }
+
+        public static implicit operator Receta(Receta v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
