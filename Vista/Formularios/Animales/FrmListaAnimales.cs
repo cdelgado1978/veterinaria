@@ -14,7 +14,7 @@ namespace Veterinaria.Formularios.Animales
 
         private AnimalControlador animalControlador;
         private readonly TipoAnimalControlador tipoAnimalControlador;
-        private readonly RazaControlador razaControlador;
+        private readonly Razacontrolador razaControlador;
         private readonly ClienteControlador clienteControlador;
         private bool Agregando;
         private int _animalId;
@@ -25,7 +25,7 @@ namespace Veterinaria.Formularios.Animales
 
             animalControlador = new AnimalControlador();
             tipoAnimalControlador = new TipoAnimalControlador();
-            razaControlador = new RazaControlador();
+            razaControlador = new Razacontrolador();
             clienteControlador = new ClienteControlador();
 
             ActualizaDBGrid();

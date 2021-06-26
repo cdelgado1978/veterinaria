@@ -7,11 +7,11 @@ using Veterinaria.Modelo.DTO;
 
 namespace Veterinaria.Controlador
 {
-    public class RazaControlador : IControlador<Raza>
+    public class Razacontrolador : IControlador<Raza>
     {
         private readonly VeterinariaEntities db;
 
-        public RazaControlador()
+        public Razacontrolador()
         {
             db = new VeterinariaEntities();
         }
@@ -107,6 +107,11 @@ namespace Veterinaria.Controlador
 
         }
 
-        
+        List<RecetaDTO> IControlador<Raza>.ObtenerTodos(string texto)
+        {
+            throw new System.NotImplementedException();
+        }
     }
-}
+
+      
+    

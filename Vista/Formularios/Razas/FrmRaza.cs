@@ -14,7 +14,7 @@ namespace Veterinaria.Vista.Formularios.Razas
 {
     public partial class FrmRaza : Form
     {
-        private RazaControlador razaControlador;
+        private Razacontrolador razaControlador;
         private readonly TipoAnimalControlador tipoAnimalControlador;
         private bool Agregando;
         private int _razaId;
@@ -25,7 +25,7 @@ namespace Veterinaria.Vista.Formularios.Razas
         {
             InitializeComponent();
 
-            razaControlador = new RazaControlador();
+            razaControlador = new Razacontrolador();
             tipoAnimalControlador = new TipoAnimalControlador();
 
             CargaTipoAnimal();
