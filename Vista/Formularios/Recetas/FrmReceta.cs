@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Veterinaria.Controlador;
 using Veterinaria.Modelo;
-using Veterinaria.Modelo.DTO;
 
 
-namespace Veterinaria.Vista.Formularios.Receta
+namespace Veterinaria.Vista.Formularios.Recetas
 {
     public partial class FrmReceta : Form
     {
         private readonly AnimalControlador animalcontrolador;
         private readonly RecetaControlador recetaControlador;
-        
+
         private bool Agregando;
-        
+
         public FrmReceta()
         {
             InitializeComponent();
@@ -44,7 +36,7 @@ namespace Veterinaria.Vista.Formularios.Receta
             LimpiarFormulario();
             Agregando = true;
 
-            
+
             btnGuardar.Enabled = true;
 
             PanelForm.Enabled = true;
@@ -64,13 +56,7 @@ namespace Veterinaria.Vista.Formularios.Receta
             checkboxinactivo.Checked = false;
 
         }
-        private void NuevaReceta()
-        {
 
-            
-
-
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -88,23 +74,23 @@ namespace Veterinaria.Vista.Formularios.Receta
             if (Agregando)
             {
 
-                var _nuevaReceta = new  ()
+                var _nuevaReceta = new Receta()
                 {
-                    
-                    
+
+
 
                 };
 
-                nueva(_nuevoAnimal);
+                nuevaReceta(_nuevaReceta);
             }
             else
             {
-                var _animal = new Animale()
+                var _receta = new Receta()
                 {
-                    
+
                 };
 
-                EditarAnimal(_animal);
+                EditarReceta(_receta);
             }
 
             btnEditar.Enabled = false;
@@ -117,10 +103,18 @@ namespace Veterinaria.Vista.Formularios.Receta
             PanelForm.Enabled = false;
         }
 
-        private void NuevoAnimal(Animale cte)
+        private void nuevaReceta(Receta receta)
         {
 
-            animalControlador.Agregar(cte);
+            recetaControlador.Agregar(receta);
+
+
+        }
+
+        private void EditarReceta(Receta receta)
+        {
+
+            recetaControlador.Editar(receta);
 
 
         }
@@ -130,5 +124,5 @@ namespace Veterinaria.Vista.Formularios.Receta
 
         }
     }
-    }
 }
+

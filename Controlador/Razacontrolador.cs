@@ -107,11 +107,7 @@ namespace Veterinaria.Controlador
 
         }
 
-        List<RecetaDTO> IControlador<Raza>.ObtenerTodos(string texto)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 
-      
+}  
     
