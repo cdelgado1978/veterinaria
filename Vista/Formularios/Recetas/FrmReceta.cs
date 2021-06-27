@@ -11,9 +11,12 @@ namespace Veterinaria.Vista.Formularios.Recetas
     public partial class FrmReceta : Form
     {
         private readonly AnimalControlador animalcontrolador;
+        private readonly ProductoControlador productoControlador;
         private readonly RecetaControlador recetaControlador;
 
-        SqlConnection conexion = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Veterinaria;Integrated Security=True");
+
+        //Mala Practica HardCode
+        //SqlConnection conexion = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=Veterinaria;Integrated Security=True");
 
 
         private bool Agregando;
@@ -27,6 +30,7 @@ namespace Veterinaria.Vista.Formularios.Recetas
 
             recetaControlador = new RecetaControlador();
             animalcontrolador = new AnimalControlador();
+            productoControlador = new ProductoControlador();
 
             ActualizaDBGrid();
 
@@ -156,25 +160,46 @@ namespace Veterinaria.Vista.Formularios.Recetas
 
         private void btnBuscaranm_Click(object sender, EventArgs e)
         {
-            string query = "select *from Animales where ID='" + txtanimalid.Text + "'";
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(query, conexion);
-            SqlDataReader leer = comando.ExecuteReader();
-            if (leer.Read() == true)
-            {
-                txtEdad.Text = leer["Edad"].ToString();
-                txtnombreanm.Text = leer["Nombre"].ToString();
-                txtDireccion.Text = leer["Direccion"].ToString();
-                txtTipoAnimal.Text = leer["TipoID"].ToString();
-                txtRaza.Text = leer["RazaID"].ToString();
-                txtPropietario.Text = leer["ClienteID"].ToString();
 
-                conexion.Close();
+            if (string.IsNullOrEmpty(txtanimalid.Text))
+            {
+                MessageBox.Show("El ID del animal no puede estar en blanco.");
+                return;
+            }
+                
+
+            var _animalId =int.Parse( txtanimalid.Text);
+
+            var _animal = animalcontrolador.Obtener(_animalId);
+
+
+            //string query = "select *from Animales where ID='" + txtanimalid.Text + "'";
+            //conexion.Open();
+            //SqlCommand comando = new SqlCommand(query, conexion);
+            //SqlDataReader leer = comando.ExecuteReader();
+            if (_animal != null)
+            {
+                //txtEdad.Text = leer["Edad"].ToString();
+                //txtnombreanm.Text = leer["Nombre"].ToString();
+                //txtDireccion.Text = leer["Direccion"].ToString();
+                //txtTipoAnimal.Text = leer["TipoID"].ToString();
+                //txtRaza.Text = leer["RazaID"].ToString();
+                //txtPropietario.Text = leer["ClienteID"].ToString();
+
+                txtEdad.Text = _animal.Edad.ToString();
+                txtnombreanm.Text = _animal.Nombre;
+                txtDireccion.Text = _animal.Direccion;
+                txtTipoAnimal.Text = _animal.Tipo_Animal.Nombre;
+                txtRaza.Text = _animal.Raza.Nombre;
+                txtPropietario.Text = $"{_animal.Cliente.Nombre} {_animal.Cliente.Apellidos}" ;
+
+
+                //    conexion.Close();
 
             }
-            
+
             else
-            {
+                {
                 MessageBox.Show("Animal no encontrado");
 
             }
@@ -182,16 +207,28 @@ namespace Veterinaria.Vista.Formularios.Recetas
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            string query = "select *from Producto where Id='" + txtProductoID.Text + "'";
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(query, conexion);
-            SqlDataReader leer = comando.ExecuteReader();
-            if (leer.Read() == true)
+            if (string.IsNullOrEmpty(txtProductoID.Text))
             {
-                txtNombrePro.Text = leer["Nombre"].ToString();
+                MessageBox.Show("El ID del producto no puede estar en blanco.");
+                return;
+            }
+
+            var _productoId = int.Parse(txtProductoID.Text);
+
+            var _producto = productoControlador.Obtener(_productoId);
+
+
+            //string query = "select *from Producto where Id='" + txtProductoID.Text + "'";
+            //conexion.Open();
+            //SqlCommand comando = new SqlCommand(query, conexion);
+            //SqlDataReader leer = comando.ExecuteReader();
+            //if (leer.Read() == true)
+            if (_producto != null)
+            {
+                txtNombrePro.Text = _producto.Nombre;
                 
 
-                conexion.Close();
+                //conexion.Close();
 
             }
 
