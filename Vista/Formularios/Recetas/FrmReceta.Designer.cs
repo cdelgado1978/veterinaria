@@ -43,6 +43,8 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.PanelRoot = new System.Windows.Forms.Panel();
             this.panelContenido = new System.Windows.Forms.Panel();
             this.PanelForm = new System.Windows.Forms.Panel();
+            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnBuscaranm = new System.Windows.Forms.Button();
             this.txtPadecimiento = new System.Windows.Forms.TextBox();
             this.txtDosis = new System.Windows.Forms.TextBox();
             this.txtNombrePro = new System.Windows.Forms.TextBox();
@@ -82,8 +84,6 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.PanelControlBox = new System.Windows.Forms.Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscaranm = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -113,10 +113,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             label7.AutoSize = true;
             label7.BackColor = System.Drawing.Color.Transparent;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(324, 54);
-            label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label7.Location = new System.Drawing.Point(432, 66);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(87, 13);
+            label7.Size = new System.Drawing.Size(110, 17);
             label7.TabIndex = 125;
             label7.Text = "Padecimiento:";
             // 
@@ -125,10 +124,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             label6.AutoSize = true;
             label6.BackColor = System.Drawing.Color.Transparent;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(418, 184);
-            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label6.Location = new System.Drawing.Point(557, 226);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(42, 13);
+            label6.Size = new System.Drawing.Size(53, 17);
             label6.TabIndex = 122;
             label6.Text = "Dosis:";
             // 
@@ -137,10 +135,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             label5.AutoSize = true;
             label5.BackColor = System.Drawing.Color.Transparent;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(361, 152);
-            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Location = new System.Drawing.Point(481, 187);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(108, 13);
+            label5.Size = new System.Drawing.Size(138, 17);
             label5.TabIndex = 121;
             label5.Text = "Nombre producto:";
             // 
@@ -149,10 +146,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             label4.AutoSize = true;
             label4.BackColor = System.Drawing.Color.Transparent;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(366, 118);
-            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Location = new System.Drawing.Point(488, 145);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(79, 13);
+            label4.Size = new System.Drawing.Size(98, 17);
             label4.TabIndex = 118;
             label4.Text = "Producto ID:";
             // 
@@ -161,10 +157,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             RazaLabel.AutoSize = true;
             RazaLabel.BackColor = System.Drawing.Color.Transparent;
             RazaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            RazaLabel.Location = new System.Drawing.Point(241, 171);
-            RazaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            RazaLabel.Location = new System.Drawing.Point(321, 210);
             RazaLabel.Name = "RazaLabel";
-            RazaLabel.Size = new System.Drawing.Size(40, 13);
+            RazaLabel.Size = new System.Drawing.Size(50, 17);
             RazaLabel.TabIndex = 113;
             RazaLabel.Text = "Raza:";
             // 
@@ -173,10 +168,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             tipoanimalLabel.AutoSize = true;
             tipoanimalLabel.BackColor = System.Drawing.Color.Transparent;
             tipoanimalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tipoanimalLabel.Location = new System.Drawing.Point(20, 171);
-            tipoanimalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            tipoanimalLabel.Location = new System.Drawing.Point(27, 210);
             tipoanimalLabel.Name = "tipoanimalLabel";
-            tipoanimalLabel.Size = new System.Drawing.Size(95, 13);
+            tipoanimalLabel.Size = new System.Drawing.Size(121, 17);
             tipoanimalLabel.TabIndex = 114;
             tipoanimalLabel.Text = "Tipo de Animal:";
             // 
@@ -185,10 +179,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             label3.AutoSize = true;
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(27, 210);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Location = new System.Drawing.Point(36, 258);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(72, 13);
+            label3.Size = new System.Drawing.Size(93, 17);
             label3.TabIndex = 112;
             label3.Text = "Propietario:";
             // 
@@ -197,10 +190,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             label2.AutoSize = true;
             label2.BackColor = System.Drawing.Color.Transparent;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(194, 69);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Location = new System.Drawing.Point(259, 85);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(40, 13);
+            label2.Size = new System.Drawing.Size(50, 17);
             label2.TabIndex = 111;
             label2.Text = "Edad:";
             // 
@@ -209,10 +201,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             nombreLabel.AutoSize = true;
             nombreLabel.BackColor = System.Drawing.Color.Transparent;
             nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(27, 110);
-            nombreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nombreLabel.Location = new System.Drawing.Point(36, 135);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(54, 13);
+            nombreLabel.Size = new System.Drawing.Size(69, 17);
             nombreLabel.TabIndex = 109;
             nombreLabel.Text = "Nombre:";
             // 
@@ -221,10 +212,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             costoLabel.AutoSize = true;
             costoLabel.BackColor = System.Drawing.Color.Transparent;
             costoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoLabel.Location = new System.Drawing.Point(20, 140);
-            costoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            costoLabel.Location = new System.Drawing.Point(27, 172);
             costoLabel.Name = "costoLabel";
-            costoLabel.Size = new System.Drawing.Size(65, 13);
+            costoLabel.Size = new System.Drawing.Size(81, 17);
             costoLabel.TabIndex = 107;
             costoLabel.Text = "Direccion:";
             // 
@@ -233,10 +223,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             lblanimalid.AutoSize = true;
             lblanimalid.BackColor = System.Drawing.Color.Transparent;
             lblanimalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblanimalid.Location = new System.Drawing.Point(28, 70);
-            lblanimalid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            lblanimalid.Location = new System.Drawing.Point(37, 86);
             lblanimalid.Name = "lblanimalid";
-            lblanimalid.Size = new System.Drawing.Size(65, 13);
+            lblanimalid.Size = new System.Drawing.Size(81, 17);
             lblanimalid.TabIndex = 104;
             lblanimalid.Text = "Animal ID:";
             // 
@@ -246,9 +235,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.PanelRoot.Controls.Add(this.panelTitulo);
             this.PanelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelRoot.Location = new System.Drawing.Point(0, 0);
-            this.PanelRoot.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelRoot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelRoot.Name = "PanelRoot";
-            this.PanelRoot.Size = new System.Drawing.Size(800, 566);
+            this.PanelRoot.Size = new System.Drawing.Size(1067, 697);
             this.PanelRoot.TabIndex = 1;
             // 
             // panelContenido
@@ -258,10 +247,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.panelContenido.Controls.Add(this.Panel_botones);
             this.panelContenido.Controls.Add(this.PanelDetalle);
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(0, 62);
-            this.panelContenido.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContenido.Location = new System.Drawing.Point(0, 76);
+            this.panelContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(800, 504);
+            this.panelContenido.Size = new System.Drawing.Size(1067, 621);
             this.panelContenido.TabIndex = 6;
             // 
             // PanelForm
@@ -294,21 +283,47 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.PanelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelForm.Enabled = false;
             this.PanelForm.Location = new System.Drawing.Point(0, 0);
-            this.PanelForm.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelForm.Name = "PanelForm";
-            this.PanelForm.Size = new System.Drawing.Size(668, 301);
+            this.PanelForm.Size = new System.Drawing.Size(891, 371);
             this.PanelForm.TabIndex = 48;
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducto.Location = new System.Drawing.Point(561, 21);
+            this.btnProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(128, 41);
+            this.btnProducto.TabIndex = 12;
+            this.btnProducto.Text = "Buscar Producto";
+            this.btnProducto.UseVisualStyleBackColor = false;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            // 
+            // btnBuscaranm
+            // 
+            this.btnBuscaranm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBuscaranm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaranm.Location = new System.Drawing.Point(131, 27);
+            this.btnBuscaranm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscaranm.Name = "btnBuscaranm";
+            this.btnBuscaranm.Size = new System.Drawing.Size(145, 41);
+            this.btnBuscaranm.TabIndex = 12;
+            this.btnBuscaranm.Text = "Buscar Animal";
+            this.btnBuscaranm.UseVisualStyleBackColor = false;
+            this.btnBuscaranm.Click += new System.EventHandler(this.btnBuscaranm_Click);
             // 
             // txtPadecimiento
             // 
             this.txtPadecimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPadecimiento.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPadecimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPadecimiento.Location = new System.Drawing.Point(416, 56);
-            this.txtPadecimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPadecimiento.Location = new System.Drawing.Point(555, 69);
+            this.txtPadecimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPadecimiento.Multiline = true;
             this.txtPadecimiento.Name = "txtPadecimiento";
-            this.txtPadecimiento.Size = new System.Drawing.Size(229, 51);
+            this.txtPadecimiento.Size = new System.Drawing.Size(305, 63);
             this.txtPadecimiento.TabIndex = 124;
             // 
             // txtDosis
@@ -316,11 +331,11 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtDosis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDosis.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDosis.Location = new System.Drawing.Point(465, 175);
-            this.txtDosis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDosis.Location = new System.Drawing.Point(620, 215);
+            this.txtDosis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDosis.Multiline = true;
             this.txtDosis.Name = "txtDosis";
-            this.txtDosis.Size = new System.Drawing.Size(180, 48);
+            this.txtDosis.Size = new System.Drawing.Size(240, 59);
             this.txtDosis.TabIndex = 123;
             // 
             // txtNombrePro
@@ -328,10 +343,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtNombrePro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombrePro.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombrePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombrePro.Location = new System.Drawing.Point(474, 145);
-            this.txtNombrePro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNombrePro.Location = new System.Drawing.Point(632, 178);
+            this.txtNombrePro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombrePro.Name = "txtNombrePro";
-            this.txtNombrePro.Size = new System.Drawing.Size(139, 22);
+            this.txtNombrePro.Size = new System.Drawing.Size(185, 27);
             this.txtNombrePro.TabIndex = 120;
             // 
             // txtProductoID
@@ -339,10 +354,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtProductoID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProductoID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProductoID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductoID.Location = new System.Drawing.Point(450, 115);
-            this.txtProductoID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtProductoID.Location = new System.Drawing.Point(600, 142);
+            this.txtProductoID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtProductoID.Name = "txtProductoID";
-            this.txtProductoID.Size = new System.Drawing.Size(82, 22);
+            this.txtProductoID.Size = new System.Drawing.Size(109, 27);
             this.txtProductoID.TabIndex = 119;
             // 
             // txtPropietario
@@ -350,11 +365,11 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPropietario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPropietario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPropietario.Location = new System.Drawing.Point(100, 202);
-            this.txtPropietario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPropietario.Location = new System.Drawing.Point(133, 249);
+            this.txtPropietario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPropietario.Multiline = true;
             this.txtPropietario.Name = "txtPropietario";
-            this.txtPropietario.Size = new System.Drawing.Size(242, 33);
+            this.txtPropietario.Size = new System.Drawing.Size(323, 41);
             this.txtPropietario.TabIndex = 117;
             // 
             // txtRaza
@@ -362,10 +377,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtRaza.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRaza.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaza.Location = new System.Drawing.Point(286, 171);
-            this.txtRaza.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtRaza.Location = new System.Drawing.Point(381, 210);
+            this.txtRaza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRaza.Name = "txtRaza";
-            this.txtRaza.Size = new System.Drawing.Size(88, 22);
+            this.txtRaza.Size = new System.Drawing.Size(117, 27);
             this.txtRaza.TabIndex = 116;
             // 
             // txtTipoAnimal
@@ -373,10 +388,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtTipoAnimal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipoAnimal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTipoAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoAnimal.Location = new System.Drawing.Point(112, 169);
-            this.txtTipoAnimal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTipoAnimal.Location = new System.Drawing.Point(149, 208);
+            this.txtTipoAnimal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTipoAnimal.Name = "txtTipoAnimal";
-            this.txtTipoAnimal.Size = new System.Drawing.Size(112, 22);
+            this.txtTipoAnimal.Size = new System.Drawing.Size(149, 27);
             this.txtTipoAnimal.TabIndex = 115;
             // 
             // txtEdad
@@ -384,10 +399,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEdad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdad.Location = new System.Drawing.Point(235, 61);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEdad.Location = new System.Drawing.Point(313, 75);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(73, 22);
+            this.txtEdad.Size = new System.Drawing.Size(97, 27);
             this.txtEdad.TabIndex = 110;
             // 
             // txtDireccion
@@ -395,11 +410,11 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(96, 132);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDireccion.Location = new System.Drawing.Point(128, 162);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(212, 33);
+            this.txtDireccion.Size = new System.Drawing.Size(283, 41);
             this.txtDireccion.TabIndex = 106;
             // 
             // txtnombreanm
@@ -407,10 +422,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtnombreanm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtnombreanm.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtnombreanm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombreanm.Location = new System.Drawing.Point(96, 101);
-            this.txtnombreanm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtnombreanm.Location = new System.Drawing.Point(128, 124);
+            this.txtnombreanm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtnombreanm.Name = "txtnombreanm";
-            this.txtnombreanm.Size = new System.Drawing.Size(170, 22);
+            this.txtnombreanm.Size = new System.Drawing.Size(227, 27);
             this.txtnombreanm.TabIndex = 105;
             // 
             // checkboxinactivo
@@ -418,10 +433,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.checkboxinactivo.BackColor = System.Drawing.Color.Transparent;
             this.checkboxinactivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkboxinactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkboxinactivo.Location = new System.Drawing.Point(570, 229);
-            this.checkboxinactivo.Margin = new System.Windows.Forms.Padding(2);
+            this.checkboxinactivo.Location = new System.Drawing.Point(760, 282);
+            this.checkboxinactivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkboxinactivo.Name = "checkboxinactivo";
-            this.checkboxinactivo.Size = new System.Drawing.Size(78, 19);
+            this.checkboxinactivo.Size = new System.Drawing.Size(104, 23);
             this.checkboxinactivo.TabIndex = 108;
             this.checkboxinactivo.Text = "Inactivo";
             this.checkboxinactivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -432,10 +447,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.txtanimalid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtanimalid.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtanimalid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtanimalid.Location = new System.Drawing.Point(98, 61);
-            this.txtanimalid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtanimalid.Location = new System.Drawing.Point(131, 75);
+            this.txtanimalid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtanimalid.Name = "txtanimalid";
-            this.txtanimalid.Size = new System.Drawing.Size(82, 22);
+            this.txtanimalid.Size = new System.Drawing.Size(109, 27);
             this.txtanimalid.TabIndex = 103;
             this.txtanimalid.DoubleClick += new System.EventHandler(this.txtanimalid_DoubleClick);
             this.txtanimalid.Enter += new System.EventHandler(this.txtNombre_Enter);
@@ -446,32 +461,33 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.Panel_botones.Controls.Add(this.btnNuevo);
             this.Panel_botones.Controls.Add(this.btnGuardar);
             this.Panel_botones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Panel_botones.Location = new System.Drawing.Point(668, 0);
-            this.Panel_botones.Margin = new System.Windows.Forms.Padding(2);
+            this.Panel_botones.Location = new System.Drawing.Point(891, 0);
+            this.Panel_botones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Panel_botones.Name = "Panel_botones";
-            this.Panel_botones.Size = new System.Drawing.Size(132, 301);
+            this.Panel_botones.Size = new System.Drawing.Size(176, 371);
             this.Panel_botones.TabIndex = 2;
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(27, 69);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(36, 85);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(78, 33);
+            this.btnEditar.Size = new System.Drawing.Size(104, 41);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Visible = false;
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Location = new System.Drawing.Point(27, 32);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Location = new System.Drawing.Point(36, 39);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(78, 33);
+            this.btnNuevo.Size = new System.Drawing.Size(104, 41);
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -481,10 +497,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(27, 106);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Location = new System.Drawing.Point(36, 130);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(78, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(104, 41);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -495,20 +511,20 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.PanelDetalle.Controls.Add(this.panel2);
             this.PanelDetalle.Controls.Add(this.PanelTituloDetalle);
             this.PanelDetalle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelDetalle.Location = new System.Drawing.Point(0, 301);
-            this.PanelDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelDetalle.Location = new System.Drawing.Point(0, 371);
+            this.PanelDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelDetalle.Name = "PanelDetalle";
-            this.PanelDetalle.Size = new System.Drawing.Size(800, 203);
+            this.PanelDetalle.Size = new System.Drawing.Size(1067, 250);
             this.PanelDetalle.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dbGridDetalle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 37);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 166);
+            this.panel2.Size = new System.Drawing.Size(1067, 204);
             this.panel2.TabIndex = 2;
             // 
             // dbGridDetalle
@@ -531,12 +547,12 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.ProveedorId});
             this.dbGridDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dbGridDetalle.Location = new System.Drawing.Point(0, 0);
-            this.dbGridDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.dbGridDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dbGridDetalle.Name = "dbGridDetalle";
             this.dbGridDetalle.ReadOnly = true;
             this.dbGridDetalle.RowHeadersWidth = 51;
             this.dbGridDetalle.RowTemplate.Height = 24;
-            this.dbGridDetalle.Size = new System.Drawing.Size(800, 166);
+            this.dbGridDetalle.Size = new System.Drawing.Size(1067, 204);
             this.dbGridDetalle.TabIndex = 1;
             // 
             // Id
@@ -649,9 +665,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.PanelTituloDetalle.Controls.Add(this.lblTituloDetalle);
             this.PanelTituloDetalle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTituloDetalle.Location = new System.Drawing.Point(0, 0);
-            this.PanelTituloDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelTituloDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelTituloDetalle.Name = "PanelTituloDetalle";
-            this.PanelTituloDetalle.Size = new System.Drawing.Size(800, 37);
+            this.PanelTituloDetalle.Size = new System.Drawing.Size(1067, 46);
             this.PanelTituloDetalle.TabIndex = 1;
             // 
             // panel3
@@ -659,10 +675,10 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.panel3.Controls.Add(this.lblBuscar);
             this.panel3.Controls.Add(this.txtBuscar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(546, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(728, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 37);
+            this.panel3.Size = new System.Drawing.Size(339, 46);
             this.panel3.TabIndex = 2;
             // 
             // lblBuscar
@@ -670,20 +686,19 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblBuscar.ForeColor = System.Drawing.Color.White;
-            this.lblBuscar.Location = new System.Drawing.Point(2, 6);
-            this.lblBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBuscar.Location = new System.Drawing.Point(3, 7);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(80, 26);
+            this.lblBuscar.Size = new System.Drawing.Size(99, 31);
             this.lblBuscar.TabIndex = 2;
             this.lblBuscar.Text = "Buscar";
             // 
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(81, 6);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar.Location = new System.Drawing.Point(108, 7);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(165, 26);
+            this.txtBuscar.Size = new System.Drawing.Size(219, 30);
             this.txtBuscar.TabIndex = 1;
             // 
             // lblTituloDetalle
@@ -691,10 +706,9 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.lblTituloDetalle.AutoSize = true;
             this.lblTituloDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblTituloDetalle.ForeColor = System.Drawing.Color.White;
-            this.lblTituloDetalle.Location = new System.Drawing.Point(8, 6);
-            this.lblTituloDetalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTituloDetalle.Location = new System.Drawing.Point(11, 7);
             this.lblTituloDetalle.Name = "lblTituloDetalle";
-            this.lblTituloDetalle.Size = new System.Drawing.Size(80, 26);
+            this.lblTituloDetalle.Size = new System.Drawing.Size(99, 31);
             this.lblTituloDetalle.TabIndex = 0;
             this.lblTituloDetalle.Text = "Detalle";
             // 
@@ -705,19 +719,19 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.panelTitulo.Controls.Add(this.label1);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(800, 62);
+            this.panelTitulo.Size = new System.Drawing.Size(1067, 76);
             this.panelTitulo.TabIndex = 5;
             // 
             // PanelControlBox
             // 
             this.PanelControlBox.Controls.Add(this.guna2ControlBox1);
             this.PanelControlBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelControlBox.Location = new System.Drawing.Point(760, 0);
-            this.PanelControlBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelControlBox.Location = new System.Drawing.Point(1014, 0);
+            this.PanelControlBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelControlBox.Name = "PanelControlBox";
-            this.PanelControlBox.Size = new System.Drawing.Size(40, 62);
+            this.PanelControlBox.Size = new System.Drawing.Size(53, 76);
             this.PanelControlBox.TabIndex = 4;
             // 
             // guna2ControlBox1
@@ -726,11 +740,11 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(4, 2);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(5, 2);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 30);
             this.guna2ControlBox1.TabIndex = 3;
             // 
             // label1
@@ -738,45 +752,19 @@ namespace Veterinaria.Vista.Formularios.Recetas
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 37);
+            this.label1.Size = new System.Drawing.Size(167, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Recetas";
             // 
-            // btnBuscaranm
-            // 
-            this.btnBuscaranm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBuscaranm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscaranm.Location = new System.Drawing.Point(48, 22);
-            this.btnBuscaranm.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscaranm.Name = "btnBuscaranm";
-            this.btnBuscaranm.Size = new System.Drawing.Size(109, 33);
-            this.btnBuscaranm.TabIndex = 12;
-            this.btnBuscaranm.Text = "Buscar Animal";
-            this.btnBuscaranm.UseVisualStyleBackColor = false;
-            this.btnBuscaranm.Click += new System.EventHandler(this.btnBuscaranm_Click);
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.Location = new System.Drawing.Point(421, 17);
-            this.btnProducto.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(96, 33);
-            this.btnProducto.TabIndex = 12;
-            this.btnProducto.Text = "Buscar Producto";
-            this.btnProducto.UseVisualStyleBackColor = false;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
             // FrmReceta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 566);
+            this.ClientSize = new System.Drawing.Size(1067, 697);
             this.Controls.Add(this.PanelRoot);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReceta";
             this.Text = "FrmReceta";
             this.Load += new System.EventHandler(this.FrmReceta_Load);

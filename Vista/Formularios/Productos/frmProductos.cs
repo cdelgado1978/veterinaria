@@ -206,5 +206,13 @@ namespace Veterinaria.Vista.Formularios.Productos
         {
 
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var producto = productosControlador.Obtener(_productoId);
+
+            if (producto != null)
+                productosControlador.Borrar(producto);
+        }
     }
 }

@@ -149,5 +149,13 @@ namespace Veterinaria.Vista.Formularios.Proveedores
             dgProveedores.DataSource = _result;
 
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var proveedor = proveedorController.Obtener(_proveedorId);
+
+            if (proveedor != null)
+                proveedorController.Borrar(proveedor);
+        }
     }
 }

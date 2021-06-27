@@ -45,6 +45,9 @@ namespace Veterinaria.Vista.TipoAnimal
             this.PanelDetalle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgListaTiposAnimal = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelTituloDetalle = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -54,9 +57,7 @@ namespace Veterinaria.Vista.TipoAnimal
             this.PanelControlBox = new System.Windows.Forms.Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBorrar = new System.Windows.Forms.Button();
             nombreLabel = new System.Windows.Forms.Label();
             this.PanelRoot.SuspendLayout();
             this.panelContenido.SuspendLayout();
@@ -144,6 +145,7 @@ namespace Veterinaria.Vista.TipoAnimal
             // 
             // Panel_botones
             // 
+            this.Panel_botones.Controls.Add(this.btnBorrar);
             this.Panel_botones.Controls.Add(this.btnEditar);
             this.Panel_botones.Controls.Add(this.btnNuevo);
             this.Panel_botones.Controls.Add(this.btnGuardar);
@@ -231,6 +233,35 @@ namespace Veterinaria.Vista.TipoAnimal
             this.dgListaTiposAnimal.Size = new System.Drawing.Size(1025, 205);
             this.dgListaTiposAnimal.TabIndex = 1;
             this.dgListaTiposAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaTiposAnimal_CellDoubleClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // Inactivo
+            // 
+            this.Inactivo.DataPropertyName = "Inactivo";
+            this.Inactivo.HeaderText = "Inactivo";
+            this.Inactivo.MinimumWidth = 6;
+            this.Inactivo.Name = "Inactivo";
+            this.Inactivo.ReadOnly = true;
+            this.Inactivo.Visible = false;
+            this.Inactivo.Width = 125;
             // 
             // PanelTituloDetalle
             // 
@@ -330,34 +361,18 @@ namespace Veterinaria.Vista.TipoAnimal
             this.label1.TabIndex = 2;
             this.label1.Text = "Tipo Animal";
             // 
-            // Id
+            // btnBorrar
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // Inactivo
-            // 
-            this.Inactivo.DataPropertyName = "Inactivo";
-            this.Inactivo.HeaderText = "Inactivo";
-            this.Inactivo.MinimumWidth = 6;
-            this.Inactivo.Name = "Inactivo";
-            this.Inactivo.ReadOnly = true;
-            this.Inactivo.Visible = false;
-            this.Inactivo.Width = 125;
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Location = new System.Drawing.Point(36, 175);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(104, 41);
+            this.btnBorrar.TabIndex = 13;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // FrmTipoAnimal
             // 
@@ -416,5 +431,6 @@ namespace Veterinaria.Vista.TipoAnimal
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Inactivo;
+        private Button btnBorrar;
     }
 }

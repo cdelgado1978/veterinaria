@@ -144,5 +144,12 @@ namespace Veterinaria.Vista.Formularios.TipoProductos
             ActualizaDBGrid();
         }
 
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var tipoProducto = tipoProductoControlador.Obtener(_tipoProductoId);
+
+            if (tipoProducto != null)
+                tipoProductoControlador.Borrar(tipoProducto);
+        }
     }
 }

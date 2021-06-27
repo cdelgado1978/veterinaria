@@ -54,6 +54,22 @@ namespace Veterinaria.Controlador
             }
         }
 
+        public Tipo_Producto Obtener(int id)
+        {
+            var _result = db.Tipo_Producto.Single(p => p.Id == id);
+
+            var entidad = new Tipo_Producto()
+                {
+                    Id = _result.Id,
+                    Nombre = _result.Nombre,
+                    Inactivo = _result.Inactivo
+
+                };
+            
+
+            return entidad;
+        }
+
         public List<TipoProductoDto> ObtenerTodos()
         {
             var _result = db.Tipo_Producto.ToList();

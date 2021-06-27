@@ -144,6 +144,12 @@ namespace Veterinaria.Vista.TipoAnimal
             ActualizaDBGrid();
         }
 
-      
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var tipoAnimal = tipoAnimalControlador.Obtener(_tipoAnimalId);
+
+            if (tipoAnimal != null)
+                tipoAnimalControlador.Borrar(tipoAnimal);
+        }
     }
 }

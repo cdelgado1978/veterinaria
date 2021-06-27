@@ -69,7 +69,7 @@ namespace Veterinaria.Vista.Formularios.Clientes
             var _telefono = txtTelefono.Text;
             
             var _inactivo = chkBoxInactivo.Checked;
-            var _provinciaId = int.Parse(cbProvincia.SelectedValue.ToString());
+            
             var _municipioId = int.Parse(cbMunicipio.SelectedValue.ToString());
 
 
@@ -201,6 +201,14 @@ namespace Veterinaria.Vista.Formularios.Clientes
                 CargaMunicipios(_provincia);
 
 
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var _cliente = clienteControlador.Obtener(_clienteId);
+
+            if (_cliente != null)
+                clienteControlador.Borrar(_cliente);
         }
     }
 }

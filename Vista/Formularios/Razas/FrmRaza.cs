@@ -162,5 +162,13 @@ namespace Veterinaria.Vista.Formularios.Razas
             cbTipoAnimal.ValueMember = "Id";
 
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            var raza = razaControlador.Obtener(_razaId);
+
+            if(raza != null)
+                razaControlador.Borrar(raza);
+        }
     }
 }
